@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Life &amp;&amp; Study
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Life &amp;&amp; Study
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Life &amp;&amp; Study
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/cnawesome" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    alei
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/Linux/">
+            Linux
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        Linux网络编程
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-02-25
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <p><img src="%E5%A5%97%E6%8E%A5%E5%AD%97.jpg" alt=""></p>
+<h4 id="套接字：源IP地址和目的IP地址以及源端口号和目的端口号的组合称为套接字。"><a href="#套接字：源IP地址和目的IP地址以及源端口号和目的端口号的组合称为套接字。" class="headerlink" title="套接字：源IP地址和目的IP地址以及源端口号和目的端口号的组合称为套接字。"></a>套接字：源IP地址和目的IP地址以及源端口号和目的端口号的组合称为套接字。</h4><p>｛    流套接字：用于提供面向连接、可靠的数据传输服务。<br>    数据报套接字：提供了一种无连接的服务。该服务并不能保证数据传输的可靠性，数据有可能在传    输过程中丢失或出现数据重复，且无法保证顺序地接收到数据。<br>    原始套接字(SOCKET_RAW)：允许对较低层次的协议直接访问，比如IP、 ICMP协议，它常用于检验新的协议实现，或者访问现有服务中配置的新设备，因为RAW SOCKET可以自如地控制Windows下的多种协议，能够对网络底层的传输机制进行控制，所以可以应用原始套接字来操纵网络层和传输层应用。<br> ｝</p>
+<h4 id="套接字基本函数："><a href="#套接字基本函数：" class="headerlink" title="套接字基本函数："></a>套接字基本函数：</h4><pre><code> 创建套接字：int socket(int family, int type, intprotocol);
+         个人理解创建socket的过程其实就是一个获得文件描述符的过程，当然这个过程会是比较复杂的。可以从内核中找到创建socket的代码，并且socket的创建和其他的listen，bind等操作分离开来。socket函数完成正确的操作是返回值大于0的文件描述符，当返回小于0的值时，操作错误。同样是返回一个文件描述符，但是会因为三个参数组合不同，对于数据具体的工作流程不同，对于应用层编程来说，这些也是不可见的。
+
+         socket有三个参数，family代表一个协议族，比较熟知的就是AF_INET，PF_PACKET等；第二个参数是协议类型，常见类型是SOCK_STREAM,SOCK_DGRAM, SOCK_RAW, SOCK_PACKET等；第三个参数是具体的协议，对于标准套接字来说，其值是0，对于原始套接字来说就是具体的协议值。
+
+
+ 套接字绑定函数： intbind(int sockfd, const struct sockaddr *myaddr, socklen_t addrlen);
+         功能介绍：bind函数主要应用于服务器模式一端，其主要的功能是将addrlen长度 structsockaddr类型的myaddr地址与sockfd文件描述符绑定到一起，在sockaddr中主要包含服务器端的协议族类型，网络地址和端口号等。在客户端模式中不需要使用bind函数。当bind函数返回0时，为正确绑定，返回-1，则为绑定失败。
+
+         bind函数的第一个参数sockfd是在创建socket套接字时返回的文件描述符。
+         bind函数的第二个参数是structsockaddr类型的数据结构，由于structsockaddr数据结构类型不方便设置，所以通常会通过对tructsockaddr_in进行地质结构设置，然后进行强制类型转换成structsockaddr类型的数据。
+
+ 监听函数：int listen(int sockfd, int backlog);
+        功能介绍：listen的操作就是当有较多的client发起connect时，server端不能及时的处理已经建立的连接，这时就会将connect连接放在等待队列中缓存起来。这个等待队列的长度有listen中的backlog参数来设定。listen和accept函数是服务器模式特有的函数，客户端不需要这个函数。当listen运行成功时，返回0；运行失败时，返回值位-1.
+
+        参数说明：sockfd是前面socket创建的文件描述符;backlog是指server端可以缓存连接的最大个数，也就是等待队列的长度。
+
+请求接收函数：int accept(int sockfd, structsockaddr *client_addr, socklen_t *len);
+        功能介绍：接受函数accept其实并不是真正的接受，而是客户端向服务器端监听端口发起的连接。对于TCP来说，accept从阻塞状态返回的时候，已经完成了三次握手的操作。Accept其实是取了一个已经处于connected状态的连接，然后把对方的协议族，网络地址以及端口都存在了client_addr中，返回一个用于操作的新的文件描述符，该文件描述符表示客户端与服务器端的连接，通过对该文件描述符操作，可以向client端发送和接收数据。同时之前socket创建的sockfd，则继续监听有没有新的连接到达本地端口。返回大于0的文件描述符则表示accept成功，否则失败。
+
+        参数说明：sockfd是socket创建的文件描述符；client_addr是本地服务器端的一个structsockaddr类型的变量，用于存放新连接的协议族，网络地址以及端口号等；第三个参数len是第二个参数所指内容的长度，对于TCP来说其值可以用sizeof(structsockaddr_in)来计算大小，说要说明的是accept的第三个参数要是指针的形式，因为这个值是要传给协议栈使用的。
+
+客户端请求连接函数： intconnect(int sock_fd, struct sockaddr *serv_addr,int addrlen);
+        功能介绍：连接函数connect是属于client端的操作函数，其目的是向服务器端发送连接请求，这也是从客户端发起TCP三次握手请求的开始，服务器端的协议族，网络地址以及端口都会填充到connect函数的serv_addr地址当中。当connect返回0时说明已经connect成功，返回值是-1时，表示connect失败。
+
+        参数说明：connect的第一个参数是socket创建的文件描述符；第二个参数是一个structsockaddr类型的指针，这个参数中设置的是要连接的目标服务器的协议族，网络地址以及端口号；第三个参数表示第二个参数内容的大小，与accept不同，这个值不是一个指针。</code></pre><p> 在服务器端和客户端建立连接之后是进行数据间的发送和接收，主要使用的接收函数是recv和read，发送函数是send和write。因为对于socket套接字来说，最终实际操作的是文件描述符，所以可以使用对文件进行操作的接收和发送函数对socket套接字进行操作。read和write函数是文件编程里的知识，所以这里不再做多与的赘述。</p>
+<h5 id="简单连接服务器代码："><a href="#简单连接服务器代码：" class="headerlink" title="简单连接服务器代码："></a>简单连接服务器代码：</h5><pre><code>#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;arpa/inet.h&gt;
+
+#define PORT 3399
+#define SIZE 1024
+
+int createSocket(){//返回一个内核的socket码
+
+    int listen_socket=socket(AF_INET,SOCK_STREAM,0);
+    if(listen_socket==-1){
+        perror(&quot;socket&quot;);
+        return -1;
+    }
+
+    struct sockaddr_in addr;
+    memset(&amp;addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;  /* Internet地址族 */
+    addr.sin_port = htons(PORT);  /* 端口号 */
+    addr.sin_addr.s_addr = htonl(INADDR_ANY);   /* IP地址 */
+
+    int ref=intbind(listen_socket,(struct sockaddr *)&amp;addr,sizeof(addr));
+    if(ref==1){
+        perror(&quot;bind&quot;);
+        return -1;
+    }
+
+    ref=listen(listen_socket,5);//放置等待队列，并非接收用户请求
+    if(ref == -1){
+        perror(&quot;listen&quot;);
+        return -1;
+    }
+
+    return listen_socket;
+
+}
+
+void listenWait_socket(int socket_id){
+    struct sockaddr_in cliaddr;
+    int addrlen = sizeof(cliaddr);
+    printf(&quot;等待客户端连接。。。。\n&quot;);
+
+    int client_socket=accept(socket_id,(struct sockaddr *)&amp;cliaddr, &amp;addrlen);
+    if(client_socket == -1)
+    {
+        perror(&quot;accept&quot;);
+        return -1;
+    }
+    return client_socket;
+
+
+}
+
+void handle_socket(int listen_socket, int client_socket){
+    char buf[SIZE];
+    while(1)
+    {
+        int ret = read(client_socket, buf, SIZE-1);
+        if(ret == -1)
+        {
+            perror(&quot;read&quot;);
+            break;
+        }
+        if(ret == 0)
+        {
+            break;
+        }
+        buf[ret]=&quot;\0&quot;;
+        for(i = 0; i &lt; ret; i++)
+        {
+            buf[i] = buf[i] + &apos;A&apos; - &apos;a&apos;;
+        }
+
+        printf(&quot;%s\n&quot;, buf);
+        write(client_socket, buf, ret);
+        if(strncmp(buf, &quot;end&quot;, 3) == 0)
+        {
+            break;
+        }
+    }
+    close(client_socket);
+
+    }
+
+
+
+
+
+}
+
+
+
+int main(){
+
+    int socket_listen=createSocket();
+    int socket_client=listenWait_socket(socket_listen);
+    hanld_client(socket_listen, socket_client);
+      close(listen_socket);
+
+    return 0;
+
+}</code></pre><h5 id="多线程并发服务器代码："><a href="#多线程并发服务器代码：" class="headerlink" title="多线程并发服务器代码："></a>多线程并发服务器代码：</h5><pre><code>#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;sys/wait.h&gt;
+
+#define PORT 9990
+#define SIZE 1024
+
+int Creat_socket()         //创建套接字和初始化以及监听函数
+{
+    int listen_socket = socket(AF_INET, SOCK_STREAM, 0);      //创建一个负责监听的套接字  
+    if(listen_socket == -1)
+    {
+        perror(&quot;socket&quot;);
+        return -1;
+    }
+    struct sockaddr_in addr;
+    memset(&amp;addr, 0, sizeof(addr));
+
+    addr.sin_family = AF_INET;  /* Internet地址族 */
+    addr.sin_port = htons(PORT);  /* 端口号 */
+    addr.sin_addr.s_addr = htonl(INADDR_ANY);   /* IP地址 */
+
+    int ret = bind(listen_socket, (struct sockaddr *)&amp;addr, sizeof(addr));    //连接
+    if(ret == -1)
+    {
+        perror(&quot;bind&quot;);
+        return -1;
+    }
+
+    ret = listen(listen_socket, 5);   //监听
+    if(ret == -1)
+    {
+        perror(&quot;listen&quot;);
+        return -1;
+    }
+    return listen_socket;
+}
+
+int wait_client(int listen_socket)
+{
+    struct sockaddr_in cliaddr;
+    int addrlen = sizeof(cliaddr);
+    printf(&quot;等待客户端连接。。。。\n&quot;);
+    int client_socket = accept(listen_socket, (struct sockaddr *)&amp;cliaddr, &amp;addrlen);     //创建一个和客户端交流的套接字
+    if(client_socket == -1)
+    {
+        perror(&quot;accept&quot;);
+        return -1;
+    }
+
+    printf(&quot;成功接收到一个客户端：%s\n&quot;, inet_ntoa(cliaddr.sin_addr));
+
+    return client_socket;
+}
+
+void hanld_client(int listen_socket, int client_socket)    //信息处理函数,功能是将客户端传过来的小写字母转化为大写字母
+{
+    char buf[SIZE];
+    while(1)
+    {
+        int ret = read(client_socket, buf, SIZE-1);
+        if(ret == -1)
+        {
+            perror(&quot;read&quot;);
+            break;
+        }
+        if(ret == 0)
+        {
+            break;
+        }
+        buf[ret] = &apos;\0&apos;;
+        int i;
+        for(i = 0; i &lt; ret; i++)
+        {
+            buf[i] = buf[i] + &apos;A&apos; - &apos;a&apos;;
+        }
+
+        printf(&quot;%s\n&quot;, buf);
+        write(client_socket, buf, ret);
+
+        if(strncmp(buf, &quot;end&quot;, 3) == 0)
+        {
+            break;
+        }
+    }
+    close(client_socket);
+}
+
+void handler(int sig)
+{
+
+    while (waitpid(-1,  NULL,   WNOHANG) &gt; 0)
+    {
+        printf (&quot;成功处理一个子进程的退出\n&quot;);
+    }
+}
+
+int main()
+{
+    int listen_socket = Creat_socket();
+
+
+    signal(SIGCHLD,  handler);    //处理子进程，防止僵尸进程的产生
+    while(1)
+    {
+        int client_socket = wait_client(listen_socket);   //多进程服务器，可以创建子进程来处理，父进程负责监听。
+        int pid = fork();
+        if(pid == -1)
+        {
+            perror(&quot;fork&quot;);
+            break;
+        }
+        if(pid &gt; 0)
+        {
+            close(client_socket);
+            continue;
+        }
+        if(pid == 0)
+        {
+            close(listen_socket);
+            hanld_client(listen_socket, client_socket);
+            break;
+        }
+    }
+
+    close(listen_socket);
+
+    return 0;
+
+｝</code></pre>
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Life &amp;&amp; Study
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Life &amp;&amp; Study
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Life &amp;&amp; Study
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/cnawesome" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    alei
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+            数据结构
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        二叉树（c版本）
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-03-11
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <p>btree.h  //二叉树头文件，用于声明数据类型和相关函数</p>
+<pre><code>#ifndef __BTREE_H__
+#define __BTREE_H__
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdbool.h&gt;
+
+typedef char dataype_bt;  //声明二叉树中存放的数据类型，便于后续更改
+
+typedef struct btreenode{   //二叉树的节点结构：存放的数据 该节点的左子节点地址及右子节点地址。注意和单链表的区别，二叉树是非线性存储，单链表是线性存储
+    dataype_bt data;
+    struct btreenode *lchild,*rchild;
+}btree_node,*btree_pnode;
+
+extern btree_pnode create_btree1(void);    //通过递归方法创建一个二叉树
+extern void create_btree(btree_pnode *T);  //通过递归方法创建一个二叉树（功能同上）
+extern void pre_order(btree_pnode t);    //采用递归方法先序遍历
+extern void unpre_order(btree_pnode t);  //采用非递归方法先序遍历
+extern void mid_order(btree_pnode t);    //采用递归方法中序遍历
+extern void post_order(btree_pnode t);   //采用递归方法后序遍历
+extern void level_order(btree_pnode t);  //层次遍历
+extern void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t);   //将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述
+#endif
+
+
+
+
+btree.c  //二叉树相关函数的实现方法
+
+#include &quot;btree.h&quot;
+#include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
+#include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+
+btree_pnode create_btree1(void)        //通过递归方法创建一个二叉树
+{
+    dataype_bt ch;
+    btree_pnode new;
+    scanf(&quot;%c&quot;,&amp;ch);
+    if(&apos;#&apos;==ch)
+    {
+        return NULL;
+    }
+    else
+    {
+        //创建根结点
+        new=(btree_pnode)malloc(sizeof(btree_node));
+        if(NULL==new)
+        {
+            perror(&quot;malloc&quot;);
+            exit(-1);
+        }
+        new-&gt;data=ch;
+        //用相同方法创建左子数
+        new-&gt;lchild=create_btree1();
+        //用相同方法创建右子数
+        new-&gt;rchild=create_btree1();
+    }
+    return new;
+}
+
+void create_btree(btree_pnode *T)          //通过递归方法创建一个二叉树（功能同上）
+{
+    dataype_bt ch;
+    scanf(&quot;%c&quot;,&amp;ch);
+    if(&apos;#&apos;==ch)
+    {
+        return ;
+    }
+    else{
+        //创建根结点
+        (*T)=(btree_pnode)malloc(sizeof(btree_node));
+        if(NULL==(*T))
+        {
+            perror(&quot;malloc&quot;);
+            exit(-1);
+        }
+        (*T)-&gt;data=ch;
+        //用相同方法创建左子数
+        create_btree(&amp;((*T)-&gt;lchild));
+        //用相同方法创建右子数
+        create_btree(&amp;((*T)-&gt;rchild));
+    }
+}
+
+void pre_order(btree_pnode t)          //采用递归方法先序遍历
+{
+    if(t!=NULL)
+    {
+        //访问根结点
+        printf(&quot;%c&quot;,t-&gt;data);
+        //先序遍历左子树
+        pre_order(t-&gt;lchild);
+        //先序遍历右子树
+        pre_order(t-&gt;rchild);
+    }
+}
+
+void unpre_order(btree_pnode t)          //采用非递归方法先序遍历
+{
+    linklist top;//top为指向栈顶结点的指针
+
+    top=stack_create();//初始化链式栈
+    /*
+        该函数包含的头文件 和 实现方法如下：
+        #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+        linklist stack_create()
+        {
+            linklist s;
+
+            if((s=(linklist)malloc(sizeof(listnode)))==NULL){
+                puts(&quot;malloc failed&quot;);
+                return NULL;
+            }
+            s-&gt;next=NULL;
+
+            return s;
+        }
+    */
+    while(t!=NULL || !(stack_empty(top))){
+        /*
+            该函数包含的头文件 和 实现方法如下：
+            #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+            int stack_empty(linklist s)  //判断栈是否为空（1表示空，0表示非空）
+            {
+                return (s-&gt;next==NULL ? 1:0);
+            }
+        */
+        if(t!=NULL){
+            printf(&quot;%c&quot;,t-&gt;data);
+            if(t-&gt;rchild !=NULL)
+                stack_push(top,t-&gt;rchild);  //入栈
+            /*
+                该函数包含的头文件 和 实现方法如下：
+                #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+                int stack_push(linklist s,datatype_ls value)  //入栈
+                {
+                    linklist p;
+                    if((p=(linklist)malloc(sizeof(listnode)))==NULL)
+                    {
+                        puts(&quot;malloc failed&quot;);
+                        return -1;
+                    }
+
+                    p-&gt;data = value;
+                    p-&gt;next=s-&gt;next;
+                    s-&gt;next = p;
+
+                    return 0;
+                }
+            */
+            t=t-&gt;lchild;
+        }else
+            t=stack_pop(top);   //出栈
+        /*
+            该函数包含的头文件 和 实现方法如下：
+            #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+            datatype_ls stack_pop(linklist s)    //出栈
+            {
+                linklist p;
+                datatype_ls ret;
+
+                p=s-&gt;next;
+                s-&gt;next=p-&gt;next;
+                ret=p-&gt;data;
+
+                free(p);
+                p=NULL;
+
+                return ret;
+            }
+        */
+    }
+
+    stack_free(top);   //释放栈
+    /*
+        该函数包含的头文件 和 实现方法如下：
+        #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
+        void stack_free(linklist s)    //释放栈
+        {
+            linklist p;
+
+            printf(&quot;free:&quot;);
+            p=s;
+            while(p)
+            {
+                s=s-&gt;next;
+                printf(&quot;%d &quot;,p-&gt;data);
+                free(p);
+                p=s;
+            }
+            putchar(10);    //10 表示 回车符（&apos;\n&apos;）
+
+        }
+    */
+}
+
+void mid_order(btree_pnode t)           //采用递归方法中序遍历
+{
+    if(t!=NULL)
+    {
+        //中序遍历左子树
+        mid_order(t-&gt;lchild);
+        //访问根结点
+        printf(&quot;%c&quot;,t-&gt;data);
+        //中序遍历右子树
+        mid_order(t-&gt;rchild);
+    }
+}
+
+void post_order(btree_pnode t)          //采用递归方法后序遍历
+{
+    if(t!=NULL)
+    {
+        //后序遍历左子树
+        post_order(t-&gt;lchild);
+        //后序遍历右子树
+        post_order(t-&gt;rchild);
+        //访问根结点
+        printf(&quot;%c&quot;,t-&gt;data);
+    }
+}
+
+void level_order(btree_pnode t)        //层次遍历
+{
+    link_pqueue q;
+    init_linkqueue(&amp;q);//初始化链式队列
+    /*
+        该函数包含的头文件 和 实现方法如下：
+        #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
+        void init_linkqueue(link_pqueue *Q)     //创建队列
+        {
+            //申请front和rear的空间
+            *Q=(link_pqueue)malloc(sizeof(link_queue));
+            if((*Q)==NULL)
+            {
+                perror(&quot;malloc&quot;);
+                exit(-1);
+            }
+            //申请头结点空间
+            (*Q)-&gt;front=(linkqueue_pnode)malloc(sizeof(linkqueue_node));
+            if((*Q)-&gt;front==NULL)
+            {
+                perror(&quot;malloc&quot;);
+                exit(-1) ;
+            }
+
+            (*Q)-&gt;front-&gt;next=NULL;
+            (*Q)-&gt;rear=(*Q)-&gt;front;
+
+            return;
+        }
+    */
+
+    while(t!=NULL)
+    {
+        //访问t指向的结点数据
+        printf(&quot;%c&quot;,t-&gt;data);
+        //当t的左指针不为空，则入队
+        if(t-&gt;lchild!=NULL)
+            in_linkqueue(t-&gt;lchild,q);
+        /*
+            该函数包含的头文件 和 实现方法如下：
+            #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
+            bool in_linkqueue(datatype data,link_pqueue q)   //入队
+            {
+                linkqueue_pnode  new;
+
+                //申请数据结点空间
+                new=(linkqueue_pnode)malloc(sizeof(linkqueue_node));
+                if(new==NULL)
+                {
+                    puts(&quot;入队失败！&quot;);
+                    return false;
+                }
+                //将数据存储在申请的空间
+                new-&gt;data=data;
+
+                //将new指向的结点插入到链式队列中
+                new-&gt;next=q-&gt;rear-&gt;next;            //这里等价于new-&gt;next = NULL;
+                q-&gt;rear-&gt;next=new;         
+
+                //让rear指针指向新的队尾结点
+                q-&gt;rear=q-&gt;rear-&gt;next;          //等价于q-&gt;rear = new;
+
+                return true;
+            }
+        */
+        //当t的右指针不为空，则入队
+        if(t-&gt;rchild!=NULL)
+            in_linkqueue(t-&gt;rchild,q);
+        //队列不为空，则出队
+        if(!is_empty_linkqueue(q))
+            out_linkqueue(q,&amp;t);
+        /*
+            该函数包含的头文件 和 实现方法如下：
+            #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
+            bool out_linkqueue(link_pqueue q,datatype *D)      //出队
+            {
+                linkqueue_pnode t;
+                //判断队列是否空
+                if(is_empty_linkqueue(q)){
+                    printf(&quot;队列已空!\n&quot;);
+                    return false;
+                }
+
+                //出队
+                t=q-&gt;front;
+                q-&gt;front =q-&gt;front-&gt;next;
+                *D=q-&gt;front-&gt;data;
+                free(t);
+
+                return true;
+            }
+        */
+        else
+            break;
+    }
+    free_linkqueue(q);           //释放队列
+    /*
+        该函数包含的头文件 和 实现方法如下：
+        #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
+        void free_linkqueue(link_pqueue q)           //释放队列
+        {
+            link_pqueue p;
+            p = q-&gt;front;
+            while(p)
+            {
+                q-&gt;front = q-&gt;front-&gt;next;
+                free(p);
+                p = q-&gt;front;
+            }
+            free(q);
+        }
+    */
+}
+
+void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述
+{
+    printf(&quot;%s&quot;,str);
+    pfun(t);
+    puts(&quot;&quot;);
+}</code></pre><p>————————————————<br>版权声明：本文为CS80960356DN博主「许新天」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_39148042/article/details/" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39148042/article/details/</a></p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>

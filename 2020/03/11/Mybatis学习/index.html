@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Life &amp;&amp; Study
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Life &amp;&amp; Study
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Life &amp;&amp; Study
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/cnawesome" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    alei
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">
+            程序人生
+        </a>
+    </h4>
+    
+    <h4 class="post-cat">
+        <a href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">
+            java
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        Mybatis(1)
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-03-11
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <h3 id="Mybatis概述"><a href="#Mybatis概述" class="headerlink" title="Mybatis概述"></a>Mybatis概述</h3><p>什么是框架<br>框架是整个或部分系统的可重用设计，表现为一组抽象构件及抽象构件实例之间加护的方法。（抽象方法，或者实例方法）。<br>它是软件开发中解决问题的一套方案。</p>
+<p>mybatis 持久层框架</p>
+<p>springnvc 表现层框架</p>
+<p>spring 不属于这三个框架</p>
+<p>三层架构<br>        表现层：张世数据<br>        业务层：处理业务需求<br>        持久层：数据库交互 </p>
+<p><img src="01%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png" alt=""></p>
+<p>持久层技术解决方案<br>    jdbc技术：<br>            connection<br>            preparedstatement<br>            resultset<br>    jdbc开发不够便捷 </p>
+<p>持久层连接数据库池过程<br>    1，加载驱动<br>    2，创建连接<br>    3，创建statement<br>    …</p>
+<p><img src="02%E6%8C%81%E4%B9%85%E5%B1%82%E6%80%BB%E5%9B%BE.jpg" alt=""><br>Mybatis 通过xml或注解的方式 执行各种statment，并通过java对象和sql的动态参数进行映射形成最终sql语句，最后通过mabatis执行sql语句并返回。<br>利用ORM思想，对jdbc进行封装，屏蔽了jdbc api底层的访问问题</p>
+<p>ORM （object relational  mapping）对象关系映射<br>即把数据库的表与实体类及实体类的属性对应起来，让我们可以操作实体类就实现数据表。</p>
+<p>如何做到？<br>目前，我们需要把实体类的属性与数据库的字段名保持一致。</p>
+<h3 id="Mybatis环境搭建"><a href="#Mybatis环境搭建" class="headerlink" title="Mybatis环境搭建"></a>Mybatis环境搭建</h3><p>1，创建maven工程，xml 添加依赖坐标（在官网上找依赖语句），同时写上数据库依赖，日志依赖，junit依赖等。<br>2，创建实体类<br>3，创建mybatis主配置文件（SqlMapConfig.xml）<br>4，创建映射配置文件(UserDao.xml)</p>
+<p>环境搭建的注意事项:<br>1,创建UserDao.xml和UserDao.java是，名称是为了和我们之前的知识保持一致。在Mybatis中它把持久层的操作接口名称和映射文件也叫做：Mapper。所以UserDAO和UserMapper是一样的。</p>
+<p>2.在idea创建目录是，它和包是不一样的 ，包创建时：comit.dao 是三级结构<br>    目录创建时 com.it.dao是一级目录。</p>
+<p>3.mybatis的映射配置文件位置必须和dao接口的包结构相同。</p>
+<p>4.映射文件的mapper标签namespace属性的取值必须是 dao接口的全限定类名。</p>
+<p>5.映射配置文件的操作配置（select），id属性的取值必须是dao接口的方法类,resulttype取值为应用接口的对象。</p>
+<p>作用：按3，4，5配置后，无需再写dao的实现类，由mybatis直接实现。</p>
+<p>UserDao.xml<br><img src="UserDaoxml.PNG" alt=""></p>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- mybatis主配置文件 -->
+<configuration>
+    <!-- 配制环境 -->
+    <environments default="mysql">
+        <!-- 配置mysql的环境 -->
+        <environments id="mysql">
+            <!-- 配置事务类型 -->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 配置数据源（连接池） -->
+            <dateSource type="POOLED">
+                <!-- 配置连接数据库的四个基本信息 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc：mysql：//localhost:3306/eesy_mybatis"></property>
+                <property name="username" value="root"></property>
+                <property name="passsword" value="123456"></property>
+            </dateSource>
+
+
+<pre><code>    &lt;/environments&gt;
+&lt;/environments&gt;
+&lt;!-- 使用配置文件实现maybatis数据库操作，指定映射配置文件的位置，映射配置文件指的是每个dao的独立配置文件 --&gt;    
+&lt;mappers&gt;
+    &lt;mapper resource=&quot;com.itz.dao.UserDao.xml&quot; /&gt;
+&lt;/mappers&gt;
+或者
+&lt;!-- 使用注解实现maybatis数据库操作，移除UserDao.xml，在dao接口方法上使用@select注解，指定sql语句。在mapper中，指定class属性是dao接口的全限定类名 --&gt;    
+&lt;mappers&gt;
+    &lt;mapper resource=&quot;com.itz.dao.UserDao&quot; /&gt;
+&lt;/mappers&gt;</code></pre></configuration>
+
+<p>环境搭建好后</p>
+<h4 id="test步骤"><a href="#test步骤" class="headerlink" title="test步骤"></a>test步骤</h4><p>1.读取配置文件<br>    inputStream in=Pesources.getResourceAsStream(“SqlMapConfig.xml”);</p>
+<pre><code>2.创建SqlSessionFactory工厂方法
+SqlSessionFatoryBuilder builder=new SqlSessionFatoryBuilder();
+SqlSEssionFatctory factory=builder.build(in);
+
+3.使用工厂产生SqlSeession对象
+SqlSession session= factory.openSession(); 
+
+4.使用SqlSession创建Dao接口的代理对象
+UserDao userDao=session.getMapper(UserDao.class);//UserDao是接口，包含未实现方法
+
+5.使用代理对象执行方法
+list&lt;User&gt; users=userDao.fandAll();
+dor(User user:users) {syste.out.println(user);}//打印所有的user
+
+6.释放资源
+session.close();
+in.close();</code></pre><p>读取配置文件，准备一个工厂生产一个为我们提供dao实现的对象，有了这个dao就能实现查询数据库等操作。，实现功能，最后释放资源。</p>
+<p>mybatis两种数据库访问方式，xml方式和注解方式，见上。</p>
+<h4 id="mybatis也可以实现dao实现。"><a href="#mybatis也可以实现dao实现。" class="headerlink" title="mybatis也可以实现dao实现。"></a>mybatis也可以实现dao实现。</h4><p>在test步骤中改变第3,4步，使用工厂创建dao对象<br>UserDao userdao = new UserDaoImpl(factory);<br>去掉session.close();</p>
+<pre><code>编写UserDaoImpl类继承UsreDao接口
+
+private SqlSessionFactory factory；
+
+public UserDaoImpl（SqlSessionFactory factory）
+｛
+    this.factory=factory;
+｝
+
+public findAll()
+{
+    1.使用工厂创建SqlSession对象
+    SqlSession session = factory.openSession();
+    2.使用session查询所有方法
+    List&lt;user&gt; users=session.selectList(satement:&quot;com.itz.dao.UserDao.fandAll&quot;);//需要namespace+id，才能定位要执行的sql语句。
+    3.返回查询结果
+    return users；
+
+}
+
+例.1
+1.读取配置文件
+inputStream in=Pesources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;);//1.读取配置文件时，有相对路径（src.com....），绝对路径(d:mai/it/...),部署后都不能用。2.使用类加载器，他只能读取类路径的配置文件；使用ServletContext对象的getRealPath（）。
+
+2.创建SqlSessionFactory工厂方法
+SqlSessionFatoryBuilder builder=new SqlSessionFatoryBuilder();
+SqlSEssionFatctory factory=builder.build(in);//创建工厂，Myabtis用了构建者模式，in代表什么呢？？？
+
+3.使用工厂产生SqlSeession对象
+SqlSession session= factory.openSession(); //如果用new 实现，每次更换实现方法是都需要改动实现方法名。重新部署，浪费时间。
+
+4.使用SqlSession创建Dao接口的代理对象
+UserDao userDao=session.getMapper(UserDao.class);//getmapper代理模式
+
+5.使用代理对象执行方法
+list&lt;User&gt; users=userDao.fandAll();
+for(User user:users) {syste.out.println(user);}//打印所有的user
+
+6.释放资源
+session.close();
+in.close();
+
+实现功能只需把上面例.1修改
+inputStream in=Pesources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;).session.getMapper(UserDao.class);
+
+list&lt;User&gt; users=userDao.fandAll();
+for(User user:users) {syste.out.println(user);}
+
+session.close();
+in.close();
+
+例.1的2,3,4,5是为了更灵活的使用满足需求。</code></pre><p><img src="%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E7%9A%84%E5%88%86%E6%9E%90.png" alt=""></p>
+<h3 id="自定义Mybatis的分析"><a href="#自定义Mybatis的分析" class="headerlink" title="自定义Mybatis的分析"></a>自定义Mybatis的分析</h3><pre><code>mybatis 使用代理dao的方式增删改查时做了什么？
+    1.创建代理对象
+    2.在代理对象中调用selectList。</code></pre><p>mybatis执行过程<br><img src="%E8%87%AA%E5%AE%9A%E4%B9%89Mybatis%E5%88%86%E6%9E%90.png" alt=""></p>
+<h3 id="JDBC是Java提供的一个操作数据库的API；"><a href="#JDBC是Java提供的一个操作数据库的API；" class="headerlink" title="JDBC是Java提供的一个操作数据库的API；"></a>JDBC是Java提供的一个操作数据库的API；</h3><p>MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及对结果集的检索封装。MyBatis可以使用简单的XML或注解用于配置和原始映射，将接口和Java的POJO（Plain Old Java Objects，普通的Java对象）映射成数据库中的记录。</p>
+<p>MyBatis是对JDBC的封装。相对于JDBC，MyBatis有以下优点：</p>
+<ol>
+<li>优化获取和释放</li>
+</ol>
+<p>我们一般在访问数据库时都是通过数据库连接池来操作数据库，数据库连接池有好几种，比如C3P0、DBCP，也可能采用容器本身的JNDI数据库连接池。我们可以通过DataSource进行隔离解耦，我们统一从DataSource里面获取数据库连接，DataSource具体由DBCP实现还是由容器的JNDI实现都可以，所以我们将DataSource的具体实现通过让用户配置来应对变化。</p>
+<p>2.SQL统一管理，对数据库进行存取操作</p>
+<p>我们使用JDBC对数据库进行操作时，SQL查询语句分布在各个Java类中，这样可读性差，不利于维护，当我们修改Java类中的SQL语句时要重新进行编译。</p>
+<p>Mybatis可以把SQL语句放在配置文件中统一进行管理，以后修改配置文件，也不需要重新就行编译部署。</p>
+<p>3.生成动态SQL语句</p>
+<p>我们在查询中可能需要根据一些属性进行组合查询，比如我们进行商品查询，我们可以根据商品名称进行查询，也可以根据发货地进行查询，或者两者组合查询。如果使用JDBC进行查询，这样就需要写多条SQL语句。</p>
+<p>Mybatis可以在配置文件中通过使用<if test=””></if>标签进行SQL语句的拼接，生成动态SQL语句。比如下面这个例子：</p>
+<select id="getCountByInfo" parameterType="User" resultType="int">
+        select count(*) from user
+        <where>
+            <if test="nickname!=null">
+                and nickname = #{nickname} 
+            </if>
+            <if test="email!=null">
+                and email = #{email} 
+            </if>
+        </where>
+
+</select>
+
+<p>就是通过昵称或email或者二者的组合查找用户数。</p>
+<p>4.能够对结果集进行映射</p>
+<p>我们在使用JDBC进行查询时，返回一个结果集ResultSet,我们要从结果集中取出结果封装为需要的类型</p>
+<p>在Mybatis中我们可以设置将结果直接映射为自己需要的类型，比如：JavaBean对象、一个Map、一个List等等。像上个例子中就是将结果映射为int类型。</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>

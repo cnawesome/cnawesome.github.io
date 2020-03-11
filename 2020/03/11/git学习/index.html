@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Life &amp;&amp; Study
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Life &amp;&amp; Study
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Life &amp;&amp; Study
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/cnawesome" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    alei
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">
+            程序人生
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        git基础（上）
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-03-11
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <h2 id="Git学习"><a href="#Git学习" class="headerlink" title="Git学习"></a>Git学习</h2><p>Git 是一个开源的分布式版本控制系统，<br>                                用于敏捷高效地处理任何或小或大的项目。</p>
+<p>Git 与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持。</p>
+<h4 id="Git与SVN区别"><a href="#Git与SVN区别" class="headerlink" title="Git与SVN区别"></a>Git与SVN区别</h4><p>Git 不仅仅是个版本控制系统，它也是个内容管理系统(CMS)，工作管理系统等。</p>
+<p>Git 与 SVN 区别点：</p>
+<pre><code>1、Git 是分布式的，SVN 不是：这是 Git 和其它非分布式的版本控制系统，例如 SVN，CVS 等，最核心的区别。
+
+2、Git 把内容按元数据方式存储，而 SVN 是按文件：所有的资源控制系统都是把文件的元信息隐藏在一个类似 .svn、.cvs 等的文件夹里。
+
+3、Git 分支和 SVN 的分支不同：分支在 SVN 中一点都不特别，其实它就是版本库中的另外一个目录。
+
+4、Git 没有一个全局的版本号，而 SVN 有：目前为止这是跟 SVN 相比 Git 缺少的最大的一个特征。
+
+5、Git 的内容完整性要优于 SVN：Git 的内容存储使用的是 SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</code></pre><p><img src="001.jpg" alt=""></p>
+<h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>本章节我们将为大家介绍 Git 的工作流程。</p>
+<p>一般工作流程如下：</p>
+<pre><code>克隆 Git 资源作为工作目录。
+在克隆的资源上添加或修改文件。
+如果其他人修改了，你可以更新资源。
+在提交前查看修改。
+提交修改。
+在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</code></pre><p><img src="002.png" alt=""></p>
+<h2 id="Git工作区、暂存区和版本库"><a href="#Git工作区、暂存区和版本库" class="headerlink" title="Git工作区、暂存区和版本库"></a>Git工作区、暂存区和版本库</h2><p>基本概念</p>
+<p>我们先来理解下Git 工作区、暂存区和版本库概念</p>
+<p>工作区：就是你在电脑里能看到的目录。<br>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。<br>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：<br><img src="003.jpg" alt=""></p>
+<h2 id="git创建仓库"><a href="#git创建仓库" class="headerlink" title="git创建仓库"></a>git创建仓库</h2><p>git init<br>Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。</p>
+<p>在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 .git 目录）。</p>
+<p>使用方法<br>使用当前目录作为Git仓库，我们只需使它初始化。</p>
+<p>git init<br>该命令执行完后会在当前目录生成一个 .git 目录。</p>
+<p>使用我们指定目录作为Git仓库 。/////</p>
+<p>git init newrepo<br>初始化后，会在 newrepo 目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。</p>
+<p>如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：</p>
+<p>$ git add *.c<br>$ git add README<br>$ git commit -m ‘初始化项目版本’<br>以上命令将目录下以 .c 结尾及 README 文件提交到仓库中。</p>
+<p>git clone //常用<br>我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。</p>
+<p>克隆仓库的命令格式为：</p>
+<p>git clone <repo><br>如果我们需要克隆到指定的目录，可以使用以下命令格式：</p>
+<p>git clone <repo> <directory><br>参数说明：</p>
+<p>repo:Git 仓库。<br>directory:本地目录。<br>比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：</p>
+<p>$ git clone git://github.com/schacon/grit.git<br>执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。</p>
+<p>如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：<br>$ git clone git://github.com/schacon/grit.git mygrit</p>
+<h2 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h2><h3 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h3><p>获取与创建项目命令<br>git init<br>用 git init 在目录中创建新的 Git 仓库。 你可以在任何时候、任何目录中这么做，完全是本地化的。</p>
+<p>在目录中执行 git init，就可以创建一个 Git 仓库了。比如我们创建 runoob 项目：</p>
+<p>$ mkdir runoob<br>$ cd runoob/<br>$ git init<br>Initialized empty Git repository in /Users/tianqixin/www/runoob/.git/</p>
+<h1 id="在-www-runoob-git-目录初始化空-Git-仓库完毕。"><a href="#在-www-runoob-git-目录初始化空-Git-仓库完毕。" class="headerlink" title="在 /www/runoob/.git/ 目录初始化空 Git 仓库完毕。"></a>在 /www/runoob/.git/ 目录初始化空 Git 仓库完毕。</h1><p>现在你可以看到在你的项目中生成了 .git 这个子目录。 这就是你的 Git 仓库了，所有有关你的此项目的快照数据都存放在这里。</p>
+<p>ls -a<br>.    ..    .git<br>git clone<br>使用 git clone 拷贝一个 Git 仓库到本地，让自己能够查看该项目，或者进行修改。</p>
+<p>如果你需要与他人合作一个项目，或者想要复制一个项目，看看代码，你就可以克隆那个项目。 执行命令：</p>
+<p> git clone [url]<br>[url] 为你想要复制的项目，就可以了。</p>
+<p>例如我们克隆 Github 上的项目：</p>
+<p>$ git clone <a href="mailto:git@github.com">git@github.com</a>:schacon/simplegit.git<br>Cloning into ‘simplegit’…<br>remote: Counting objects: 13, done.<br>remote: Total 13 (delta 0), reused 0 (delta 0), pack-reused 13<br>Receiving objects: 100% (13/13), done.<br>Resolving deltas: 100% (2/2), done.<br>Checking connectivity… done.<br>克隆完成后，在当前目录下会生成一个 simplegit 目录：</p>
+<p>$ cd simplegit/<br>$ ls<br>README   Rakefile lib<br>上述操作将复制该项目的全部记录。</p>
+<p>$ ls -a<br>.        ..       .git     README   Rakefile lib<br>$ cd .git<br>$ ls<br>HEAD        description info        packed-refs<br>branches    hooks       logs        refs<br>config      index       objects<br>默认情况下，Git 会按照你提供的 URL 所指示的项目的名称创建你的本地项目目录。 通常就是该 URL 最后一个 / 之后的项目名称。如果你想要一个不一样的名字， 你可以在该命令后加上你想要的名称。</p>
+<hr>
+<p>基本快照<br>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目的快照的命令作介绍。</p>
+<p>git status</p>
+<p>$ touch README<br>$ touch hello.php<br>$ ls<br>README        hello.php<br>$ git status -s<br>?? README<br>?? hello.php<br>$<br>/////git status 命令用于查看项目的当前状态。/////</p>
+<p>接下来我们执行 git add 命令来添加文件：</p>
+<p>$ git add README hello.php<br>现在我们再执行 git status，就可以看到这两个文件已经加上去了。</p>
+<p>$ git status -s<br>A  README<br>A  hello.php<br>$<br>新项目中，添加所有文件很普遍，我们可以使用 git add . 命令来添加当前项目的所有文件。</p>
+<p>现在我们修改 README 文件：</p>
+<p>$ vim README<br>在 README 添加以下内容：# Runoob Git 测试，然后保存退出。</p>
+<p>再执行一下 git status：</p>
+<p>$ git status -s<br>AM README<br>A  hello.php<br>“AM” 状态的意思是，这个文件在我们将它添加到缓存之后又有改动。改动后我们再执行 git add 命令将其添加到缓存中：</p>
+<p>$ git add .<br>$ git status -s<br>A  README<br>A  hello.php<br>当你要将你的修改包含在即将提交的快照里的时候，需要执行 git add。</p>
+<p>git status<br>//////git status 以查看在你上次提交之后是否有修改。//////</p>
+<p>我演示该命令的时候加了 -s 参数，以获得简短的结果输出。如果没加该参数会详细输出内容：</p>
+<p>$ git status<br>On branch master</p>
+<p>Initial commit</p>
+<p>Changes to be committed:<br>  (use “git rm –cached <file>…” to unstage)</p>
+<pre><code>new file:   README
+new file:   hello.php</code></pre><p>git diff<br>执行 git diff 来查看执行 git status 的结果的详细信息。</p>
+<p>git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。</p>
+<p>尚未缓存的改动：git diff<br>查看已缓存的改动： git diff –cached<br>查看已缓存的与未缓存的所有改动：git diff HEAD<br>显示摘要而非整个 diff：git diff –stat<br>在 hello.php 文件中输入以下内容：</p>
+<?php
+echo '菜鸟教程：www.runoob.com';
+?>
+<p>$ git status -s<br>A  README<br>AM hello.php</p>
+<p>$ git diff<br>diff –git a/hello.php b/hello.php<br>index e69de29..69b5711 100644<br>— a/hello.php<br>+++ b/hello.php<br>@@ -0,0 +1,3 @@<br>+<?php
++echo '菜鸟教程：www.runoob.com';
++?></p>
+<p>git status 显示你上次提交更新后的更改或者写入缓存的改动， 而 git diff 一行一行地显示这些改动具体是啥。</p>
+<p>接下来我们来查看下 git diff –cached 的执行效果：</p>
+<p>$ git add hello.php<br>$ git status -s<br>A  README<br>A  hello.php<br>$ git diff –cached<br>diff –git a/README b/README<br>new file mode 100644<br>index 0000000..8f87495<br>— /dev/null<br>+++ b/README<br>@@ -0,0 +1 @@<br>+# Runoob Git 测试<br>diff –git a/hello.php b/hello.php<br>new file mode 100644<br>index 0000000..69b5711<br>— /dev/null<br>+++ b/hello.php<br>@@ -0,0 +1,3 @@<br>+<?php
++echo '菜鸟教程：www.runoob.com';
++?></p>
+<p>git commit<br>////使用 git add 命令将想要快照的内容写入缓存区， 而执行 git commit 将缓存区内容添加到仓库中。/////</p>
+<p>Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址。</p>
+<p>$ git config –global user.name ‘runoob’<br>$ git config –global user.email <a href="mailto:test@runoob.com">test@runoob.com</a><br>接下来我们写入缓存，并提交对 hello.php 的所有改动。在首个例子中，我们使用 -m 选项以在命令行中提供提交注释。</p>
+<p>$ git add hello.php<br>$ git status -s<br>A  README<br>A  hello.php<br>$ git commit -m ‘第一次版本提交’<br>[master (root-commit) d32cf1f] 第一次版本提交<br> 2 files changed, 4 insertions(+)<br> create mode 100644 README<br> create mode 100644 hello.php</p>
+<p>现在我们已经记录了快照。如果我们再执行 git status:</p>
+<p>$ git status</p>
+<h1 id="On-branch-master"><a href="#On-branch-master" class="headerlink" title="On branch master"></a>On branch master</h1><p>nothing to commit (working directory clean)<br>以上输出说明我们在最近一次提交之后，没有做任何改动，是一个”working directory clean：干净的工作目录”。</p>
+<p>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：</p>
+<h1 id="Please-enter-the-commit-message-for-your-changes-Lines-starting"><a href="#Please-enter-the-commit-message-for-your-changes-Lines-starting" class="headerlink" title="Please enter the commit message for your changes. Lines starting"></a>Please enter the commit message for your changes. Lines starting</h1><h1 id="with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit"><a href="#with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit" class="headerlink" title="with ‘#’ will be ignored, and an empty message aborts the commit."></a>with ‘#’ will be ignored, and an empty message aborts the commit.</h1><h1 id="On-branch-master-1"><a href="#On-branch-master-1" class="headerlink" title="On branch master"></a>On branch master</h1><h1 id="Changes-to-be-committed"><a href="#Changes-to-be-committed" class="headerlink" title="Changes to be committed:"></a>Changes to be committed:</h1><h1 id="use-“git-reset-HEAD-…”-to-unstage"><a href="#use-“git-reset-HEAD-…”-to-unstage" class="headerlink" title="(use “git reset HEAD …” to unstage)"></a>(use “git reset HEAD <file>…” to unstage)</h1><p>#</p>
+<h1 id="modified-hello-php"><a href="#modified-hello-php" class="headerlink" title="modified:   hello.php"></a>modified:   hello.php</h1><p>#<br>~<br>~<br>“.git/COMMIT_EDITMSG” 9L, 257C<br>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：</p>
+<p>git commit -a<br>我们先修改 hello.php 文件为以下内容：</p>
+<?php
+echo '菜鸟教程：www.runoob.com';
+echo '菜鸟教程：www.runoob.com';
+?>
+<p>再执行以下命令：</p>
+<p>git commit -am ‘修改 hello.php 文件’<br>[master 71ee2cb] 修改 hello.php 文件<br> 1 file changed, 1 insertion(+)</p>
+<p>git reset HEAD<br>git reset HEAD 命令用于取消已缓存的内容。</p>
+<p>我们先改动文件 README 文件，内容如下：</p>
+<h1 id="Runoob-Git-测试"><a href="#Runoob-Git-测试" class="headerlink" title="Runoob Git 测试"></a>Runoob Git 测试</h1><h1 id="菜鸟教程"><a href="#菜鸟教程" class="headerlink" title="菜鸟教程"></a>菜鸟教程</h1><p>hello.php 文件修改为：</p>
+<?php
+echo '菜鸟教程：www.runoob.com';
+echo '菜鸟教程：www.runoob.com';
+echo '菜鸟教程：www.runoob.com';
+?>
+<p>现在两个文件修改后，都提交到了缓存区，我们现在要取消其中一个的缓存，操作如下：</p>
+<p>$ git status -s<br> M README<br> M hello.php<br>$ git add .<br>$ git status -s<br>M  README<br>M  hello.php<br>$ git reset HEAD hello.php<br>Unstaged changes after reset:<br>M    hello.php<br>$ git status -s<br>M  README<br> M hello.php<br>现在你执行 git commit，只会将 README 文件的改动提交，而 hello.php 是没有的。</p>
+<p>$ git commit -m ‘修改’<br>[master f50cfda] 修改<br> 1 file changed, 1 insertion(+)<br>$ git status -s<br> M hello.php<br>可以看到 hello.php 文件的修改并未提交。</p>
+<p>这时我们可以使用以下命令将 hello.php 的修改提交：</p>
+<p>$ git commit -am ‘修改 hello.php 文件’<br>[master 760f74d] 修改 hello.php 文件<br> 1 file changed, 1 insertion(+)<br>$ git status<br>On branch master<br>nothing to commit, working directory clean</p>
+<p>/////简而言之，执行 git reset HEAD 以取消之前 git add 添加，但不希望包含在下一提交快照中的缓存。////</p>
+<p>git rm<br>如果只是简单地从工作目录中手工删除文件，运行 git status 时就会在 Changes not staged for commit 的提示。</p>
+<p>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作<br>git rm <file></p>
+<p>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f<br>git rm -f <file></p>
+<p>如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 –cached 选项即可<br>git rm –cached <file></p>
+<p>如我们删除 hello.php文件：</p>
+<p>$ git rm hello.php<br>rm ‘hello.php’<br>$ ls<br>README</p>
+<p>不从工作区中删除文件：<br>$ git rm –cached README<br>rm ‘README’<br>$ ls<br>README</p>
+<p>可以递归删除，即如果后面跟的是一个目录做为参数，则会递归删除整个目录中的所有子目录和文件：<br>git rm –r * </p>
+<p>进入某个目录中，执行此语句，会删除该目录下的所有文件和子目录。<br>git mv<br>git mv 命令用于移动或重命名一个文件、目录、软连接。</p>
+<p>我们先把刚移除的 README 添加回来：</p>
+<p>$ git add README<br>然后对其重名:</p>
+<p>$ git mv README  README.md<br>$ ls<br>README.md</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>

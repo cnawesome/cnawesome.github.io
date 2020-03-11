@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Life &amp;&amp; Study
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+</head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Life &amp;&amp; Study
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Life &amp;&amp; Study
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/cnawesome" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    alei
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    <h4 class="post-cat">
+        <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+            计算机网络
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        计算机网络知识点（供考试）
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-03-10
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <h3 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h3><p>计算机网络的分类：</p>
+<pre><code>按分布范围：
+    1）广域网WAN
+    2）城域网MAN（大多使用以太网技术，也可以成为局域网）
+    3）局域网LAN
+    4)个人区域网PAN（）
+
+按传输技术：
+    1）广播式网络（共享通信信道，发送报文所有人都能接收到）
+    2）点对点网络（一对计算机通信）
+
+按交换技术分：（交换技术指的是通信设备和主机之间交换信息所采用的数据格式，交换装置的方式）
+    1）电路交换网络（在源节点与目标节点间建立一条专用的通信链路用来传输数据，该链路可以使虚拟的）
+    2）报文交换网络（也称存储转发，将数据封装成报文，存储转发，每个报文单独选择到达目的地的路径）
+    3）分组交换网络（也称包交换，将数据分成较短固定长度的数据块，把报文分块？以存储转发方式传输）
+
+等;</code></pre><p>计算机网络性能指标：</p>
+<pre><code>带宽：本来表示通信线路允许通过的信号频带范围，单位赫兹Hz。在计算机网络中，
+    表示网络的通信线路传送数据的能力，即传送的最高数据率，单位b/s。
+
+时延：数据从一端传输到另一端所需要的时间。
+    发送时延：节点将分组的所有比特传输到链路上的时间。
+        发送时延=分组长度/信道宽度
+    传播时延：一个比特从链路的一端到另一端的所需时间。
+        传播时延=信道长度/电磁波在信道传播的速率
+    处理时延：数据在存储转发时处理的所需时间。
+    排队时延：分组进入路由器在队列中等待处理的时间。
+
+时延带宽积：发送端连续发送数据，当发送的第一个比特即将到达终点时，发送端已经发送出的数据数。
+    时延带宽积=传播时延*信道带宽
+
+往返时延：发送端发送数据，到发送端接收到接收端的确认，总共经过的时延。
+
+吞吐量：单位时间内，通过某个网络的数据量。吞吐量受网络的带宽和额定速率限制。
+
+速率：计算机网络中主机在数字信道上传送数据的速率。单位为b/s</code></pre><p>计算机网络中接口定义：同一节点中，相邻两层交换信息的接触点。</p>
+<p>服务的定义：下层为紧邻的上层提供的功能调用。</p>
+<p>计算机网络的服务：</p>
+<pre><code>1）面向连接和面向无连接服务
+    面向连接：通信前双方必须建立连接结束后释放连接。
+    无连接：不需要现建立连接，尽最大努力交付，得不可靠传输。
+2）可靠传输与不可靠传输
+3）有应答服务和无应答服务
+    有应答，接收方接收到数据向发送方给出相应的应答。</code></pre><p>码元：一个固定时长的信号波形，表示一位k进制数，代表不同离散数值的基本波形是数字信号的计量单位。</p>
+<p>码元速率：单位时间传输的码元个数，码元速率与进制无关，单位波特每秒</p>
+<p>信息传输速率：单位时间传输的二进制码元个数，单位比特每秒</p>
+<p>电路交换，报文交换和分组交换<br>    1）电路交换：两个节点之间不许先建立一条专用的物理通信路径。传输期间一直被占用。<br>                三个阶段：连接建立，数据传输，连接释放<br>                优势：通信时延小，有序传输，没有冲突，适用范围广，实时性强，控制简单。</p>
+<pre><code>2）报文交换：交换的单位是报文，报文携带目标地址等信息。采用存储转发机制。
+            优点：无需建立连接，动态分配路线，提高线路可靠性，提高线路利用性，提供多目标服务。
+3）分组交换：把大的报文进行分组，再加上必要的控制信息，节点接受的分组后，展示保存下来并排队等待传输。
+            优点：无建立时延，线路利用率高，加速传输</code></pre><p>数据报与虚电路（分组交换的两种形式）<br>    分组交换很具器通信子网向端点系统提供服务，进一步可分为面向连接的虚电路方式和无连接的数据报形式，这两种服务都是网络层提供的。<br>    数据报:使用端系统的协议把报文拆成若干带有序号的数据单元形成数据报分组。</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
