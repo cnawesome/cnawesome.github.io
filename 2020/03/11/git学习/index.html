@@ -153,7 +153,7 @@
 
 4、Git 没有一个全局的版本号，而 SVN 有：目前为止这是跟 SVN 相比 Git 缺少的最大的一个特征。
 
-5、Git 的内容完整性要优于 SVN：Git 的内容存储使用的是 SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</code></pre><p><img src="001.jpg" alt=""></p>
+5、Git 的内容完整性要优于 SVN：Git 的内容存储使用的是 SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</code></pre><p><img src="/2020/03/11/git%E5%AD%A6%E4%B9%A0/001.jpg" alt></p>
 <h2 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h2><p>本章节我们将为大家介绍 Git 的工作流程。</p>
 <p>一般工作流程如下：</p>
 <pre><code>克隆 Git 资源作为工作目录。
@@ -161,10 +161,10 @@
 如果其他人修改了，你可以更新资源。
 在提交前查看修改。
 提交修改。
-在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</code></pre><p><img src="002.png" alt=""></p>
+在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</code></pre><p><img src="/2020/03/11/git%E5%AD%A6%E4%B9%A0/002.png" alt></p>
 <h2 id="Git工作区、暂存区和版本库"><a href="#Git工作区、暂存区和版本库" class="headerlink" title="Git工作区、暂存区和版本库"></a>Git工作区、暂存区和版本库</h2><p>基本概念</p>
 <p>我们先来理解下Git 工作区、暂存区和版本库概念</p>
-<p>工作区：就是你在电脑里能看到的目录。<br>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。<br>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：<br><img src="003.jpg" alt=""></p>
+<p>工作区：就是你在电脑里能看到的目录。<br>暂存区：英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。<br>版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。<br>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：<br><img src="/2020/03/11/git%E5%AD%A6%E4%B9%A0/003.jpg" alt></p>
 <h2 id="git创建仓库"><a href="#git创建仓库" class="headerlink" title="git创建仓库"></a>git创建仓库</h2><p>git init<br>Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都需要在 Git 的仓库中运行，所以 git init 是使用 Git 的第一个命令。</p>
 <p>在执行完成 git init 命令后，Git 仓库会生成一个 .git 目录，该目录包含了资源的所有元数据，其他的项目目录保持不变（不像 SVN 会在每个子目录生成 .svn 目录，Git 只在仓库的根目录生成 .git 目录）。</p>
 <p>使用方法<br>使用当前目录作为Git仓库，我们只需使它初始化。</p>
@@ -175,8 +175,8 @@
 <p>$ git add *.c<br>$ git add README<br>$ git commit -m ‘初始化项目版本’<br>以上命令将目录下以 .c 结尾及 README 文件提交到仓库中。</p>
 <p>git clone //常用<br>我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。</p>
 <p>克隆仓库的命令格式为：</p>
-<p>git clone <repo><br>如果我们需要克隆到指定的目录，可以使用以下命令格式：</p>
-<p>git clone <repo> <directory><br>参数说明：</p>
+<p>git clone <repo><br>如果我们需要克隆到指定的目录，可以使用以下命令格式：</repo></p>
+<p>git clone <repo> <directory><br>参数说明：</directory></repo></p>
 <p>repo:Git 仓库。<br>directory:本地目录。<br>比如，要克隆 Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：</p>
 <p>$ git clone git://github.com/schacon/grit.git<br>执行该命令后，会在当前目录下创建一个名为grit的目录，其中包含一个 .git 的目录，用于保存下载下来的所有版本记录。</p>
 <p>如果要自己定义要新建的项目目录名称，可以在上面的命令末尾指定新的名字：<br>$ git clone git://github.com/schacon/grit.git mygrit</p>
@@ -207,7 +207,7 @@
 <p>我演示该命令的时候加了 -s 参数，以获得简短的结果输出。如果没加该参数会详细输出内容：</p>
 <p>$ git status<br>On branch master</p>
 <p>Initial commit</p>
-<p>Changes to be committed:<br>  (use “git rm –cached <file>…” to unstage)</p>
+<p>Changes to be committed:<br>  (use “git rm –cached <file>…” to unstage)</file></p>
 <pre><code>new file:   README
 new file:   hello.php</code></pre><p>git diff<br>执行 git diff 来查看执行 git status 的结果的详细信息。</p>
 <p>git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别。git diff 有两个主要的应用场景。</p>
@@ -232,7 +232,7 @@ echo '菜鸟教程：www.runoob.com';
 <p>$ git status</p>
 <h1 id="On-branch-master"><a href="#On-branch-master" class="headerlink" title="On branch master"></a>On branch master</h1><p>nothing to commit (working directory clean)<br>以上输出说明我们在最近一次提交之后，没有做任何改动，是一个”working directory clean：干净的工作目录”。</p>
 <p>如果你没有设置 -m 选项，Git 会尝试为你打开一个编辑器以填写提交信息。 如果 Git 在你对它的配置中找不到相关信息，默认会打开 vim。屏幕会像这样：</p>
-<h1 id="Please-enter-the-commit-message-for-your-changes-Lines-starting"><a href="#Please-enter-the-commit-message-for-your-changes-Lines-starting" class="headerlink" title="Please enter the commit message for your changes. Lines starting"></a>Please enter the commit message for your changes. Lines starting</h1><h1 id="with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit"><a href="#with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit" class="headerlink" title="with ‘#’ will be ignored, and an empty message aborts the commit."></a>with ‘#’ will be ignored, and an empty message aborts the commit.</h1><h1 id="On-branch-master-1"><a href="#On-branch-master-1" class="headerlink" title="On branch master"></a>On branch master</h1><h1 id="Changes-to-be-committed"><a href="#Changes-to-be-committed" class="headerlink" title="Changes to be committed:"></a>Changes to be committed:</h1><h1 id="use-“git-reset-HEAD-…”-to-unstage"><a href="#use-“git-reset-HEAD-…”-to-unstage" class="headerlink" title="(use “git reset HEAD …” to unstage)"></a>(use “git reset HEAD <file>…” to unstage)</h1><p>#</p>
+<h1 id="Please-enter-the-commit-message-for-your-changes-Lines-starting"><a href="#Please-enter-the-commit-message-for-your-changes-Lines-starting" class="headerlink" title="Please enter the commit message for your changes. Lines starting"></a>Please enter the commit message for your changes. Lines starting</h1><h1 id="with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit"><a href="#with-‘-’-will-be-ignored-and-an-empty-message-aborts-the-commit" class="headerlink" title="with ‘#’ will be ignored, and an empty message aborts the commit."></a>with ‘#’ will be ignored, and an empty message aborts the commit.</h1><h1 id="On-branch-master-1"><a href="#On-branch-master-1" class="headerlink" title="On branch master"></a>On branch master</h1><h1 id="Changes-to-be-committed"><a href="#Changes-to-be-committed" class="headerlink" title="Changes to be committed:"></a>Changes to be committed:</h1><h1 id="use-“git-reset-HEAD-…”-to-unstage"><a href="#use-“git-reset-HEAD-…”-to-unstage" class="headerlink" title="(use “git reset HEAD …” to unstage)"></a>(use “git reset HEAD <file>…” to unstage)</file></h1><p>#</p>
 <h1 id="modified-hello-php"><a href="#modified-hello-php" class="headerlink" title="modified:   hello.php"></a>modified:   hello.php</h1><p>#<br>~<br>~<br>“.git/COMMIT_EDITMSG” 9L, 257C<br>如果你觉得 git add 提交缓存的流程太过繁琐，Git 也允许你用 -a 选项跳过这一步。命令格式如下：</p>
 <p>git commit -a<br>我们先修改 hello.php 文件为以下内容：</p>
 <?php
@@ -256,9 +256,9 @@ echo '菜鸟教程：www.runoob.com';
 <p>$ git commit -am ‘修改 hello.php 文件’<br>[master 760f74d] 修改 hello.php 文件<br> 1 file changed, 1 insertion(+)<br>$ git status<br>On branch master<br>nothing to commit, working directory clean</p>
 <p>/////简而言之，执行 git reset HEAD 以取消之前 git add 添加，但不希望包含在下一提交快照中的缓存。////</p>
 <p>git rm<br>如果只是简单地从工作目录中手工删除文件，运行 git status 时就会在 Changes not staged for commit 的提示。</p>
-<p>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作<br>git rm <file></p>
-<p>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f<br>git rm -f <file></p>
-<p>如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 –cached 选项即可<br>git rm –cached <file></p>
+<p>要从 Git 中移除某个文件，就必须要从已跟踪文件清单中移除，然后提交。可以用以下命令完成此项工作<br>git rm <file></file></p>
+<p>如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 -f<br>git rm -f <file></file></p>
+<p>如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 –cached 选项即可<br>git rm –cached <file></file></p>
 <p>如我们删除 hello.php文件：</p>
 <p>$ git rm hello.php<br>rm ‘hello.php’<br>$ ls<br>README</p>
 <p>不从工作区中删除文件：<br>$ git rm –cached README<br>rm ‘README’<br>$ ls<br>README</p>

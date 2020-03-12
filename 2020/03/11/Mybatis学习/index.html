@@ -152,10 +152,10 @@
 <p>springnvc 表现层框架</p>
 <p>spring 不属于这三个框架</p>
 <p>三层架构<br>        表现层：张世数据<br>        业务层：处理业务需求<br>        持久层：数据库交互 </p>
-<p><img src="01%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png" alt=""></p>
+<p><img src="/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/01%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84.png" alt></p>
 <p>持久层技术解决方案<br>    jdbc技术：<br>            connection<br>            preparedstatement<br>            resultset<br>    jdbc开发不够便捷 </p>
 <p>持久层连接数据库池过程<br>    1，加载驱动<br>    2，创建连接<br>    3，创建statement<br>    …</p>
-<p><img src="02%E6%8C%81%E4%B9%85%E5%B1%82%E6%80%BB%E5%9B%BE.jpg" alt=""><br>Mybatis 通过xml或注解的方式 执行各种statment，并通过java对象和sql的动态参数进行映射形成最终sql语句，最后通过mabatis执行sql语句并返回。<br>利用ORM思想，对jdbc进行封装，屏蔽了jdbc api底层的访问问题</p>
+<p><img src="/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/02%E6%8C%81%E4%B9%85%E5%B1%82%E6%80%BB%E5%9B%BE.jpg" alt><br>Mybatis 通过xml或注解的方式 执行各种statment，并通过java对象和sql的动态参数进行映射形成最终sql语句，最后通过mabatis执行sql语句并返回。<br>利用ORM思想，对jdbc进行封装，屏蔽了jdbc api底层的访问问题</p>
 <p>ORM （object relational  mapping）对象关系映射<br>即把数据库的表与实体类及实体类的属性对应起来，让我们可以操作实体类就实现数据表。</p>
 <p>如何做到？<br>目前，我们需要把实体类的属性与数据库的字段名保持一致。</p>
 <h3 id="Mybatis环境搭建"><a href="#Mybatis环境搭建" class="headerlink" title="Mybatis环境搭建"></a>Mybatis环境搭建</h3><p>1，创建maven工程，xml 添加依赖坐标（在官网上找依赖语句），同时写上数据库依赖，日志依赖，junit依赖等。<br>2，创建实体类<br>3，创建mybatis主配置文件（SqlMapConfig.xml）<br>4，创建映射配置文件(UserDao.xml)</p>
@@ -165,7 +165,7 @@
 <p>4.映射文件的mapper标签namespace属性的取值必须是 dao接口的全限定类名。</p>
 <p>5.映射配置文件的操作配置（select），id属性的取值必须是dao接口的方法类,resulttype取值为应用接口的对象。</p>
 <p>作用：按3，4，5配置后，无需再写dao的实现类，由mybatis直接实现。</p>
-<p>UserDao.xml<br><img src="UserDaoxml.PNG" alt=""></p>
+<p>UserDao.xml<br><img src="/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/UserDaoxml.PNG" alt></p>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -198,7 +198,7 @@
 &lt;!-- 使用注解实现maybatis数据库操作，移除UserDao.xml，在dao接口方法上使用@select注解，指定sql语句。在mapper中，指定class属性是dao接口的全限定类名 --&gt;    
 &lt;mappers&gt;
     &lt;mapper resource=&quot;com.itz.dao.UserDao&quot; /&gt;
-&lt;/mappers&gt;</code></pre></configuration>
+&lt;/mappers&gt;</code></pre></environments></environments></configuration>
 
 <p>环境搭建好后</p>
 <h4 id="test步骤"><a href="#test步骤" class="headerlink" title="test步骤"></a>test步骤</h4><p>1.读取配置文件<br>    inputStream in=Pesources.getResourceAsStream(“SqlMapConfig.xml”);</p>
@@ -272,10 +272,10 @@ for(User user:users) {syste.out.println(user);}
 session.close();
 in.close();
 
-例.1的2,3,4,5是为了更灵活的使用满足需求。</code></pre><p><img src="%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E7%9A%84%E5%88%86%E6%9E%90.png" alt=""></p>
+例.1的2,3,4,5是为了更灵活的使用满足需求。</code></pre><p><img src="/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E7%9A%84%E5%88%86%E6%9E%90.png" alt></p>
 <h3 id="自定义Mybatis的分析"><a href="#自定义Mybatis的分析" class="headerlink" title="自定义Mybatis的分析"></a>自定义Mybatis的分析</h3><pre><code>mybatis 使用代理dao的方式增删改查时做了什么？
     1.创建代理对象
-    2.在代理对象中调用selectList。</code></pre><p>mybatis执行过程<br><img src="%E8%87%AA%E5%AE%9A%E4%B9%89Mybatis%E5%88%86%E6%9E%90.png" alt=""></p>
+    2.在代理对象中调用selectList。</code></pre><p>mybatis执行过程<br><img src="/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/%E8%87%AA%E5%AE%9A%E4%B9%89Mybatis%E5%88%86%E6%9E%90.png" alt></p>
 <h3 id="JDBC是Java提供的一个操作数据库的API；"><a href="#JDBC是Java提供的一个操作数据库的API；" class="headerlink" title="JDBC是Java提供的一个操作数据库的API；"></a>JDBC是Java提供的一个操作数据库的API；</h3><p>MyBatis是一个支持普通SQL查询，存储过程和高级映射的优秀持久层框架。MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及对结果集的检索封装。MyBatis可以使用简单的XML或注解用于配置和原始映射，将接口和Java的POJO（Plain Old Java Objects，普通的Java对象）映射成数据库中的记录。</p>
 <p>MyBatis是对JDBC的封装。相对于JDBC，MyBatis有以下优点：</p>
 <ol>
@@ -287,8 +287,8 @@ in.close();
 <p>Mybatis可以把SQL语句放在配置文件中统一进行管理，以后修改配置文件，也不需要重新就行编译部署。</p>
 <p>3.生成动态SQL语句</p>
 <p>我们在查询中可能需要根据一些属性进行组合查询，比如我们进行商品查询，我们可以根据商品名称进行查询，也可以根据发货地进行查询，或者两者组合查询。如果使用JDBC进行查询，这样就需要写多条SQL语句。</p>
-<p>Mybatis可以在配置文件中通过使用<if test=””></if>标签进行SQL语句的拼接，生成动态SQL语句。比如下面这个例子：</p>
-<select id="getCountByInfo" parameterType="User" resultType="int">
+<p>Mybatis可以在配置文件中通过使用<if test="””"></if>标签进行SQL语句的拼接，生成动态SQL语句。比如下面这个例子：</p>
+<select id="getCountByInfo" parametertype="User" resulttype="int">
         select count(*) from user
         <where>
             <if test="nickname!=null">

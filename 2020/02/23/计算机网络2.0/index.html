@@ -156,14 +156,14 @@
 效率高的方法：用私钥加密对称密钥</code></pre><p>加密算法标准DES<br>    属于分组密码</p>
 <p>DES 加密步骤：将文件分组，一组一组进行加密。将加密后的每一组合并成新的文件。<br>DES算法公开取决于秘钥长度。</p>
 <h4 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h4><p>作用：防止抵赖，防止更改</p>
-<p><img src="%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.png" alt=""><br>发送给别人后，别人同样的方法，将文件单向散列后，用公钥解密，如果摘要一样，文件没有被修改。</p>
+<p><img src="/2020/02/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2.0/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D.png" alt><br>发送给别人后，别人同样的方法，将文件单向散列后，用公钥解密，如果摘要一样，文件没有被修改。</p>
 <p>证书颁发机构CA<br>作用：防止使用不合法的公钥私钥。确保为企业颁发证书，确认身份真实，用户需要信任CA机构。</p>
 <p>打开认证单元：        cmd-&gt;mmc-&gt;添加管理单元</p>
 <h4 id="Internet安全协议"><a href="#Internet安全协议" class="headerlink" title="Internet安全协议"></a>Internet安全协议</h4><p>ssl 安全套接字 在应用层和传输层之间，在传输层之前给应用层加密</p>
 <p>功能：服务器鉴别<br>      客户端鉴别<br>      加密ssl会话</p>
-<h4 id="网络层安全-IPsec"><a href="#网络层安全-IPsec" class="headerlink" title="网络层安全 IPsec"></a>网络层安全 IPsec</h4><p><img src="%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%80%9A%E4%BF%A1%E5%9B%BE.jpg" alt=""></p>
-<p>SA是构成IPsec的基础，是连个通信实体协商建立的协议（利用IKE协议）<br><img src="SA.jpg" alt=""></p>
-<p>AH 签名协议不加密<br>ESP 签名加密协议<br><img src="AH.jpg" alt=""><br><img src="ESP.jpg" alt=""><br>可以在本地安全策略配置</p>
+<h4 id="网络层安全-IPsec"><a href="#网络层安全-IPsec" class="headerlink" title="网络层安全 IPsec"></a>网络层安全 IPsec</h4><p><img src="/2020/02/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2.0/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E9%80%9A%E4%BF%A1%E5%9B%BE.jpg" alt></p>
+<p>SA是构成IPsec的基础，是连个通信实体协商建立的协议（利用IKE协议）<br><img src="/2020/02/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2.0/SA.jpg" alt></p>
+<p>AH 签名协议不加密<br>ESP 签名加密协议<br><img src="/2020/02/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2.0/AH.jpg" alt><br><img src="/2020/02/23/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C2.0/ESP.jpg" alt><br>可以在本地安全策略配置</p>
 <h4 id="数据链路层安全"><a href="#数据链路层安全" class="headerlink" title="数据链路层安全"></a>数据链路层安全</h4><p>ppp 身份验证协议</p>
 <h4 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h4><p>一种特殊编程的路由</p>
 <p>类型： 网络层防火墙<br>      应用层防火墙</p>

@@ -153,9 +153,7 @@
 <p>4.Maven项目的目录约定<br>MavenProjectRoot(项目根目录)<br>   |—-src<br>   |     |—-main<br>   |     |         |—-java ——存放项目的.java文件<br>   |     |         |—-resources ——存放项目资源文件，如spring, hibernate配置文件<br>   |     |—-test<br>   |     |         |—-java ——存放所有测试.java文件，如JUnit测试类<br>   |     |         |—-resources ——存放项目资源文件，如spring, hibernate配置文件<br>   |—-target ——项目输出位置<br>   |—-pom.xml —-用于标识该项目是一个Maven项目</p>
 <p>pom.xml文件中的内容如下：</p>
  <?xml version="1.0" encoding="UTF-8"?>
-<p>  <project xmlns="http://maven.apache.org/POM/4.0.0" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+<p>  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0 
   http://maven.apache.org/xsd/maven-4.0.0.xsd"><br>      <!--所有的Maven项目都必须配置这四个配置项--><br>      <modelVersion>4.0.0</modelVersion><br>      <!--groupId指的是项目名的项目组，默认就是包名--><br>      <groupId>cn.gacl.maven.hello</groupId><br>     <!--artifactId指的是项目中的某一个模块，默认命名方式是"项目名-模块名"--><br>     <artifactId>hello-first</artifactId><br>     <!--version指的是版本，这里使用的是Maven的快照版本--><br>     <version>SNAPSHOT-0.0.1</version><br> </project></p>
 <p>编写好java代码后，使用Maven编译完成之后，在项目根目录下会生成一个target文件夹</p>
 <p>在终端使用”mvn clean”命令清除编译结果，也就是把编译生成的target文件夹删掉</p>
