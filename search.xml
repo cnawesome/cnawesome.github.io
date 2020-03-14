@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>普通生物学</title>
+    <url>/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
+    <content><![CDATA[<hr>
+]]></content>
+  </entry>
+  <entry>
     <title>Mybatis(1)</title>
     <url>/2020/03/11/Mybatis%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h3 id="Mybatis概述"><a href="#Mybatis概述" class="headerlink" title="Mybatis概述"></a>Mybatis概述</h3><p>什么是框架<br>框架是整个或部分系统的可重用设计，表现为一组抽象构件及抽象构件实例之间加护的方法。（抽象方法，或者实例方法）。<br>它是软件开发中解决问题的一套方案。</p>
@@ -1285,6 +1291,13 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>令牌环网：令牌帧循环传递，有主机要发送数据时，当前令牌无其他数据，传递到该主机，该主机拿下令牌附加数据，传出去继续循环传递，传到目标主机，目标主机确认后，复制该数据，不做其他改动，令牌帧继续传递，传到发送主机，主机收回数据，令牌帧重新工作。</p>
 <p> 广域网数据链路层控制协议：<br>     ppp协议：使用串行线路通信的面向字节的协议。<br>         三个组成部分：<br>                     1）链路控制协议LCP<br>                     2）网络控制协议NCP<br>                     3）一个将IP数据包封装到串行链路的方法</p>
 <p>网桥：数据链路层设备，连接多个网段。</p>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><h4 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h4><p>静态路由和动态路由<br>    路由器转发分组是通过路由表转发的。静态理由手动设置，动态路由自动生成</p>
+<pre><code>距离-向量路由算法：所有的节点都定期将它们的整个路由选择表传给所有与之直接连接的节点（相邻的节点）。
+    路由表包含，每条路径的目的地（另一个节点），路径的代价（也称距离），常用的如RIP。
+链路状态路由算法：主动测试所有的邻接节点的状态。定期将链路状态传递给其他节点。</code></pre><p>层次路由：网络增大，太多路由器不合适大型网络。<br>        内部网关协议：区域内的通信。<br>        外部网关协议：多区域的通信。</p>
+<h4 id="ip"><a href="#ip" class="headerlink" title="ip"></a>ip</h4><p>ip数据报分片：链路层能承载的最大数据量成为u最大传输单元MTU，因为IP数据报封装在链路层数据报中，链路层严格限制ip数据包的长度。IP数据报长度大于链路层传输长度时，需要分片。<br>MF 标志是否是最后一个片，DF标志是否是分片，一个吻标志位表分片的报。</p>
+<p>NAT 网络地址转换 将专有网络地址转换为公有网络地址。</p>
+<p>地址划分：子网划分，子网掩码，CIDR无分类编址<br>子网划分：不改变原有类型的网络，借用若干个主机号作为子网号。<br>CIDR消除传统的ABC类网络地址划分，使用网络前缀和主机号来划分地址。这个网络前缀号相同的ip地址称作罗路由聚合或者超网。</p>
 ]]></content>
       <categories>
         <category>计算机网络</category>
@@ -1338,6 +1351,8 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>逆波兰表达式RPN</p>
 <p>将中缀表达式转换为RPN,可以使用间的的栈进出来实现中缀表达式的问题。</p>
 <p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/RPN%E8%BD%AC%E6%8D%A2%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F.jpg" alt><br>中缀转RPN,操作数的顺序不会变</p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E6%9C%89%E6%A0%B9%E6%A0%91.jpg" alt><br><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E6%9C%89%E5%BA%8F%E6%A0%91.jpg" alt><br><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E8%B7%AF%E5%BE%84.jpg" alt><br><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E8%BF%9E%E9%80%9A.jpg" alt></p>
+<p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E6%A0%91%E7%9A%84%E8%B7%AF%E5%BE%84.jpg" alt><br><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E6%A0%91%E7%9A%84%E9%AB%98%E5%BA%A6%E6%B7%B1%E5%BA%A6.jpg" alt></p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -1794,8 +1809,8 @@ k=Min(重传次数，10)
 <p>路由：<br>沿途路由器必须知道到目标网络的下一跳给哪个接口<br>默认路由 0.0.0.0 就是网关</p>
 <p>网关的目的确定一条指定的路线</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/icmp%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/icmp%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.jpg" alt></p>
-<h4 id="动态路由："><a href="#动态路由：" class="headerlink" title="动态路由："></a>动态路由：</h4><p>RIP：动态路由协议，周期性广播30秒，最大跳数16<br>OPSF：内部网关协议，触发式更新，支持多区域，开放式<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ospf.jpg" alt></p>
-<p>BGP：外部网关协议</p>
+<h4 id="动态路由："><a href="#动态路由：" class="headerlink" title="动态路由："></a>动态路由：</h4><p>RIP：动态路由协议，周期性广播30秒，最大跳数16,内部网关协议，每个路由器都得维护自己到其他相邻每个目的网络的距离记录。<br>OPSF：内部网关协议，触发式更新，支持多区域，开放式，内部网关协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ospf.jpg" alt></p>
+<p>BGP：边界网关协议，外部网关协议的一种</p>
 <h4 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h4><p>访问远程服务器，远程服务器分配私网地址，让其访问<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/vpn.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/vpn%E7%AA%97%E5%8F%A3.jpg" alt></p>
 <h4 id="NAT-网络地址转换"><a href="#NAT-网络地址转换" class="headerlink" title="NAT 网络地址转换"></a>NAT 网络地址转换</h4><p>通过公有网络时，把私有网址转换为公有网络地址。</p>
 <p>PAT 端口地址转换<br>    外网的人访问内网的web服务器端口，使用PAT,</p>

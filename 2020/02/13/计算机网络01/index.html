@@ -219,8 +219,8 @@ k=Min(重传次数，10)
 <p>路由：<br>沿途路由器必须知道到目标网络的下一跳给哪个接口<br>默认路由 0.0.0.0 就是网关</p>
 <p>网关的目的确定一条指定的路线</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/icmp%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/icmp%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B.jpg" alt></p>
-<h4 id="动态路由："><a href="#动态路由：" class="headerlink" title="动态路由："></a>动态路由：</h4><p>RIP：动态路由协议，周期性广播30秒，最大跳数16<br>OPSF：内部网关协议，触发式更新，支持多区域，开放式<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ospf.jpg" alt></p>
-<p>BGP：外部网关协议</p>
+<h4 id="动态路由："><a href="#动态路由：" class="headerlink" title="动态路由："></a>动态路由：</h4><p>RIP：动态路由协议，周期性广播30秒，最大跳数16,内部网关协议，每个路由器都得维护自己到其他相邻每个目的网络的距离记录。<br>OPSF：内部网关协议，触发式更新，支持多区域，开放式，内部网关协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ospf.jpg" alt></p>
+<p>BGP：边界网关协议，外部网关协议的一种</p>
 <h4 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h4><p>访问远程服务器，远程服务器分配私网地址，让其访问<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/vpn.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/vpn%E7%AA%97%E5%8F%A3.jpg" alt></p>
 <h4 id="NAT-网络地址转换"><a href="#NAT-网络地址转换" class="headerlink" title="NAT 网络地址转换"></a>NAT 网络地址转换</h4><p>通过公有网络时，把私有网址转换为公有网络地址。</p>
 <p>PAT 端口地址转换<br>    外网的人访问内网的web服务器端口，使用PAT,</p>
