@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>算法设计3.0</title>
+    <url>/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/</url>
+    <content><![CDATA[<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD.jpg" alt><br>v 顶点 ，e 边<br>|v| 顶点个数 ，|e| 边数</p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E6%97%A0%E5%90%91%E5%9B%BE.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E6%9C%89%E5%90%91%E5%9B%BE.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E6%9C%89%EF%BC%8C%E6%97%A0%E5%90%91%E5%9B%BE.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84%E8%B7%AF%E5%BE%84.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84%E6%A8%A1%E6%9D%BF%E7%B1%BB.jpg" alt></p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vscode配置编译环境</title>
     <url>/2020/03/18/vscode%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<hr>
@@ -16,6 +31,9 @@
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E6%B5%81%E7%9A%84%E5%BD%A2%E6%88%90.JPG" alt></p>
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E4%B8%AD%E7%9A%84%E7%94%B5%E7%A3%81%E8%83%BD%E9%87%8F.JPG" alt></p>
 <h4 id="电路分类："><a href="#电路分类：" class="headerlink" title="电路分类："></a>电路分类：</h4><p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8A%A8%E6%80%81%E7%94%B5%E9%98%BB.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E6%9C%89%E6%BA%90%E6%97%A0%E6%BA%90.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E6%97%B6%E5%8F%98%E6%97%B6%E4%B8%8D%E5%8F%98%E7%94%B5%E8%B7%AF.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%BA%BF%E6%80%A7%E4%B8%8E%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%94%B5%E8%B7%AF.JPG" alt></p>
+<h4 id="电路变量"><a href="#电路变量" class="headerlink" title="电路变量"></a>电路变量</h4><p>为了定量描述电路性能，引入电路变量.<br>分为基本变量和复合变量</p>
+<p>基本变量如：电流，电压等。<br>复合变量如：功率，能量等。</p>
+<p>电路的实际方向不好确定，使用参考方向，参考方向可以任意指定。</p>
 ]]></content>
       <categories>
         <category>程序人生</category>
@@ -1402,6 +1420,8 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E6%80%9D%E8%B7%AF%E7%BB%86%E8%8A%82.jpg" alt><br>把左侧链上的节点一次入栈</p>
 <p>层次遍历：</p>
 <p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E5%92%8C%E5%85%88%E5%BA%8F.jpg" alt><br>由中序遍历的根节点可以确定先序遍历的左子树和右子树<br><img src="/2020/03/06/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A12-0/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%90%8E%E5%BA%8F%E5%92%8C%E5%85%88%E5%BA%8F.jpg" alt><br>同理</p>
+<p>==========</p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -1872,11 +1892,12 @@ k=Min(重传次数，10)
 <h4 id="IP层次化"><a href="#IP层次化" class="headerlink" title="IP层次化"></a>IP层次化</h4><p>ip=网络层+主机层</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ip%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ip%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB%E5%85%B7%E4%BD%93.jpg" alt></p>
 <p>保留的私网地址<br>    10.0.0.0<br>    172.16.0.0–172.31.0.0<br>    192.168.0.0–192.168.255.0</p>
+<p>169.254.0.0 是用来表示没有分派到公网地址的主机。</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E4%BD%9C%E7%94%A8.jpg" alt></p>
 <p>子网掩码：判断两个网址是否在同一网段</p>
 <p>广播地址一般主机位全为1，例如10.255.255.255即发送给10网段的广播地址。</p>
-<h4 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h4><p>子网掩码把主机层位分给网络层位<br>    主机位归零，网络位做与运算<br>    主机部分不能全为1，也不能全为0</p>
-<p>变长子网划分<br>判断变长子网的主机的网段，主机位归零，网络位做与运算</p>
+<h4 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h4><p>等长子网划分<br>子网掩码把主机层位分给网络层位<br>    主机位归零，网络位做与运算<br>    主机部分不能全为1，也不能全为0</p>
+<p>变长子网划分<br>判断变长子网的主机的网段，主机位归零，网络位做与运算，多一个子网掩码位数更改</p>
 <p>超网<br>合并同一物理层上的网段</p>
 <h4 id="ip与mac"><a href="#ip与mac" class="headerlink" title="ip与mac"></a>ip与mac</h4><p>ip地址：决定目标地址<br>mac地址：决定下一跳</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E4%BC%A0%E8%BE%93%E6%97%B6ip%E4%B8%8Emac.jpg" alt></p>
