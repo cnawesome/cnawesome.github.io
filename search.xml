@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Android学习日记1.0</title>
+    <url>/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/</url>
+    <content><![CDATA[<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/newPJ.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/moudle.jpg.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80.jpg" alt><br><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/manifest.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/mainactivity.jpg" alt><br><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/manifest.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/r%E6%96%87%E4%BB%B6.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/r%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3.jpg" alt></p>
+<p>android R文件</p>
+<p>res/：包含应用资源，例如可绘制对象文件、布局文件和 UI 字符串。</p>
+<p>raw/：用于存放各种原生资源(音频，视频，一些XML文件等)，我们可以通过openRawResource(int id)来获得资源的二进制流！其实和Assets差不多，不过这里面的资源会在R文件那里生成一个资源id而已。</p>
+<p>AVD：安卓模拟器</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法设计3.0</title>
     <url>/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/</url>
     <content><![CDATA[<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD.jpg" alt><br>v 顶点 ，e 边<br>|v| 顶点个数 ，|e| 边数</p>
@@ -10,6 +31,10 @@
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5.jpg" alt></p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E8%BE%B9%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.jpg" alt></p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E6%93%8D%E4%BD%9C%E5%85%B7%E4%BD%93.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%A1%B6%E7%82%B9%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%A1%B6%E7%82%B9%E5%88%A0%E9%99%A4%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E8%BE%B9%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E8%BE%B9%E5%88%A0%E9%99%A4%E4%BB%A3%E7%A0%81.jpg" alt></p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -647,10 +672,10 @@ echo 'runoob';
 <p>$ git status -s<br>UU runoob.php<br>$ git add runoob.php<br>$ git status -s<br>M  runoob.php<br>$ git commit<br>[master 88afe0e] Merge branch ‘change_site’<br>现在我们成功解决了合并中的冲突，并提交了结果。</p>
 <p>##Git 查看提交历史<br>在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。</p>
 <p>针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：</p>
-<p>$ git log<br>commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -&gt; master)<br>Merge: c68142b 7774248<br>Author: runoob <a href="mailto:&#x74;&#x65;&#115;&#116;&#x40;&#114;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#x6f;&#109;">&#x74;&#x65;&#115;&#116;&#x40;&#114;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#x6f;&#109;</a><br>Date:   Fri May 3 15:55:58 2019 +0800</p>
-<pre><code>Merge branch &apos;change_site&apos;</code></pre><p>commit c68142b562c260c3071754623b08e2657b4c6d5b<br>Author: runoob <a href="mailto:&#116;&#101;&#x73;&#116;&#64;&#114;&#117;&#x6e;&#x6f;&#111;&#98;&#x2e;&#99;&#111;&#109;">&#116;&#101;&#x73;&#116;&#64;&#114;&#117;&#x6e;&#x6f;&#111;&#98;&#x2e;&#99;&#111;&#109;</a><br>Date:   Fri May 3 15:52:12 2019 +0800</p>
-<pre><code>修改代码</code></pre><p>commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)<br>Author: runoob <a href="mailto:&#x74;&#101;&#x73;&#x74;&#64;&#114;&#117;&#x6e;&#111;&#111;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x74;&#101;&#x73;&#x74;&#64;&#114;&#117;&#x6e;&#111;&#111;&#98;&#x2e;&#x63;&#x6f;&#109;</a><br>Date:   Fri May 3 15:49:26 2019 +0800</p>
-<pre><code>changed the runoob.php</code></pre><p>commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00<br>Author: runoob <a href="mailto:&#x74;&#101;&#115;&#x74;&#x40;&#114;&#x75;&#110;&#111;&#111;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x74;&#101;&#115;&#x74;&#x40;&#114;&#x75;&#110;&#111;&#111;&#x62;&#46;&#x63;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:35:32 2019 +0800<br>我们可以用 –oneline 选项来查看历史记录的简洁的版本。</p>
+<p>$ git log<br>commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -&gt; master)<br>Merge: c68142b 7774248<br>Author: runoob <a href="mailto:&#116;&#101;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;">&#116;&#101;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:55:58 2019 +0800</p>
+<pre><code>Merge branch &apos;change_site&apos;</code></pre><p>commit c68142b562c260c3071754623b08e2657b4c6d5b<br>Author: runoob <a href="mailto:&#x74;&#101;&#x73;&#x74;&#64;&#x72;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#111;&#109;">&#x74;&#101;&#x73;&#x74;&#64;&#x72;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#111;&#109;</a><br>Date:   Fri May 3 15:52:12 2019 +0800</p>
+<pre><code>修改代码</code></pre><p>commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)<br>Author: runoob <a href="mailto:&#116;&#x65;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;">&#116;&#x65;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:49:26 2019 +0800</p>
+<pre><code>changed the runoob.php</code></pre><p>commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00<br>Author: runoob <a href="mailto:&#116;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#x63;&#111;&#109;">&#116;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#x63;&#111;&#109;</a><br>Date:   Fri May 3 15:35:32 2019 +0800<br>我们可以用 –oneline 选项来查看历史记录的简洁的版本。</p>
 <p>$ git log –oneline<br>$ git log –oneline<br>d5e9fc2 (HEAD -&gt; master) Merge branch ‘change_site’<br>c68142b 修改代码<br>7774248 (change_site) changed the runoob.php<br>c1501a2 removed test.txt、add runoob.php<br>3e92c19 add test.txt<br>3b58100 第一次版本提交<br>这告诉我们的是，此项目的开发历史。</p>
 <p>我们还可以用 –graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：</p>
 <ul>
@@ -1805,7 +1830,7 @@ int main()
   <entry>
     <title>计算机网络1.0</title>
     <url>/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/</url>
-    <content><![CDATA[<h3 id="1-计算机网络概述"><a href="#1-计算机网络概述" class="headerlink" title="1.计算机网络概述"></a>1.计算机网络概述</h3><p>许多主机连接-&gt;网络<br>许多网络连接-&gt;互联网<br>做大的互联网-&gt;因特网</p>
+    <content><![CDATA[<h2 id="1-计算机网络概述"><a href="#1-计算机网络概述" class="headerlink" title="1.计算机网络概述"></a>1.计算机网络概述</h2><p>许多主机连接-&gt;网络<br>许多网络连接-&gt;互联网<br>做大的互联网-&gt;因特网</p>
 <h4 id="因特网3部曲"><a href="#因特网3部曲" class="headerlink" title="因特网3部曲"></a>因特网3部曲</h4><pre><code>1.ARPANET向互联网发展 始于1983
 2.3级结构的因特网 主干网-&gt;地区网-&gt;用户
 3.多层次ISP（互联网运营商）结构互联网</code></pre><h4 id="数据交换"><a href="#数据交换" class="headerlink" title="数据交换"></a>数据交换</h4><pre><code>电路交换，占线
@@ -1827,7 +1852,7 @@ int main()
 <p>调制方法：<br>调幅<br>调频<br>调相</p>
 <p>波特 数据传输的速率</p>
 <p>信噪比<br>    C=W log2 （1+s/n） b/s<br>    w是信道的带宽<br>    s为信道上所传信号的平均功率<br>    n为信道上的高斯噪声功率</p>
-<h3 id="2-物理层"><a href="#2-物理层" class="headerlink" title="2.物理层"></a>2.物理层</h3><h4 id="奈奎斯特定理"><a href="#奈奎斯特定理" class="headerlink" title="奈奎斯特定理"></a>奈奎斯特定理</h4><p>在理想低通的信道中，极限码元传输速率为 2w baud ，w是理想低通信道的带宽，单位hz</p>
+<h2 id="2-物理层"><a href="#2-物理层" class="headerlink" title="2.物理层"></a>2.物理层</h2><h4 id="奈奎斯特定理"><a href="#奈奎斯特定理" class="headerlink" title="奈奎斯特定理"></a>奈奎斯特定理</h4><p>在理想低通的信道中，极限码元传输速率为 2w baud ，w是理想低通信道的带宽，单位hz</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%AE%9A%E7%90%86%E4%BC%AA%E8%AF%81%E6%98%8E.jpg" alt></p>
 <h4 id="导向传输媒体"><a href="#导向传输媒体" class="headerlink" title="导向传输媒体"></a>导向传输媒体</h4><p>双绞线 屏蔽双绞线 非屏蔽双绞线<br>同轴电缆<br>光纤</p>
 <h4 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h4><p>频分信道复用<br>时分信道复用<br>码分信道复用<br>波分信道复用</p>
@@ -1838,7 +1863,7 @@ int main()
 一个模拟信号经过抽样量化后，得到已量化的脉冲幅度调制信号，它仅为有限个数值。
 编码，就是用一组二进制码组来表示每一个有固定电平的量化值。然而，实际上量化是在编码过程中同时完成的，故编码过程也称为模/数变换，可记作A/D。
     奈奎斯特抽样定理：若频带宽度有限的，要从抽样信号中无失真地恢复原信号，抽样频率应大于2倍信号最高频率</code></pre><h4 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h4><p>xDSL<br>    x数字用户线：使用的是数字用户技术<br>DMT</p>
-<h3 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3.数据链路层"></a>3.数据链路层</h3><h4 id="数据链路层使用信道有两种类型："><a href="#数据链路层使用信道有两种类型：" class="headerlink" title="数据链路层使用信道有两种类型："></a>数据链路层使用信道有两种类型：</h4><p>1.点对点信道<br>2.广播信道 一点多</p>
+<h2 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3.数据链路层"></a>3.数据链路层</h2><h4 id="数据链路层使用信道有两种类型："><a href="#数据链路层使用信道有两种类型：" class="headerlink" title="数据链路层使用信道有两种类型："></a>数据链路层使用信道有两种类型：</h4><p>1.点对点信道<br>2.广播信道 一点多</p>
 <p>链路：一条点对点的物理线路段，中间没有任何其他交换节点</p>
 <p>数据链路层传输的是帧</p>
 <p>帧 -&gt; 帧头+帧尾+物理层地址+校验码</p>
@@ -1873,7 +1898,7 @@ E、CRC校验码位数 = 生成多项式位数 - 1。
 
 比特填充的首尾标志法：以特定的比特流作为一帧的开始与结束。
 
-违规编码法:一般在物理层使用，利用非传输信号格式的信号来表示一帧的开始与结束。</code></pre><h4 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h4><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
+违规编码法:一般在物理层使用，利用非传输信号格式的信号来表示一帧的开始与结束。</code></pre><h3 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h3><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.jpg" alt></p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B.jpg" alt><br>ＰＰＰ连接的每一端都必须首先发送ＬＣＰ数据 包来配置和测试数据连接。在连接建立后，对等实体还有可能需要认证。<br>然后，ＰＰＰ必须发送ＮＣＰ数据包来选择一种或多种网络层协议来配置。一旦被选中的网络层协议被配置好后，该网络层的数据报就可以在链路上传送了。 链路将保持可配置的状态直到有ＬＣＰ数据包和ＮＣＰ数据包终止连接，或者由其他外部事件发生时（例如非活动时钟计时已满或网络管理人员的干涉）</p>
 <p>ppp协议三个组成部分<br>1.数据链路层协议支持异步串行或同步串行介质<br>2.使用LCP链路控制协议建立维护链路连接<br>3.网络控制协议NCP允许点对点连接的多种协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E7%BB%86%E8%8A%82.jpg" alt></p>
@@ -1923,6 +1948,7 @@ k=Min(重传次数，10)
 <p>应用层准备数据-&gt;传输层分块数据-&gt;网络层打包数据(发片)-&gt;数据链路层封装成帧</p>
 <p>ip协议：<br>rip：（动态路由协议）周期性广播路由表，<br>ospf</p>
 <h3 id="5-传输层"><a href="#5-传输层" class="headerlink" title="5.传输层"></a>5.传输层</h3><p>TCP:可靠传输，传输的文件需要分段，建立会话<br>UDP：不需要会话，不分段，不可靠传输 例如：多播，广播</p>
+<p>负责向两个主机中进程之间的通信提供服务。由于一个主机可同时运行多个进程，因此传输层有复用和分用的功能。<br>    复用，就是多个应用层进程可同时使用下面运输层的服务。<br>    分用，就是把收到的信息分别交付给上面应用层中相应的进程。</p>
 <p>netstat 查看会话</p>
 <p>-an 查看侦听端口</p>
 <p>提供进程中间联系</p>
