@@ -6,13 +6,13 @@
     <content><![CDATA[<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/newPJ.jpg" alt></p>
 <p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/moudle.jpg.jpg" alt></p>
 <p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80.jpg" alt><br><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/manifest.jpg" alt></p>
-<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/mainactivity.jpg" alt><br><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/manifest.jpg" alt></p>
-<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/r%E6%96%87%E4%BB%B6.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/mainactivity.jpg" alt></p>
+<p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/r%E6%96%87%E4%BB%B6.jpg" alt><br>android R文件出现问题可以 clear 恢复。</p>
 <p><img src="/2020/03/21/Android%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B01-0/r%E6%96%87%E4%BB%B6%E8%A7%A3%E5%86%B3.jpg" alt></p>
-<p>android R文件</p>
 <p>res/：包含应用资源，例如可绘制对象文件、布局文件和 UI 字符串。</p>
 <p>raw/：用于存放各种原生资源(音频，视频，一些XML文件等)，我们可以通过openRawResource(int id)来获得资源的二进制流！其实和Assets差不多，不过这里面的资源会在R文件那里生成一个资源id而已。</p>
 <p>AVD：安卓模拟器</p>
+<p>viewgroup是抽象类，一般使用它的子类</p>
 ]]></content>
       <categories>
         <category>Android</category>
@@ -33,8 +33,17 @@
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E4%BB%A3%E7%A0%81.jpg" alt></p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E6%93%8D%E4%BD%9C%E5%85%B7%E4%BD%93.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E9%A1%B6%E7%82%B9%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0.jpg" alt></p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%A1%B6%E7%82%B9%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81.jpg" alt></p>
-<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%A1%B6%E7%82%B9%E5%88%A0%E9%99%A4%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E9%A1%B6%E7%82%B9%E5%88%A0%E9%99%A4%E4%BB%A3%E7%A0%81.jpg" alt><br>在图中插入一个新的节点</p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E8%BE%B9%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E8%BE%B9%E5%88%A0%E9%99%A4%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<h4 id="BFS-广度优先遍历"><a href="#BFS-广度优先遍历" class="headerlink" title="BFS 广度优先遍历"></a>BFS 广度优先遍历</h4><p>把图化为树，把非线性变为半线性。<br>正如把树通过遍历化为队列，把半线性化为了线性。</p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84BFS.jpg" alt></p>
+<p>图的广度优先遍历类似与树的层次遍历。</p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84BFS%E4%BB%A3%E7%A0%81.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84BFS%E4%BB%A3%E7%A0%811.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84BFS%E8%BF%87%E7%A8%8B1.jpg" alt></p>
+<p>按BFS广度优先遍历出来的节点到节点的距离时最短路径。</p>
+<h4 id="DFS-深度优先搜索"><a href="#DFS-深度优先搜索" class="headerlink" title="DFS 深度优先搜索"></a>DFS 深度优先搜索</h4><p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/DFS%E4%BB%8B%E7%BB%8D.jpg" alt></p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84DFS%E4%BB%A3%E7%A0%81.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E5%9B%BE%E7%9A%84DFS%E4%BB%A3%E7%A0%81%E7%BB%86%E8%8A%82.jpg" alt></p>
+<p>分为有向图和无向图的DFS</p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -672,10 +681,10 @@ echo 'runoob';
 <p>$ git status -s<br>UU runoob.php<br>$ git add runoob.php<br>$ git status -s<br>M  runoob.php<br>$ git commit<br>[master 88afe0e] Merge branch ‘change_site’<br>现在我们成功解决了合并中的冲突，并提交了结果。</p>
 <p>##Git 查看提交历史<br>在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。</p>
 <p>针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：</p>
-<p>$ git log<br>commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -&gt; master)<br>Merge: c68142b 7774248<br>Author: runoob <a href="mailto:&#116;&#101;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;">&#116;&#101;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:55:58 2019 +0800</p>
-<pre><code>Merge branch &apos;change_site&apos;</code></pre><p>commit c68142b562c260c3071754623b08e2657b4c6d5b<br>Author: runoob <a href="mailto:&#x74;&#101;&#x73;&#x74;&#64;&#x72;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#111;&#109;">&#x74;&#101;&#x73;&#x74;&#64;&#x72;&#117;&#110;&#111;&#111;&#98;&#46;&#x63;&#111;&#109;</a><br>Date:   Fri May 3 15:52:12 2019 +0800</p>
-<pre><code>修改代码</code></pre><p>commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)<br>Author: runoob <a href="mailto:&#116;&#x65;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;">&#116;&#x65;&#115;&#116;&#64;&#x72;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#99;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:49:26 2019 +0800</p>
-<pre><code>changed the runoob.php</code></pre><p>commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00<br>Author: runoob <a href="mailto:&#116;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#x63;&#111;&#109;">&#116;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#111;&#x6f;&#98;&#46;&#x63;&#111;&#109;</a><br>Date:   Fri May 3 15:35:32 2019 +0800<br>我们可以用 –oneline 选项来查看历史记录的简洁的版本。</p>
+<p>$ git log<br>commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -&gt; master)<br>Merge: c68142b 7774248<br>Author: runoob <a href="mailto:&#116;&#101;&#115;&#x74;&#x40;&#x72;&#117;&#110;&#x6f;&#x6f;&#98;&#46;&#99;&#111;&#x6d;">&#116;&#101;&#115;&#x74;&#x40;&#x72;&#117;&#110;&#x6f;&#x6f;&#98;&#46;&#99;&#111;&#x6d;</a><br>Date:   Fri May 3 15:55:58 2019 +0800</p>
+<pre><code>Merge branch &apos;change_site&apos;</code></pre><p>commit c68142b562c260c3071754623b08e2657b4c6d5b<br>Author: runoob <a href="mailto:&#116;&#x65;&#115;&#116;&#64;&#114;&#117;&#110;&#111;&#111;&#98;&#x2e;&#x63;&#111;&#109;">&#116;&#x65;&#115;&#116;&#64;&#114;&#117;&#110;&#111;&#111;&#98;&#x2e;&#x63;&#111;&#109;</a><br>Date:   Fri May 3 15:52:12 2019 +0800</p>
+<pre><code>修改代码</code></pre><p>commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)<br>Author: runoob <a href="mailto:&#x74;&#101;&#x73;&#116;&#x40;&#x72;&#x75;&#x6e;&#111;&#x6f;&#x62;&#x2e;&#99;&#111;&#109;">&#x74;&#101;&#x73;&#116;&#x40;&#x72;&#x75;&#x6e;&#111;&#x6f;&#x62;&#x2e;&#99;&#111;&#109;</a><br>Date:   Fri May 3 15:49:26 2019 +0800</p>
+<pre><code>changed the runoob.php</code></pre><p>commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00<br>Author: runoob <a href="mailto:&#x74;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#x6f;&#x6f;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x74;&#101;&#115;&#116;&#64;&#114;&#x75;&#110;&#x6f;&#x6f;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a><br>Date:   Fri May 3 15:35:32 2019 +0800<br>我们可以用 –oneline 选项来查看历史记录的简洁的版本。</p>
 <p>$ git log –oneline<br>$ git log –oneline<br>d5e9fc2 (HEAD -&gt; master) Merge branch ‘change_site’<br>c68142b 修改代码<br>7774248 (change_site) changed the runoob.php<br>c1501a2 removed test.txt、add runoob.php<br>3e92c19 add test.txt<br>3b58100 第一次版本提交<br>这告诉我们的是，此项目的开发历史。</p>
 <p>我们还可以用 –graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：</p>
 <ul>
