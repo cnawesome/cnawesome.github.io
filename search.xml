@@ -4,8 +4,10 @@
     <title>c++基础</title>
     <url>/2020/03/26/c-%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="define宏定义"><a href="#define宏定义" class="headerlink" title="define宏定义"></a>define宏定义</h3><p>ANSI标准五个预定义的宏名<br>    <strong>LINE</strong> 表示该行代码的所在行号<br>    <strong>FILE</strong> 表示源文件的文件名<br>    <strong>DATE</strong> 表示源文件被编译的日期，格式(月/日/年)<br>    <strong>TIME</strong> 表示源文件被编译成目标代码的时间，格式(时:分:秒)<br>    <strong>STDC</strong> 表示编译器是否标准，标准时表示常量1，非标准则表示其它数字</p>
-<p>宏定义可以使用在函数身上：<br>    #define INFO(msg) info_debug(<strong>FILE</strong>, <strong>LINE</strong>, <strong>DATE</strong>, <strong>TIME</strong>, msg)</p>
-<pre><code>void info_debug(const char* filename, int line, const char* date, const char* time, const char* msg)
+<p>宏定义可以使用在函数身上：</p>
+<pre><code>#define INFO(msg) info_debug(__FILE__, __LINE__, __DATE__, __TIME__, msg) 
+
+void info_debug(const char* filename, int line, const char* date, const char* time, const char* msg)
 {
     printf_s(&quot;info_debug %s:%d (%s-%s):%s&quot;, filename, line, date, time, msg);
 }
@@ -15,7 +17,8 @@ int main()
     INFO(&quot;Hello world!\n&quot;);
     system(&quot;pause&quot;);
     return 0;
-}</code></pre>]]></content>
+}</code></pre><p>宏定义的细节<br>    1）对于有参数的宏定义，宏定义时，在宏名与带参数的括号之间不应加空格，否则将空格以后的字符都作为替代字符串的一部分。<br>    2）带参数的宏定义只是进行简单的字符替换，宏展开则是在编译前进行的，在展开时并不分配内存单元，不进行值的传递处理，因此替换不会占用运行时间，只占用编译时间。<br>    3）宏不存在类型问题，宏名无类型，宏的参数也无类型，只是一个符号代表，展开时代入指定的字符串即可，宏定义时，字符串可以是任何类型的数据。</p>
+]]></content>
       <categories>
         <category>c++</category>
       </categories>
@@ -118,7 +121,9 @@ int main()
 <h4 id="高级搜索树"><a href="#高级搜索树" class="headerlink" title="高级搜索树"></a>高级搜索树</h4><p>伸张树：为了更宽松的使用avl的性质。</p>
 <p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E8%87%AA%E9%80%82%E5%BA%94%E8%B0%83%E6%95%B4%E6%80%9D%E8%B7%AF.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E5%B1%80%E9%83%A8%E6%80%A7.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E5%8F%8C%E5%B1%82%E4%BC%B8%E5%BC%A0.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E5%8F%8C%E5%B1%82%E4%BC%B8%E5%BC%A01.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E5%8F%8C%E5%B1%82%E4%BC%B8%E5%BC%A02.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/%E4%BC%B8%E5%BC%A0%E6%A0%91%E5%8F%8C%E5%B1%82%E4%BC%B8%E5%BC%A03.jpg" alt></p>
 <p>伸张树自适应调整策略并非最佳策略</p>
-<h4 id="B-TREE"><a href="#B-TREE" class="headerlink" title="B-TREE"></a>B-TREE</h4><p>数据越来越多，让内存看起来越来越小</p>
+<h4 id="B-TREE"><a href="#B-TREE" class="headerlink" title="B-TREE"></a>B-TREE</h4><p>原因：数据越来越多，让内存看起来越来越小</p>
+<p>又称平衡多路搜索树</p>
+<p><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E5%A4%9A%E8%B7%AF%E5%B9%B3%E8%A1%A1.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E8%8A%82%E7%82%B9.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E9%98%B6%E6%95%B0.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9F%A5%E8%AF%A2%E6%95%88%E6%9E%9C.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E7%B4%A7%E5%87%91%E8%A1%A8%E7%A4%BA.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9C%80%E5%B0%8F%E6%A0%91%E9%AB%98.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9C%80%E5%A4%A7%E6%A0%91%E9%AB%98.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91.jpg" alt><br>利用向量来表示<br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91tree%E4%BB%A3%E7%A0%81.jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81jpg" alt><br><img src="/2020/03/19/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A13-0/b%E6%A0%91%E6%9F%A5%E6%89%BE%E5%A4%B1%E8%B4%A5.jpg" alt><br>b树的查找失败，必然是在外部的叶子节点。</p>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -159,8 +164,21 @@ int main()
   <entry>
     <title>普通生物学</title>
     <url>/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/</url>
-    <content><![CDATA[<hr>
+    <content><![CDATA[<h3 id="生物膜的特性"><a href="#生物膜的特性" class="headerlink" title="生物膜的特性"></a>生物膜的特性</h3><p>1.生物膜具有流动性<br>2.膜蛋白分布不对称<br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C%E7%9A%84%E7%BB%84%E6%88%90.jpg" alt><br>生物膜处于动态运动中</p>
+<p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C%E7%9A%84%E8%9B%8B%E7%99%BD%E8%B4%A8.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%B4%A8%E5%9F%BA%E8%B4%A8.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%86%9C%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD.jpg" alt></p>
+<p>膜蛋白的作用：<br>    1.作为膜转运蛋白，选择性的介导小分子物质的跨膜运输。<br>    2.具有酶的功能<br>    3.作为细胞表面的受体，与激素结合之后将型号传递到胞内<br>    4.糖蛋白的糖链可有哦为细胞之间的识别标志。<br>    5.形成细胞之间的连接<br>    6。作为细胞骨架的连接点。</p>
+<p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%86%9C%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%B7%A8%E8%86%9C%E8%BF%90%E8%BE%93%E7%AE%80%E5%8D%95%E6%89%A9%E6%95%A3.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%B0%8F%E5%88%86%E5%AD%90%E8%B7%A8%E8%86%9C%E8%BF%90%E8%BE%93.jpg" alt></p>
+<p>载体蛋白：通过改变自身构件，转运</p>
+<p>小分子的跨膜运输：<br>    简单扩散<br>    被动运输<br>    主动运输</p>
+<h4 id="细胞连接"><a href="#细胞连接" class="headerlink" title="细胞连接"></a>细胞连接</h4><p>细胞间或细胞-基质见的接触部位形成特殊的连接结构，叫细胞连接。 </p>
+<p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F1.jpg" alt></p>
 ]]></content>
+      <categories>
+        <category>程序人生</category>
+      </categories>
+      <tags>
+        <tag>程序人生</tag>
+      </tags>
   </entry>
   <entry>
     <title>Mybatis(1)</title>
