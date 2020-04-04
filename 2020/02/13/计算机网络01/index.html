@@ -263,7 +263,8 @@ k=Min(重传次数，10)
 <p>负责向两个主机中进程之间的通信提供服务。由于一个主机可同时运行多个进程，因此传输层有复用和分用的功能。<br>    复用，就是多个应用层进程可同时使用下面运输层的服务。<br>    分用，就是把收到的信息分别交付给上面应用层中相应的进程。</p>
 <h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%8A%A5%E6%96%87.jpg" alt><br>URG: 标识紧急指针是否有效<br>ACK: 标识确认序号是否有效<br>PSH: 用来提示接收端应用程序立刻将数据从tcp缓冲区读走<br>RST: 要求重新建立连接. 我们把含有RST标识的报文称为复位报文段<br>SYN: 请求建立连接. 我们把含有SYN标识的报文称为同步报文段<br>FIN: 通知对端, 本端即将关闭. 我们把含有FIN标识的报文称为结束报文段</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B%E6%96%87%E5%AD%97.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E4%B8%A2%E5%A4%B1%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B.jpg" alt></p>
-<p>netstat 查看会话</p>
+<p>tcp协议功能：可靠传输，流量控制，拥塞控制</p>
+<p>可靠传输：停止等待协议（特色：自动超时重传）<br>netstat 查看会话</p>
 <p>-an 查看侦听端口</p>
 <p>提供进程中间联系</p>
 
