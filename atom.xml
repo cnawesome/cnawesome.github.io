@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cnawesome.github.io/"/>
-  <updated>2020-04-08T12:10:19.822Z</updated>
+  <updated>2020-04-09T08:06:23.259Z</updated>
   <id>https://cnawesome.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ununtu 操作</title>
+    <title>ubuntu 操作</title>
     <link href="https://cnawesome.github.io/2020/04/08/ununtu-%E6%93%8D%E4%BD%9C/"/>
     <id>https://cnawesome.github.io/2020/04/08/ununtu-%E6%93%8D%E4%BD%9C/</id>
     <published>2020-04-08T10:21:30.000Z</published>
-    <updated>2020-04-08T12:10:19.822Z</updated>
+    <updated>2020-04-09T08:06:23.259Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>whoami 用来查看当前用户名</p><h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><p>APT管理软件：高级报管理工具</p><p>软件更新，升级<br>    sudo apt-get update 或者 sudo apt-get upgrade<br>软件安装<br>    sudo apt-get install 软件包名</p><p>软件删除<br>    sudo apt-get remove</p><p>搜索软件包<br>    sudo apt-get search 软件包名</p><p>显示该包的依赖信息<br>    sudo apt-get depends 软件包名</p><h4 id="dpkg-command"><a href="#dpkg-command" class="headerlink" title="dpkg command"></a>dpkg command</h4><p>安装dpkg命令：<br>    sudo dpkg -i deb 包名</p><p>shutdown 关机命令<br>    -t 告诉init多久后关机<br>    -r 重新启动<br>    -k 不是真正的关机，只是警告信息<br>    -h 关机后关闭电源</p><p>halt 命令 关闭系统</p><p>putty 远程登录<br>    pputty以中国远程登陆工具，功能强大</p><pre><code>1。在服务器端安装openssh-serveropenssh服务器组件sshd持续监听老子客户端工具的连接请求。在ubuntu安装 openssh-servesudo apt-get install opensssh-server2.客户端安装putty</code></pre><h2 id="ubuntu-文件管理"><a href="#ubuntu-文件管理" class="headerlink" title="ubuntu 文件管理"></a>ubuntu 文件管理</h2><p>在liunx里，一切都看作文件<br>在liunx中没有磁盘的逻辑分区，任何一种类的文件系统被创建后都需要挂载到某个特定的目录才能使用。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>whoami 用来查看当前用户名</p><h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><p>APT管理软件：高级报管理工具</p><p>软件更新，升级<br>    sudo apt-get update 或者 sudo apt-get upgrade<br>软件安装<br>    sudo apt-get install 软件包名</p><p>软件删除<br>    sudo apt-get remove</p><p>搜索软件包<br>    sudo apt-get search 软件包名</p><p>显示该包的依赖信息<br>    sudo apt-get depends 软件包名</p><h4 id="dpkg-command"><a href="#dpkg-command" class="headerlink" title="dpkg command"></a>dpkg command</h4><p>安装dpkg命令：<br>    sudo dpkg -i deb 包名</p><p>shutdown 关机命令<br>    -t 告诉init多久后关机<br>    -r 重新启动<br>    -k 不是真正的关机，只是警告信息<br>    -h 关机后关闭电源</p><p>halt 命令 关闭系统</p><p>putty 远程登录<br>    pputty以中国远程登陆工具，功能强大</p><pre><code>1。在服务器端安装openssh-serveropenssh服务器组件sshd持续监听老子客户端工具的连接请求。在ubuntu安装 openssh-servesudo apt-get install opensssh-server2.客户端安装putty</code></pre><h2 id="ubuntu-文件管理"><a href="#ubuntu-文件管理" class="headerlink" title="ubuntu 文件管理"></a>ubuntu 文件管理</h2><p>在linux里，一切都看作文件<br>在linux中没有磁盘的逻辑分区，任何一种类的文件系统被创建后都需要挂载到某个特定的目录才能使用。</p><p>linux用磁盘块管理内存空间。磁盘块=超级节点+i-节点+数据块</p><p>cat命令：显示文件或追加文件<br>cat -n 编号输出文件<br>cat可以用于输出重定向，将现有的文件内容重定向到已有的文件。如果目标文件不存在，创建该文件。<br>    cat a1.txt&gt;a2.txt<br>    cat a1.txt&gt;&gt;a2.txt 表示追加重定向</p><p>more显示输出内容，根据窗口大小调整分页 </p><p>less 显示文件</p><p>head 显示文件前n行，不带选项时默认显示前10行<br>tail 显示文件后n行</p><p>echo 输出字符串到基本输出，在显示器的输出</p><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>一个由标准输入</p><h3 id="linux-多用户"><a href="#linux-多用户" class="headerlink" title="linux 多用户"></a>linux 多用户</h3><p>liunx用户分类：<br>    1.超级用户<br>    2.系统用户（一些系统进程的使用名）<br>    3.普通用户</p><p>每一个用户都只能属于一个基本用户组，可以属于多个附加组。</p>]]></content>
     
     <summary type="html">
     
@@ -36,10 +36,10 @@
     </summary>
     
     
-      <category term="ubuntu" scheme="https://cnawesome.github.io/categories/ubuntu/"/>
+      <category term="linux" scheme="https://cnawesome.github.io/categories/linux/"/>
     
     
-      <category term="ubuntu" scheme="https://cnawesome.github.io/tags/ubuntu/"/>
+      <category term="linux" scheme="https://cnawesome.github.io/tags/linux/"/>
     
   </entry>
   
