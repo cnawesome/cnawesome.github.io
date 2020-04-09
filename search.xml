@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ununtu 操作</title>
+    <url>/2020/04/08/ununtu-%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>whoami 用来查看当前用户名</p>
+<h3 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h3><p>APT管理软件：高级报管理工具</p>
+<p>软件更新，升级<br>    sudo apt-get update 或者 sudo apt-get upgrade<br>软件安装<br>    sudo apt-get install 软件包名</p>
+<p>软件删除<br>    sudo apt-get remove</p>
+<p>搜索软件包<br>    sudo apt-get search 软件包名</p>
+<p>显示该包的依赖信息<br>    sudo apt-get depends 软件包名</p>
+<h4 id="dpkg-command"><a href="#dpkg-command" class="headerlink" title="dpkg command"></a>dpkg command</h4><p>安装dpkg命令：<br>    sudo dpkg -i deb 包名</p>
+<p>shutdown 关机命令<br>    -t 告诉init多久后关机<br>    -r 重新启动<br>    -k 不是真正的关机，只是警告信息<br>    -h 关机后关闭电源</p>
+<p>halt 命令 关闭系统</p>
+<p>putty 远程登录<br>    pputty以中国远程登陆工具，功能强大</p>
+<pre><code>1。在服务器端安装openssh-server
+openssh服务器组件sshd持续监听老子客户端工具的连接请求。
+
+在ubuntu安装 openssh-serve
+
+sudo apt-get install opensssh-server
+
+2.客户端安装putty</code></pre><h2 id="ubuntu-文件管理"><a href="#ubuntu-文件管理" class="headerlink" title="ubuntu 文件管理"></a>ubuntu 文件管理</h2><p>在liunx里，一切都看作文件<br>在liunx中没有磁盘的逻辑分区，任何一种类的文件系统被创建后都需要挂载到某个特定的目录才能使用。</p>
+]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法设计4.0</title>
     <url>/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/</url>
     <content><![CDATA[<h3 id="散列-hashing"><a href="#散列-hashing" class="headerlink" title="散列 hashing"></a>散列 hashing</h3><p><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E6%95%A3%E5%88%97%E5%8E%9F%E7%90%86.jpg" alt></p>
@@ -13,7 +42,10 @@
 <h4 id="多槽位"><a href="#多槽位" class="headerlink" title="多槽位"></a>多槽位</h4><p><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E6%95%A3%E5%88%97%E8%A1%A8%E5%86%B2%E7%AA%81.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E6%95%A3%E5%88%97%E8%A1%A8%E5%86%B2%E7%AA%81%E5%A4%9A%E6%A7%BD%E4%BD%8D.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E6%95%A3%E5%88%97%E8%A1%A8%E5%86%B2%E7%AA%81%E7%8B%AC%E7%AB%8B%E9%93%BE.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E6%95%A3%E5%88%97%E8%A1%A8%E5%86%B2%E7%AA%81%E7%8B%AC%E7%AB%8B%E9%93%BE%E4%BC%98%E7%BC%BA%E7%82%B9.jpg" alt></p>
 <h3 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h3><p><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E7%BB%93%E6%9E%84%E6%80%A7.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E5%A0%86%E5%BA%8F%E6%80%A7.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E4%BB%A3%E7%A0%81.jpg" alt></p>
 <p>按优先级排序，需要一个优先级队列来实现</p>
-<h4 id="完全二叉堆"><a href="#完全二叉堆" class="headerlink" title="完全二叉堆"></a>完全二叉堆</h4>]]></content>
+<h4 id="完全二叉堆"><a href="#完全二叉堆" class="headerlink" title="完全二叉堆"></a>完全二叉堆</h4><p><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E5%A0%86%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E5%A0%86%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/04/02/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A14-0/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E5%A0%86%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%E4%BB%A3%E7%A0%81.jpg" alt></p>
+<p>删除操作：为什么不用左子树根节点？<br>如果用左子树根节点换根节点，也必然会出现顺序错误，在调整顺序的操作上比起用最后一个节点来说，多余了一些操作。</p>
+]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -182,7 +214,8 @@ int main()
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%85%B3%E8%81%94%E5%8F%82%E8%80%83%E6%96%B9%E5%90%91.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/.JPG" alt><br>电路的实际方向不好确定，使用参考方向，参考方向可以任意指定。</p>
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8A%9F%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8A%9F%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97.JPG" alt><br>阻值和功率是电阻的属性。<br>超过电阻的额定功率会导致电阻损坏。</p>
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E5%90%B8%E6%94%B6%E4%B8%8E%E5%8F%91%E5%87%BA.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E7%94%B5%E9%98%BB%E5%90%B8%E6%94%B6%E4%B8%8E%E5%8F%91%E5%87%BA.JPG" alt><br>电阻不论是关联和非关联，都是吸收功率。</p>
-]]></content>
+<h4 id="2b法"><a href="#2b法" class="headerlink" title="2b法"></a>2b法</h4><p>列出所有原件方程，kcl方程，kvl方程</p>
+<h3 id="电路的等效变换"><a href="#电路的等效变换" class="headerlink" title="电路的等效变换"></a>电路的等效变换</h3>]]></content>
       <categories>
         <category>程序人生</category>
       </categories>
@@ -1988,6 +2021,9 @@ int main()
 <p>数据链路层传输的是帧</p>
 <p>帧 -&gt; 帧头+帧尾+物理层地址+校验码</p>
 <p>数据链路层要解决的问题：<br>1.封装成帧<br>2.透明传输（有转义字符，避免中间数据干扰）</p>
+<h4 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h4><p>1.停止等待协议<br>发送方发出一个帧，接收方接受一个帧并反馈。没有反馈发送方就等待。</p>
+<p>2.滑动窗口<br>有发送窗口发送一组连续的帧，接受窗口接受一个返回一个确认信息，并向后滑动一个帧位置。发送窗口向后滑动一个帧位置，继续发送串窗口内的帧数据；如果没有接受窗口的确认，发送给窗口不能移动。<br>    停止等待协议：发送窗口和接收窗口=1；<br>    后退N帧协议：发送窗口》=1；接收窗口=1；<br>    选择重传协议：发送窗口》1；接收窗口》1；</p>
+<h4 id="可靠传输"><a href="#可靠传输" class="headerlink" title="可靠传输"></a>可靠传输</h4><p>1.超时重传<br>2.自动重传请求<br>    停止等待协议<br>    后退N帧协议<br>    选择重传协议</p>
 <h4 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h4><p>CRC循环允余：只允许无差错接受，出错会要求发送方重传，而不是中间重传<br>实现可靠传输：差错检测+确认+重传机制</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%BE%AA%E7%8E%AF%E5%85%81%E4%BD%99%E8%AE%A1%E7%AE%97.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%BE%AA%E7%8E%AF%E5%85%81%E4%BD%99%E8%AE%A1%E7%AE%971.jpg" alt><br>    一、CRC校验概念</p>
 <pre><code>即循环冗余校验码（Cyclic Redundancy Check），是数据通信领域中最常用的一种查错校验码，循环冗余检查（CRC）是一种数据传输检错功能，对数据进行多项式计算，并将得到的结果附在帧的后面，接收设备也执行类似的算法，以保证数据传输的正确性和完整性。其特征是信息字段和校验字段的长度可以任意选定。
@@ -2073,7 +2109,8 @@ k=Min(重传次数，10)
 <h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%8A%A5%E6%96%87.jpg" alt><br>URG: 标识紧急指针是否有效<br>ACK: 标识确认序号是否有效<br>PSH: 用来提示接收端应用程序立刻将数据从tcp缓冲区读走<br>RST: 要求重新建立连接. 我们把含有RST标识的报文称为复位报文段<br>SYN: 请求建立连接. 我们把含有SYN标识的报文称为同步报文段<br>FIN: 通知对端, 本端即将关闭. 我们把含有FIN标识的报文称为结束报文段</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B%E6%96%87%E5%AD%97.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E4%B8%A2%E5%A4%B1%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B.jpg" alt></p>
 <p>tcp协议功能：可靠传输，流量控制，拥塞控制</p>
-<p>可靠传输：停止等待协议（特色：自动超时重传）<br>netstat 查看会话</p>
+<p>可靠传输：停止等待协议（特色：自动超时重传）</p>
+<p>netstat 查看会话</p>
 <p>-an 查看侦听端口</p>
 <p>提供进程中间联系</p>
 ]]></content>
