@@ -30,6 +30,10 @@ sudo apt-get install opensssh-server
 <h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>一个由标准输入</p>
 <h3 id="linux-多用户"><a href="#linux-多用户" class="headerlink" title="linux 多用户"></a>linux 多用户</h3><p>liunx用户分类：<br>    1.超级用户<br>    2.系统用户（一些系统进程的使用名）<br>    3.普通用户</p>
 <p>每一个用户都只能属于一个基本用户组，可以属于多个附加组。</p>
+<p>quote 磁盘配额</p>
+<p>物理内存时系统提供的内存大小。<br>linux的虚拟内存时利用磁盘空间的一块逻辑内存<br>用作虚拟内存的磁盘空间称为交换空间<br>swap时linux下的虚拟内存分区，作用是在物理内存使用完之后，将磁盘空间即swap分区当作内存来使用。</p>
+<p>gcc 编译流程：预编译，编译，汇编（生成目标文件），链接（生成可执行文件）</p>
+<p>gdb程序调试工具</p>
 ]]></content>
       <categories>
         <category>linux</category>
@@ -223,8 +227,14 @@ int main()
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%85%B3%E8%81%94%E5%8F%82%E8%80%83%E6%96%B9%E5%90%91.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/.JPG" alt><br>电路的实际方向不好确定，使用参考方向，参考方向可以任意指定。</p>
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8A%9F%E7%8E%87%E7%9A%84%E5%AE%9A%E4%B9%89.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8A%9F%E7%8E%87%E7%9A%84%E8%AE%A1%E7%AE%97.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E8%83%BD%E9%87%8F%E8%AE%A1%E7%AE%97.JPG" alt><br>阻值和功率是电阻的属性。<br>超过电阻的额定功率会导致电阻损坏。</p>
 <p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E5%90%B8%E6%94%B6%E4%B8%8E%E5%8F%91%E5%87%BA.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E7%94%B5%E9%98%BB%E5%90%B8%E6%94%B6%E4%B8%8E%E5%8F%91%E5%87%BA.JPG" alt><br>电阻不论是关联和非关联，都是吸收功率。</p>
-<h4 id="2b法"><a href="#2b法" class="headerlink" title="2b法"></a>2b法</h4><p>列出所有原件方程，kcl方程，kvl方程</p>
-<h3 id="电路的等效变换"><a href="#电路的等效变换" class="headerlink" title="电路的等效变换"></a>电路的等效变换</h3>]]></content>
+<p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%8F%97%E6%8E%A7%E6%BA%90%E6%98%AF%E5%90%A6%E4%B8%BA%E4%BA%8C%E7%AB%AF.JPG" alt></p>
+<p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E6%9C%AF%E8%AF%AD.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%9F%BA%E5%B0%94%E9%9C%8D%E5%A4%AB%E5%AE%9A%E5%BE%8B.JPG" alt></p>
+<p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/kvl.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%B9%BF%E4%B9%89kvl.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%B9%BF%E4%B9%89kcl.JPG" alt></p>
+<h4 id="2b法"><a href="#2b法" class="headerlink" title="2b法"></a>2b法</h4><p>列出所有原件方程，kcl方程，kvl方程<br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/2b%E6%B3%95.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E8%B7%AF%E7%94%B5%E9%98%BB%E5%90%B8%E6%94%B6%E4%B8%8E%E5%8F%91%E5%87%BA.JPG" alt></p>
+<h3 id="电路的等效变换"><a href="#电路的等效变换" class="headerlink" title="电路的等效变换"></a>电路的等效变换</h3><p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%AD%89%E6%95%88%E5%8F%98%E6%8D%A2.JPG" alt><br>0值电压源等效于0值电阻等效于短路</p>
+<p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E4%B8%B2%E5%B9%B6%E8%81%94.JPG" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E9%98%BB%E5%85%83%E4%BB%B6%E4%B8%B2%E8%81%94.JPG" alt></p>
+<p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E7%94%B5%E9%98%BB%E5%85%83%E4%BB%B6%E5%B9%B6%E8%81%94.JPG" alt></p>
+<pre><code>---2020/4/10</code></pre>]]></content>
       <categories>
         <category>程序人生</category>
       </categories>
@@ -1517,6 +1527,7 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>可靠传输：<br>    自动重传分为三种：<br>        1）停等式<br>        2）后退N帧<br>        3）选择性重传</p>
 <p>单帧滑动窗口停等协议：<br>接收方每收到一个帧都回应确认</p>
 <p>多帧滑动窗口后退N帧协议：<br>不需要逐帧确认，确认一个，便确认了这个前面所有的。</p>
+<p>多帧滑动窗口选择重传协议：只重传出现差错的数据帧和计时器潮湿的数据帧，这是接收窗口必须加大。</p>
 <p>介质访问控制：为使用介质的每一个节点隔离来自同一个信道上其他节点传送的信号。</p>
 <pre><code>常用的介质访问控制方法：
     1）信道划分
@@ -1548,7 +1559,9 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>复用：发送方不同的应用程序否可以使用一个传输层协议传送数据。<br>分用：接收方的传输层能剥去报文的首部后正确交付到目的进程。</p>
 <p>传输层通过端口与应用层实现交付。通过端口号区分不同应用进程</p>
 <p>端口只具有本地意义，分为两类：<br>    1）服务端使用端口<br>    2）客户端使用端口<br>在网络中通过采用接收方和发送方的 套接字组合 来识别端点。<br>所谓 套接字 就是一个通信端点。<br>    套接字=（ip地址，端口号）<br>它唯一的表示了网络中某个主机的某一个应用。</p>
-]]></content>
+<p>UDP数据报首部长度时固定的8b；</p>
+<p>tcp的可靠传输如何保证？<br>1序号 确认，tcp连接传输的数据流每一个字节都编上序号，确认时总是确认收到的下一个报文段的数据的第一个字节的序号<br>2.重传</p>
+<pre><code>------------------ 2020.4.13</code></pre>]]></content>
       <categories>
         <category>计算机网络</category>
       </categories>
@@ -2209,6 +2222,7 @@ k=Min(重传次数，10)
 
 量子纠缠，量子描述物质或物质量的最小单位，量子纠缠描述的是两个物质不论距离多远，一方变化都会影响另一方，爱因斯坦称之为诡异的互动性</code></pre><p>(1-COSt)/SINt = SINt/(1+COSt)</p>
 <p>两个看似不同的表现但实质上是同一个东西。</p>
+<p>新冠性病毒已经持续了4个月了，今天我挂掉了科目二，为了做一些形式上的自我惩罚，我选择去找个工厂干一干，我。发现了一个制造口罩的零时工工作，12小时制</p>
 ]]></content>
       <categories>
         <category>生活</category>
