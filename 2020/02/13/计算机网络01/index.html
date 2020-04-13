@@ -212,7 +212,8 @@ E、CRC校验码位数 = 生成多项式位数 - 1。
 
 比特填充的首尾标志法：以特定的比特流作为一帧的开始与结束。
 
-违规编码法:一般在物理层使用，利用非传输信号格式的信号来表示一帧的开始与结束。</code></pre><h3 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h3><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
+违规编码法:一般在物理层使用，利用非传输信号格式的信号来表示一帧的开始与结束。</code></pre><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E5%AD%97%E7%AC%A6%E8%AE%A1%E6%95%B0%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E8%BF%9D%E8%A7%84%E7%BC%96%E7%A0%81%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E8%BF%9D%E8%A7%84%E7%BC%96%E7%A0%81%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E9%9B%B6%E6%AF%94%E7%89%B9%E5%A1%AB%E5%85%85%E6%B3%95.jpg" alt></p>
+<h3 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h3><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.jpg" alt></p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B.jpg" alt><br>ＰＰＰ连接的每一端都必须首先发送ＬＣＰ数据 包来配置和测试数据连接。在连接建立后，对等实体还有可能需要认证。<br>然后，ＰＰＰ必须发送ＮＣＰ数据包来选择一种或多种网络层协议来配置。一旦被选中的网络层协议被配置好后，该网络层的数据报就可以在链路上传送了。 链路将保持可配置的状态直到有ＬＣＰ数据包和ＮＣＰ数据包终止连接，或者由其他外部事件发生时（例如非活动时钟计时已满或网络管理人员的干涉）</p>
 <p>ppp协议三个组成部分<br>1.数据链路层协议支持异步串行或同步串行介质<br>2.使用LCP链路控制协议建立维护链路连接<br>3.网络控制协议NCP允许点对点连接的多种协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E7%BB%86%E8%8A%82.jpg" alt></p>
@@ -268,6 +269,8 @@ k=Min(重传次数，10)
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B%E6%96%87%E5%AD%97.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E4%B8%A2%E5%A4%B1%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B.jpg" alt></p>
 <p>tcp协议功能：可靠传输，流量控制，拥塞控制</p>
 <p>可靠传输：停止等待协议（特色：自动超时重传）</p>
+<p>拥塞控制<br>tcp超时重传：<br>tcp允余确认：通过重复3次发送失序之前的前一个允余ack来确认报文段之后的报文段丢失。</p>
+<p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/tcp%E6%8B%A5%E5%A1%9E%E7%AA%97%E5%8F%A3.jpg" alt></p>
 <p>netstat 查看会话</p>
 <p>-an 查看侦听端口</p>
 <p>提供进程中间联系</p>
