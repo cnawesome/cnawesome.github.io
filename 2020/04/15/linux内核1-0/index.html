@@ -119,106 +119,49 @@
     </div>
 </header>
         <main class="main">
-            
-<section class="posts">
+            <article class="post">
     
-        <article class="post">
-            
-                <h4 class="post-cat">
-                    <a href="/categories/linux/">
-                        linux
-                    </a>
-                </h4>
-                
-                    <h1 class="post-title">
-                        <a href="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/">
-                            linux内核1.0
-                        </a>
-                    </h1>
-
-                    <ul class="post-date">
-                        <li>
-                            April 15, 2020
-                        </li>
-                        <li>
-                            alei
-                        </li>
-                    </ul>
-                    
-                        <div class="post-cover">
-                            <img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC.jpg">
-                        </div>
-                    
-                    <div class="post-content ">
-                        
-                            <a href="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/" class="more-link">Continue reading</a>
-                    </div>
-        </article>
-        
-        <article class="post">
-            
-                <h4 class="post-cat">
-                    <a href="/categories/linux/">
-                        linux
-                    </a>
-                </h4>
-                
-                    <h1 class="post-title">
-                        <a href="/2020/04/08/ubuntu-%E6%93%8D%E4%BD%9C/">
-                            ubuntu 操作
-                        </a>
-                    </h1>
-
-                    <ul class="post-date">
-                        <li>
-                            April 8, 2020
-                        </li>
-                        <li>
-                            alei
-                        </li>
-                    </ul>
-                    
-                    <div class="post-content ">
-                        
-                            <a href="/2020/04/08/ubuntu-%E6%93%8D%E4%BD%9C/" class="more-link">Continue reading</a>
-                    </div>
-        </article>
-        
-        <article class="post">
-            
-                <h4 class="post-cat">
-                    <a href="/categories/Linux/">
-                        Linux
-                    </a>
-                </h4>
-                
-                    <h1 class="post-title">
-                        <a href="/2020/02/25/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                            Linux网络编程
-                        </a>
-                    </h1>
-
-                    <ul class="post-date">
-                        <li>
-                            February 25, 2020
-                        </li>
-                        <li>
-                            alei
-                        </li>
-                    </ul>
-                    
-                        <div class="post-cover">
-                            <img src="/2020/02/25/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/%E5%A5%97%E6%8E%A5%E5%AD%97.jpg">
-                        </div>
-                    
-                    <div class="post-content ">
-                        
-                            <a href="/2020/02/25/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="more-link">Continue reading</a>
-                    </div>
-        </article>
-        
-</section>
-
+    
+    <h4 class="post-cat">
+        <a href="/categories/linux/">
+            linux
+        </a>
+    </h4>
+    
+    
+    <h2 class="post-title">
+        linux内核1.0
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-04-15
+        </li>
+        <li>
+            alei
+        </li>
+    </ul>
+    <div class="post-content">
+        <pre><code>---------- 再一次看内核书籍，这一次一定要努力看完</code></pre><h3 id="1-linux的由来"><a href="#1-linux的由来" class="headerlink" title="1.linux的由来"></a>1.linux的由来</h3><p>由unix，minix，gun计划，posix标准，internet网络发展过来。</p>
+<p><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC.jpg" alt><br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC2.jpg" alt></p>
+<p><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E5%86%85%E6%A0%B8%E6%96%87%E4%BB%B6.jpg" alt><br>bootimage 是软盘印象image的引导启动文件。<br>包括磁盘引导扇区代码，操作系统加载程序和内核执行代码。</p>
+<p>磁盘引导扇区代码：<br>    pc的ram bios启动-&gt;默认启动驱动器的引导扇区代码-&gt;操作系统加载程序和内核执行代码读入内存-&gt;操作系统加载程序进行初始化内核-&gt;最终加载陈旭把控制权交给内核代码</p>
+<p>内核代码正常运行需要文件系统的支持。</p>
+<p>rootimage 向内和提供基本的根文件系统。</p>
+<p>这两个盘合起来相当于一个可启动的dos操作系统盘。</p>
+<p>as86.tar.Z 是16位汇编器连接程序软件包<br>Ǆlinux-0.11.tar.Z 压缩的内核源代码</p>
+<p><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/linnux%E7%9B%AE%E5%BD%95.jpg" alt><br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/linux%E5%8F%82%E8%80%83%E7%9A%84%E4%B9%A6.jpg" alt><br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/linux%E8%AF%9E%E7%94%9F.jpg" alt></p>
+<h3 id="微型计算机组成结构"><a href="#微型计算机组成结构" class="headerlink" title="微型计算机组成结构"></a>微型计算机组成结构</h3><h4 id="i-o端口寻址"><a href="#i-o端口寻址" class="headerlink" title="i/o端口寻址"></a>i/o端口寻址</h4><p>cpu访问i/o接口控制器或其上的信息，需要首先指定他们的地址。这种地址成为i/o端口</p>
+<p>i/o控制器 包含：访问数据的数据端口，输出命令的命令端口，访问控制器状态的状态端口。</p>
+<p>端口地址的设置方法：1.统一编制：2.独立编址<br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E7%AB%AF%E5%8F%A3%E7%BB%9F%E4%B8%80%E7%BC%96%E5%9D%80.jpg" alt><br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/%E7%AB%AF%E5%8F%A3%E7%8B%AC%E7%AB%8B%E7%BC%96%E5%9D%80.jpg" alt></p>
+<p>Linux下 在/proc/ioports 可以查看相关控制器或设置使用的i/o地址范围</p>
+<h4 id="接口访问控制"><a href="#接口访问控制" class="headerlink" title="接口访问控制"></a>接口访问控制</h4><p>pc机接口数据传输控制方式：<br>    1.程序循环查询方式<br>    2.中断处理方式<br>    3.DMA传输方式</p>
+<h3 id="主存，bios和cmos存储器"><a href="#主存，bios和cmos存储器" class="headerlink" title="主存，bios和cmos存储器"></a>主存，bios和cmos存储器</h3><h4 id="主存"><a href="#主存" class="headerlink" title="主存"></a>主存</h4><p>计算机上电-&gt;内存地址初始化（除去0xA0000到0xFFFFF 640K到1M 和  0xFFFE0000 到0xFFFFFFFF 4g处的最后一64k，这两个区域特定用于i/o设备和bios程序）</p>
+<p><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/at%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E5%8C%BA%E5%9F%9F.jpg" alt></p>
+<h4 id="bios"><a href="#bios" class="headerlink" title="bios"></a>bios</h4><p><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/bios.jpg" alt><br>计算机上电-&gt; 内存地址初始化-&gt; cpu自动把代码段寄存器cs设置为0xF000，段基地址为 0xFFFF0000，段长度为64kb-&gt; ip=0xFFF0,cpu代码指向 0xFFFFFFF0 ，系统ram bios程序存放位置-&gt; bios在该位置存放一条jmp跳转指令转入bios内开始执行-&gt; bios执行初始化后将bios代码与数据复制到内存低端1M末端的64k处-&gt; 跳转到该位置让cpu静茹真正的实地址模式工作-&gt; 将操作系统引导程序加载到内存0x7c00处，继续执行引导程序<br><img src="/2020/04/15/linux%E5%86%85%E6%A0%B81-0/bios%E6%89%A7%E8%A1%8C.jpg" alt></p>
+<h4 id="cmos"><a href="#cmos" class="headerlink" title="cmos"></a>cmos</h4><p>存储系统硬件信息和时钟信息</p>
+<h3 id="控制器和控制卡"><a href="#控制器和控制卡" class="headerlink" title="控制器和控制卡"></a>控制器和控制卡</h3>
+    </div>
+</article>
         </main>
         <aside class="aside">
             <div class="close"></div>
