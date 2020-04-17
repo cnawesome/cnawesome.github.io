@@ -122,6 +122,12 @@
             <article class="post">
     
     
+    <h4 class="post-cat">
+        <a href="/categories/Linux/">
+            Linux
+        </a>
+    </h4>
+    
     
     <h2 class="post-title">
         linux内核2.0
@@ -135,8 +141,21 @@
         </li>
     </ul>
     <div class="post-content">
-        <hr>
+        <h3 id="80x86保护模式及其编程"><a href="#80x86保护模式及其编程" class="headerlink" title="80x86保护模式及其编程"></a>80x86保护模式及其编程</h3><pre><code>-本书介绍的linux擦欧总系统基于intel公司80x86
+及其相关外围硬件组成的pc机。</code></pre><p>80x86 参考书籍： 《IA-32 intal体系结构软件开发者手册》<br>，《系统编程指南》</p>
+<h4 id="80x86-系统寄存器和系统指令"><a href="#80x86-系统寄存器和系统指令" class="headerlink" title="80x86 系统寄存器和系统指令"></a>80x86 系统寄存器和系统指令</h4><h5 id="系统寄存器"><a href="#系统寄存器" class="headerlink" title="系统寄存器"></a>系统寄存器</h5><p>标志寄存器： EFLAGS的系统标志和IOPL字段用于控制i/o访问，可屏蔽硬件中断，调试，任务切换以及虚拟-8086模式。<br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8.jpg" alt><br>内存管理寄存器：<br>处理器提供四个内存管理寄存器（GDTR，LDTR，IDTR和TR），用于指定分段内存管理所使用的系统表的基地址。<br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%AF%84%E5%AD%98%E5%99%A8.jpg" alt><br>控制寄存器：（CR0，CR1，CR2和CR3），用于控制和确定处理器的操作模式以及当前执行的任务的特性。<br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8.jpg" alt></p>
+<h5 id="系统指令"><a href="#系统指令" class="headerlink" title="系统指令"></a>系统指令</h5><p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A4.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E7%B3%BB%E7%BB%9F%E6%8C%87%E4%BB%A42.jpg" alt></p>
+<h5 id="保存模式内存管理"><a href="#保存模式内存管理" class="headerlink" title="保存模式内存管理"></a>保存模式内存管理</h5><p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%86%85%E5%AD%98%E5%AF%BB%E5%9D%80.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A22.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A23.jpg" alt></p>
+<p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%9C%B0%E5%9D%80%E4%BF%9D%E6%8A%A4.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%9C%B0%E5%9D%80%E4%BF%9D%E6%8A%A42.jpg" alt></p>
+<p>虚拟地址 采用 段结构<br>段地址 映射到 线性地址<br>线性地址 映射到 物理地址<br>线性地址 可采用 页表结构</p>
+<p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E7%9A%84%E5%AE%9A%E4%B9%89.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E7%9A%84%E5%AE%9A%E4%B9%892.jpg" alt></p>
+<h5 id="段描述符表"><a href="#段描述符表" class="headerlink" title="段描述符表"></a>段描述符表</h5><p>段描述表 分为 GDT(全局描述表) 和 LDT(局部描述表)<br>虚拟内存中，一般是GDT，一半是LDT。<br>GDT任务共享<br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%A1%A8.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%A1%A82.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%A1%A83.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A6%E8%A1%A84.jpg" alt></p>
+<h5 id="段选择符"><a href="#段选择符" class="headerlink" title="段选择符"></a>段选择符</h5><p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E9%80%89%E6%8B%A9%E7%AC%A6.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E9%80%89%E6%8B%A9%E7%AC%A62.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E9%80%89%E6%8B%A9%E7%AC%A63.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E9%80%89%E6%8B%A9%E7%AC%A64.jpg" alt></p>
+<h5 id="段描述符"><a href="#段描述符" class="headerlink" title="段描述符"></a>段描述符</h5><p><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A6.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A62.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A63.jpg" alt><br><img src="/2020/04/16/linux%E5%86%85%E6%A0%B82-0/80x86%E5%88%86%E6%AE%B5%E6%9C%BA%E5%88%B6%E7%AB%AF%E6%AE%B5%E6%8F%8F%E8%BF%B0%E7%AC%A64.jpg" alt></p>
+<p>段选择符 指向 段描述符表 向内寻找 段描述符 找到对应的空间</p>
+<pre><code>-------2020.4.17  这段主要是介绍内存的管理，段内存的寻址
 
+至101页</code></pre>
     </div>
 </article>
         </main>
