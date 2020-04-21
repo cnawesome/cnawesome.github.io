@@ -175,7 +175,7 @@ sudo apt-get install opensssh-server
       </tags>
   </entry>
   <entry>
-    <title>c++基础</title>
+    <title>c++笔记</title>
     <url>/2020/03/26/c-%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="define宏定义"><a href="#define宏定义" class="headerlink" title="define宏定义"></a>define宏定义</h3><p>ANSI标准五个预定义的宏名<br>    <strong>LINE</strong> 表示该行代码的所在行号<br>    <strong>FILE</strong> 表示源文件的文件名<br>    <strong>DATE</strong> 表示源文件被编译的日期，格式(月/日/年)<br>    <strong>TIME</strong> 表示源文件被编译成目标代码的时间，格式(时:分:秒)<br>    <strong>STDC</strong> 表示编译器是否标准，标准时表示常量1，非标准则表示其它数字</p>
 <p>宏定义可以使用在函数身上：</p>
@@ -349,7 +349,8 @@ int main()
 <p>求和电路源串联的电压源的电流时，电压源的电流看作0.</p>
 <h4 id="运算放大器"><a href="#运算放大器" class="headerlink" title="运算放大器"></a>运算放大器</h4><p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8%E7%89%B9%E6%80%A7.jpg" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8%E8%B4%9F%E5%8F%8D%E9%A6%88.jpg" alt></p>
 <p>在特定的情况下，只能用加压求流，或加流求压。</p>
-<pre><code>----2020/4/14</code></pre>]]></content>
+<pre><code>----2020/4/14</code></pre><h4 id="二端口"><a href="#二端口" class="headerlink" title="二端口"></a>二端口</h4><p><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E4%BA%8C%E7%AB%AF%E5%8F%A3.jpg" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E4%BA%92%E6%98%93%E4%BA%8C%E7%AB%AF%E5%8F%A3.jpg" alt><br><img src="/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E5%AF%B9%E7%A7%B0%E4%BA%8C%E7%AB%AF%E5%8F%A3.jpg" alt></p>
+<pre><code>----2020/4/20</code></pre>]]></content>
       <categories>
         <category>程序人生</category>
       </categories>
@@ -661,7 +662,7 @@ public static void main(String[] args) throws IOException {
       </tags>
   </entry>
   <entry>
-    <title>代理模式，类加载器</title>
+    <title>java笔记1</title>
     <url>/2020/03/11/java%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>代理(Proxy)是一种设计模式,提供了间接对目标对象进行访问的方式;即通过代理对象访问目标对象.这样做的好处是:可以在目标对象实现的功能上,增加额外的功能补充,即扩展目标对象的功能.</p>
 <p>代理模式包含如下角色：</p>
@@ -1626,6 +1627,7 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
     有应答，接收方接收到数据向发送方给出相应的应答。</code></pre><p>码元：一个固定时长的信号波形，表示一位k进制数，代表不同离散数值的基本波形是数字信号的计量单位。</p>
 <p>码元速率：单位时间传输的码元个数，码元速率与进制无关，单位波特每秒</p>
 <p>信息传输速率：单位时间传输的二进制码元个数，单位比特每秒</p>
+<p>码元传输速率与信息传输速率有一定关系：<br>    一个码元携带n bit 信息量（一个码元可表示一个k进制数，码元携带的是k进制在物理层需要的位数）<br>    m baud 的码元传输速率=m * n 的信息传输速率</p>
 <p>电路交换，报文交换和分组交换<br>    1）电路交换：两个节点之间不许先建立一条专用的物理通信路径。传输期间一直被占用。<br>                三个阶段：连接建立，数据传输，连接释放<br>                优势：通信时延小，有序传输，没有冲突，适用范围广，实时性强，控制简单。</p>
 <pre><code>2）报文交换：交换的单位是报文，报文携带目标地址等信息。采用存储转发机制。
             优点：无需建立连接，动态分配路线，提高线路可靠性，提高线路利用性，提供多目标服务。
@@ -2168,11 +2170,11 @@ int main()
 二、循环冗余校验码（CRC）的基本原理
 
 在K位信息码后再拼接R位的校验码，整个编码长度为N位，因此，这种编码也叫（N，K）码。对于一个给定的（N，K）码，可以证明存在一个最高次幂为N-K=R的多项式G(x)。根据G(x)可以生成K位信息的校验码，而G(x)叫做这个CRC码的生成多项式。
-
+多项式的系数成为crc运算的除数*
 三、生成步骤
 
 1、将生成多项式G(X)转换成对应的二进制数。
-2、将信息码左移R（R为G（X）的阶）位，相当于给对应的信息多项式M(X)*X^R。
+2、将信息码左移R（R为G（X）的阶）位，相当于给对应的信息多项式M(X)*X^R。也就是添加R个0，R为多项式的最高阶数
 3、用生成多项式（二进制数）对信息码做除，即：（M(X)*X^R）/G(X)得到R位的余数。
 4、将余数拼到信息码左移后空出的位置，得到完整的CRC码。
 
@@ -2192,7 +2194,7 @@ E、CRC校验码位数 = 生成多项式位数 - 1。
 比特填充的首尾标志法：以特定的比特流作为一帧的开始与结束。
 
 违规编码法:一般在物理层使用，利用非传输信号格式的信号来表示一帧的开始与结束。</code></pre><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E5%AD%97%E7%AC%A6%E5%A1%AB%E5%85%85%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E5%AD%97%E7%AC%A6%E8%AE%A1%E6%95%B0%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E8%BF%9D%E8%A7%84%E7%BC%96%E7%A0%81%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E8%BF%9D%E8%A7%84%E7%BC%96%E7%A0%81%E6%B3%95.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%BB%84%E5%B8%A7%E9%9B%B6%E6%AF%94%E7%89%B9%E5%A1%AB%E5%85%85%E6%B3%95.jpg" alt></p>
-<h3 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h3><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
+<h3 id="点到点协议"><a href="#点到点协议" class="headerlink" title="点到点协议"></a>点到点协议</h3><p>广域网技术<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%8A%9F%E8%83%BD.jpg" alt><br>ppp协议（电话网等，一般）<br>    支持多种网络协议<br>    链路协议</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.jpg" alt></p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B.jpg" alt><br>ＰＰＰ连接的每一端都必须首先发送ＬＣＰ数据 包来配置和测试数据连接。在连接建立后，对等实体还有可能需要认证。<br>然后，ＰＰＰ必须发送ＮＣＰ数据包来选择一种或多种网络层协议来配置。一旦被选中的网络层协议被配置好后，该网络层的数据报就可以在链路上传送了。 链路将保持可配置的状态直到有ＬＣＰ数据包和ＮＣＰ数据包终止连接，或者由其他外部事件发生时（例如非活动时钟计时已满或网络管理人员的干涉）</p>
 <p>ppp协议三个组成部分<br>1.数据链路层协议支持异步串行或同步串行介质<br>2.使用LCP链路控制协议建立维护链路连接<br>3.网络控制协议NCP允许点对点连接的多种协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E7%BB%86%E8%8A%82.jpg" alt></p>
@@ -2274,7 +2276,7 @@ k=Min(重传次数，10)
       </tags>
   </entry>
   <entry>
-    <title>java基础2</title>
+    <title>java笔记2</title>
     <url>/2020/02/01/java%E5%9F%BA%E7%A1%802/</url>
     <content><![CDATA[<h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><p>this关键字：<br>    1.代表对象<br>    2.调用对象构造</p>
 <p>垃圾回收机制：<br>fn：不一定销毁类的存储</p>
