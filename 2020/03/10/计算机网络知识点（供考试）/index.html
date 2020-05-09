@@ -187,7 +187,7 @@
     有应答，接收方接收到数据向发送方给出相应的应答。</code></pre><p>码元：一个固定时长的信号波形，表示一位k进制数，代表不同离散数值的基本波形是数字信号的计量单位。</p>
 <p>码元速率：单位时间传输的码元个数，码元速率与进制无关，单位波特每秒</p>
 <p>信息传输速率：单位时间传输的二进制码元个数，单位比特每秒</p>
-<p>码元传输速率与信息传输速率有一定关系：<br>    一个码元携带n bit 信息量（一个码元可表示一个k进制数，码元代表用来表示该进制的电气种类）<br>    m baud 的码元传输速率=m * n 的信息传输速率</p>
+<p>码元传输速率与信息传输速率有一定关系：<br>    一个码元携带n bit 信息量（一个码元可表示一个k进制数，码元代表用来表示该进制的电气种类）<br>    码元与二进制<br>    m baud 的码元传输速率=m * n 的信息传输速率<br>    n=log2 码元种类;</p>
 <p>电路交换，报文交换和分组交换<br>    1）电路交换：两个节点之间不许先建立一条专用的物理通信路径。传输期间一直被占用。<br>                三个阶段：连接建立，数据传输，连接释放<br>                优势：通信时延小，有序传输，没有冲突，适用范围广，实时性强，控制简单。</p>
 <pre><code>2）报文交换：交换的单位是报文，报文携带目标地址等信息。采用存储转发机制。
             优点：无需建立连接，动态分配路线，提高线路可靠性，提高线路利用性，提供多目标服务。
@@ -201,7 +201,8 @@
 <p>数据链路层：为网络层服务，加强物理层功能，将物理层提供的可能出错的物理连接，改为无差错的数据链路，使之在网络层表现为无差错的数据链路。<br>    为网络层提供的服务：<br>                    1）无确认的无连接服务，发送数据帧不需要建立链路连接，目标接收到帧也不需要回应。<br>                    2）有确认的无连接服务。<br>                    3）有确认的面向连接服务。<br>    透明传输：不管什么样的数据都能在链路上传输，比如，某些内容中的数据与帧的标志相同需要做一些处理是指能传输。</p>
 <p>组帧：帧定界，帧同步，透明传输等。</p>
 <p>编码技术实现差错控制：<br>                1）自动重传请求 ARQ<br>                2)前向纠错 FEC</p>
-<p>常见的检错编码:<br>            1)奇偶校验码<br>            2）循环允余码<br>流量控制：由接收方控制发送方的发送数据的速率。<br>    1）停止等待流量协议<br>    2）滑动窗口协议：滑动，每次把目标整体向后移动一位，窗口，指目标整体</p>
+<p>常见的检错编码:<br>            1)奇偶校验码<br>            2）循环允余码    </p>
+<p>流量控制：由接收方控制发送方的发送数据的速率。<br>    1）停止等待流量协议<br>    2）滑动窗口协议：滑动，每次把目标整体向后移动一位，窗口，指目标整体</p>
 <p>可靠传输：<br>    自动重传分为三种：<br>        1）停等式<br>        2）后退N帧<br>        3）选择性重传</p>
 <p>单帧滑动窗口停等协议：<br>接收方每收到一个帧都回应确认</p>
 <p>多帧滑动窗口后退N帧协议：<br>不需要逐帧确认，确认一个，便确认了这个前面所有的。</p>
@@ -225,6 +226,19 @@
 <p>令牌环网：令牌帧循环传递，有主机要发送数据时，当前令牌无其他数据，传递到该主机，该主机拿下令牌附加数据，传出去继续循环传递，传到目标主机，目标主机确认后，复制该数据，不做其他改动，令牌帧继续传递，传到发送主机，主机收回数据，令牌帧重新工作。</p>
 <p> 广域网数据链路层控制协议：<br>     ppp协议：使用串行线路通信的面向字节的协议。<br>         三个组成部分：<br>                     1）链路控制协议LCP<br>                     2）网络控制协议NCP<br>                     3）一个将IP数据包封装到串行链路的方法</p>
 <p>网桥：数据链路层设备，连接多个网段。</p>
+<hr>
+<h4 id="ppp专题"><a href="#ppp专题" class="headerlink" title="ppp专题"></a>ppp专题</h4><p>ppp协议要求：<br>    1：简单，数据链路层的帧，不需要纠错，不需要序号，不需要流量控制。<br>    2：封装成帧：ppp必须规定特殊的字符作为帧定界符，确定帧的开始和结束。<br>    3：透明性：碰到帧定界符相同的字符要采取避免措施。<br>    4：ppp协议必须支持在同一条物理链路有上同时支持多种网络层协议。<br>    5：ppp必须支持在多种链路上运行。<br>    6，差错检测 对接收到的帧进行 检测，丢弃错误帧<br>    7：检测链接状态<br>    8：最大传送单元 mtu，设置mtu数值，超过就丢弃。<br>    9：网络层地址协商，必须通过一种机制是通信的两个网络层的实体通过协商知道并配置彼此的网络层地址。<br>    10：数据压缩协商</p>
+<p>ppp协议的组成：<br>    1：一个把ip数据包封装到串行链路的方法。ip数据包是ppp帧的信息内容，受mtu约束。<br>    2：一个用来建立，配置和测试数据链路连接的链路控制协议<br>    3：一套网络控制协议NCP</p>
+<p>ppp协议的帧格式：</p>
+<pre><code>ppp首部4个字段 ：【F(数据：7E，帧开始) A(数据：FF)     C(数据：03,控制信息)    协议(两个字节)】
+
+ppp信息部分
+
+ppp尾部2个字段：【FCS(CRC帧序列检验)    F(数据：7E，帧结尾)】</code></pre><hr>
+<hr>
+<h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><h4 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h4><p><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%9C%80%E9%95%BF%E5%B8%A7%E9%95%BF.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BF%A1%E9%81%93%E6%9C%80%E5%A4%A7%E5%88%A9%E7%94%A8%E7%8E%87.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E6%9C%80%E5%B0%8F%E5%B8%A7%E9%95%BF.jpg" alt></p>
+<p><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/vlan.jpg" alt></p>
+<hr>
 <h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><h4 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h4><p>静态路由和动态路由<br>    路由器转发分组是通过路由表转发的。静态理由手动设置，动态路由自动生成</p>
 <pre><code>距离-向量路由算法：所有的节点都定期将它们的整个路由选择表传给所有与之直接连接的节点（相邻的节点）。
     路由表包含，每条路径的目的地（另一个节点），路径的代价（也称距离），常用的如RIP。
@@ -256,7 +270,7 @@ RTT2为这次的往返时间</code></pre><p>计算超时重传时间    RTO<br> 
                 
     <h1>Categories</h1>
 
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/matlap/">matlap</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/c/">c++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">程序人生</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/java/">java</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a></li></ul>
 
             </section>
             <section class="aside-section">
@@ -271,7 +285,7 @@ RTT2为这次的往返时间</code></pre><p>计算超时重传时间    RTO<br> 
                 
     <h1>Tags</h1>
 
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matlap/" rel="tag">matlap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/" rel="tag">程序人生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/" rel="tag">c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/" rel="tag">程序人生</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" rel="tag">计算机组成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag">计算机网络</a></li></ul>
 
             </section>
         </aside>

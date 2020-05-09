@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cnawesome.github.io/"/>
-  <updated>2020-04-18T09:37:53.885Z</updated>
+  <updated>2020-05-09T09:29:29.172Z</updated>
   <id>https://cnawesome.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机组成1.0</title>
+    <link href="https://cnawesome.github.io/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/"/>
+    <id>https://cnawesome.github.io/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/</id>
+    <published>2020-05-07T07:54:29.000Z</published>
+    <updated>2020-05-09T09:29:29.172Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="计算机组成概念"><a href="#计算机组成概念" class="headerlink" title="计算机组成概念"></a>计算机组成概念</h3><p>计算机组成与计算机体系区别</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8C%BA%E5%88%AB.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84.jpg" alt><br>实线是数据传输，虚线是控制传输<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%842.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%843.jpg" alt></p><p>累加运算器</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%BF%90%E7%AE%97%E5%99%A8%E7%BB%93%E6%9E%84.jpg" alt><br>ACC：数据寄存器<br>ALU：运算寄存器<br>X：运算数<br>MQ：存放结果</p><p>控制器<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%8E%A7%E5%88%B6%E5%99%A8.jpg" alt><br>PC:保存指令地址</p><p>运算速度：<br>机器字长：cpu一次处理数据的位数<br>与cpu寄存器位数有关</p><p>CPI：执行一条指令所需要的时间周期</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%89%E6%99%AE%E6%A3%AE%E6%B3%95.jpg" alt><br>f表示频率；</p><p>MIPS:每秒执行百万条指令</p><p>ELOPS：每秒浮点运算次数</p><h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%86%E7%B1%BB.jpg" alt></p><p>1.单总线结构框图</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%95%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8F%8C%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p><p>多总线结构</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8F%8C%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%842.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%9B%9B%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/pci%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%A4%9A%E5%B1%82pci%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/vl-bus%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p><h4 id="总线控制"><a href="#总线控制" class="headerlink" title="总线控制"></a>总线控制</h4><p>基础概念：</p><p>主设备（模块）：多总线由控制权<br>从设备（模块）：响应从主设备发来的总线命令</p><p>功能：总线判优，总线通信</p><h5 id="总线判优控制"><a href="#总线判优控制" class="headerlink" title="总线判优控制"></a>总线判优控制</h5><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%A4%E4%BC%98%E6%8E%A7%E5%88%B6.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%A4%E4%BC%98%E9%93%BE%E5%BC%8F%E6%9F%A5%E8%AF%A2.jpg" alt><br>BS:总线忙<br>BR：总线请求<br>BG:链式查询  是否提出总线占用请求</p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9A%E6%97%B6%E6%9F%A5%E8%AF%A2.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E7%8B%AC%E7%AB%8B%E8%AF%B7%E6%B1%82.jpg" alt></p><h5 id="总线通信控制"><a href="#总线通信控制" class="headerlink" title="总线通信控制"></a>总线通信控制</h5><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E4%BC%A0%E8%BE%93%E5%91%A8%E6%9C%9F.jpg" alt></p><p>总线通信方式：<br>    1.同步通信<br>    2.异步通信<br>    3.半同步通信<br>    4.分离式通信<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%8A%E5%90%8C%E6%AD%A5%E5%90%8C%E4%BF%A1.jpg" alt></p><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1%E7%89%B9%E7%82%B9.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;计算机组成概念&quot;&gt;&lt;a href=&quot;#计算机组成概念&quot; class=&quot;headerlink&quot; title=&quot;计算机组成概念&quot;&gt;&lt;/a&gt;计算机组成概念&lt;/h3&gt;&lt;p&gt;计算机组成与计算机体系区别&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2020/05/07/%E8%AE%
+      
+    
+    </summary>
+    
+    
+      <category term="计算机组成" scheme="https://cnawesome.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
+    
+    
+      <category term="计算机组成" scheme="https://cnawesome.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"/>
+    
+  </entry>
   
   <entry>
     <title>linux内核2.0</title>
@@ -513,33 +540,6 @@ callable 有返回类型&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;线程池&quot;
     
     
       <category term="c" scheme="https://cnawesome.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客</title>
-    <link href="https://cnawesome.github.io/2020/03/11/hello-world/"/>
-    <id>https://cnawesome.github.io/2020/03/11/hello-world/</id>
-    <published>2020-03-11T08:24:36.211Z</published>
-    <updated>2020-02-26T02:37:28.152Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to my Chanal, This is my very first post. </p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="博客初体验"><a href="#博客初体验" class="headerlink" title="博客初体验"></a>博客初体验</h3><h4 id="new-blog-new-life"><a href="#new-blog-new-life" class="headerlink" title="new blog,new life"></a>new blog,new life</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to my Chanal, This is my very first post. &lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://cnawesome.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="https://cnawesome.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   

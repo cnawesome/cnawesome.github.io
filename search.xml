@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>计算机组成1.0</title>
+    <url>/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/</url>
+    <content><![CDATA[<h3 id="计算机组成概念"><a href="#计算机组成概念" class="headerlink" title="计算机组成概念"></a>计算机组成概念</h3><p>计算机组成与计算机体系区别</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8C%BA%E5%88%AB.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84.jpg" alt><br>实线是数据传输，虚线是控制传输<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%842.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%843.jpg" alt></p>
+<p>累加运算器</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%BF%90%E7%AE%97%E5%99%A8%E7%BB%93%E6%9E%84.jpg" alt><br>ACC：数据寄存器<br>ALU：运算寄存器<br>X：运算数<br>MQ：存放结果</p>
+<p>控制器<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%8E%A7%E5%88%B6%E5%99%A8.jpg" alt><br>PC:保存指令地址</p>
+<p>运算速度：<br>机器字长：cpu一次处理数据的位数<br>与cpu寄存器位数有关</p>
+<p>CPI：执行一条指令所需要的时间周期</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%89%E6%99%AE%E6%A3%AE%E6%B3%95.jpg" alt><br>f表示频率；</p>
+<p>MIPS:每秒执行百万条指令</p>
+<p>ELOPS：每秒浮点运算次数</p>
+<h4 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h4><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%86%E7%B1%BB.jpg" alt></p>
+<p>1.单总线结构框图</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%95%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8F%8C%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p>
+<p>多总线结构</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8F%8C%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%89%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%842.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%9B%9B%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%841.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/pci%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%A4%9A%E5%B1%82pci%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/vl-bus%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84.jpg" alt></p>
+<h4 id="总线控制"><a href="#总线控制" class="headerlink" title="总线控制"></a>总线控制</h4><p>基础概念：</p>
+<p>主设备（模块）：多总线由控制权<br>从设备（模块）：响应从主设备发来的总线命令</p>
+<p>功能：总线判优，总线通信</p>
+<h5 id="总线判优控制"><a href="#总线判优控制" class="headerlink" title="总线判优控制"></a>总线判优控制</h5><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%A4%E4%BC%98%E6%8E%A7%E5%88%B6.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E5%88%A4%E4%BC%98%E9%93%BE%E5%BC%8F%E6%9F%A5%E8%AF%A2.jpg" alt><br>BS:总线忙<br>BR：总线请求<br>BG:链式查询  是否提出总线占用请求</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E8%AE%A1%E6%95%B0%E5%99%A8%E5%AE%9A%E6%97%B6%E6%9F%A5%E8%AF%A2.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E7%8B%AC%E7%AB%8B%E8%AF%B7%E6%B1%82.jpg" alt></p>
+<h5 id="总线通信控制"><a href="#总线通信控制" class="headerlink" title="总线通信控制"></a>总线通信控制</h5><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E4%BC%A0%E8%BE%93%E5%91%A8%E6%9C%9F.jpg" alt></p>
+<p>总线通信方式：<br>    1.同步通信<br>    2.异步通信<br>    3.半同步通信<br>    4.分离式通信<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%8A%E5%90%8C%E6%AD%A5%E5%90%8C%E4%BF%A1.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1%E7%89%B9%E7%82%B9.jpg" alt></p>
+]]></content>
+      <categories>
+        <category>计算机组成</category>
+      </categories>
+      <tags>
+        <tag>计算机组成</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux内核2.0</title>
     <url>/2020/04/16/linux%E5%86%85%E6%A0%B82-0/</url>
     <content><![CDATA[<h3 id="80x86保护模式及其编程"><a href="#80x86保护模式及其编程" class="headerlink" title="80x86保护模式及其编程"></a>80x86保护模式及其编程</h3><pre><code>-本书介绍的linux擦欧总系统基于intel公司80x86
@@ -1627,7 +1666,7 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
     有应答，接收方接收到数据向发送方给出相应的应答。</code></pre><p>码元：一个固定时长的信号波形，表示一位k进制数，代表不同离散数值的基本波形是数字信号的计量单位。</p>
 <p>码元速率：单位时间传输的码元个数，码元速率与进制无关，单位波特每秒</p>
 <p>信息传输速率：单位时间传输的二进制码元个数，单位比特每秒</p>
-<p>码元传输速率与信息传输速率有一定关系：<br>    一个码元携带n bit 信息量（一个码元可表示一个k进制数，码元代表用来表示该进制的电气种类）<br>    m baud 的码元传输速率=m * n 的信息传输速率</p>
+<p>码元传输速率与信息传输速率有一定关系：<br>    一个码元携带n bit 信息量（一个码元可表示一个k进制数，码元代表用来表示该进制的电气种类）<br>    码元与二进制<br>    m baud 的码元传输速率=m * n 的信息传输速率<br>    n=log2 码元种类;</p>
 <p>电路交换，报文交换和分组交换<br>    1）电路交换：两个节点之间不许先建立一条专用的物理通信路径。传输期间一直被占用。<br>                三个阶段：连接建立，数据传输，连接释放<br>                优势：通信时延小，有序传输，没有冲突，适用范围广，实时性强，控制简单。</p>
 <pre><code>2）报文交换：交换的单位是报文，报文携带目标地址等信息。采用存储转发机制。
             优点：无需建立连接，动态分配路线，提高线路可靠性，提高线路利用性，提供多目标服务。
@@ -1641,7 +1680,8 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>数据链路层：为网络层服务，加强物理层功能，将物理层提供的可能出错的物理连接，改为无差错的数据链路，使之在网络层表现为无差错的数据链路。<br>    为网络层提供的服务：<br>                    1）无确认的无连接服务，发送数据帧不需要建立链路连接，目标接收到帧也不需要回应。<br>                    2）有确认的无连接服务。<br>                    3）有确认的面向连接服务。<br>    透明传输：不管什么样的数据都能在链路上传输，比如，某些内容中的数据与帧的标志相同需要做一些处理是指能传输。</p>
 <p>组帧：帧定界，帧同步，透明传输等。</p>
 <p>编码技术实现差错控制：<br>                1）自动重传请求 ARQ<br>                2)前向纠错 FEC</p>
-<p>常见的检错编码:<br>            1)奇偶校验码<br>            2）循环允余码<br>流量控制：由接收方控制发送方的发送数据的速率。<br>    1）停止等待流量协议<br>    2）滑动窗口协议：滑动，每次把目标整体向后移动一位，窗口，指目标整体</p>
+<p>常见的检错编码:<br>            1)奇偶校验码<br>            2）循环允余码    </p>
+<p>流量控制：由接收方控制发送方的发送数据的速率。<br>    1）停止等待流量协议<br>    2）滑动窗口协议：滑动，每次把目标整体向后移动一位，窗口，指目标整体</p>
 <p>可靠传输：<br>    自动重传分为三种：<br>        1）停等式<br>        2）后退N帧<br>        3）选择性重传</p>
 <p>单帧滑动窗口停等协议：<br>接收方每收到一个帧都回应确认</p>
 <p>多帧滑动窗口后退N帧协议：<br>不需要逐帧确认，确认一个，便确认了这个前面所有的。</p>
@@ -1665,6 +1705,19 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 <p>令牌环网：令牌帧循环传递，有主机要发送数据时，当前令牌无其他数据，传递到该主机，该主机拿下令牌附加数据，传出去继续循环传递，传到目标主机，目标主机确认后，复制该数据，不做其他改动，令牌帧继续传递，传到发送主机，主机收回数据，令牌帧重新工作。</p>
 <p> 广域网数据链路层控制协议：<br>     ppp协议：使用串行线路通信的面向字节的协议。<br>         三个组成部分：<br>                     1）链路控制协议LCP<br>                     2）网络控制协议NCP<br>                     3）一个将IP数据包封装到串行链路的方法</p>
 <p>网桥：数据链路层设备，连接多个网段。</p>
+<hr>
+<h4 id="ppp专题"><a href="#ppp专题" class="headerlink" title="ppp专题"></a>ppp专题</h4><p>ppp协议要求：<br>    1：简单，数据链路层的帧，不需要纠错，不需要序号，不需要流量控制。<br>    2：封装成帧：ppp必须规定特殊的字符作为帧定界符，确定帧的开始和结束。<br>    3：透明性：碰到帧定界符相同的字符要采取避免措施。<br>    4：ppp协议必须支持在同一条物理链路有上同时支持多种网络层协议。<br>    5：ppp必须支持在多种链路上运行。<br>    6，差错检测 对接收到的帧进行 检测，丢弃错误帧<br>    7：检测链接状态<br>    8：最大传送单元 mtu，设置mtu数值，超过就丢弃。<br>    9：网络层地址协商，必须通过一种机制是通信的两个网络层的实体通过协商知道并配置彼此的网络层地址。<br>    10：数据压缩协商</p>
+<p>ppp协议的组成：<br>    1：一个把ip数据包封装到串行链路的方法。ip数据包是ppp帧的信息内容，受mtu约束。<br>    2：一个用来建立，配置和测试数据链路连接的链路控制协议<br>    3：一套网络控制协议NCP</p>
+<p>ppp协议的帧格式：</p>
+<pre><code>ppp首部4个字段 ：【F(数据：7E，帧开始) A(数据：FF)     C(数据：03,控制信息)    协议(两个字节)】
+
+ppp信息部分
+
+ppp尾部2个字段：【FCS(CRC帧序列检验)    F(数据：7E，帧结尾)】</code></pre><hr>
+<hr>
+<h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><h4 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h4><p><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%9C%80%E9%95%BF%E5%B8%A7%E9%95%BF.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BF%A1%E9%81%93%E6%9C%80%E5%A4%A7%E5%88%A9%E7%94%A8%E7%8E%87.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E6%9C%80%E5%B0%8F%E5%B8%A7%E9%95%BF.jpg" alt></p>
+<p><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7.jpg" alt><br><img src="/2020/03/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E4%BE%9B%E8%80%83%E8%AF%95%EF%BC%89/vlan.jpg" alt></p>
+<hr>
 <h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><h4 id="路由算法"><a href="#路由算法" class="headerlink" title="路由算法"></a>路由算法</h4><p>静态路由和动态路由<br>    路由器转发分组是通过路由表转发的。静态理由手动设置，动态路由自动生成</p>
 <pre><code>距离-向量路由算法：所有的节点都定期将它们的整个路由选择表传给所有与之直接连接的节点（相邻的节点）。
     路由表包含，每条路径的目的地（另一个节点），路径的代价（也称距离），常用的如RIP。
@@ -2155,16 +2208,20 @@ int main()
 <p>2w log2 v<br>w:波特率</p>
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%AE%9A%E7%90%86%E4%BC%AA%E8%AF%81%E6%98%8E.jpg" alt></p>
 <p>采样速率=二级制表示的码元长度*一秒中采样次数</p>
-<p>采样速率》=数据速率</p>
+<p>采样速率&gt;=数据速率</p>
 <h4 id="导向传输媒体"><a href="#导向传输媒体" class="headerlink" title="导向传输媒体"></a>导向传输媒体</h4><p>双绞线 屏蔽双绞线 非屏蔽双绞线<br>同轴电缆<br>光纤</p>
-<h4 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h4><p>频分信道复用<br>时分信道复用<br>码分信道复用<br>波分信道复用</p>
+<h4 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h4><p>频分信道复用</p>
+<p>时分信道复用</p>
+<p>码分信道复用：<br>    设m bit 为一码片，所给码片都得正交。（可能是为了检验码片的确定性），用8位表示i、1，8位的反码表示0;<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%A0%81%E5%88%86%E5%A4%8D%E7%94%A8.jpg" alt></p>
+<p>波分信道复用</p>
 <h4 id="数字传输系统"><a href="#数字传输系统" class="headerlink" title="数字传输系统"></a>数字传输系统</h4><p>脉码调制PCM 模拟转数字<br>    脉冲编码调制就是把一个时间连续，取值连续的模拟信号变换成时间离散，取值离散的数字信号后在信道中传输。脉冲编码调制就是对模拟信号先抽样，再对样值幅度量化，编码的过程。</p>
 <pre><code>抽样，就是对模拟信号进行周期性扫描，把时间上连续的信号变成时间上离散的信号，抽样必须遵循奈奎斯特抽样定理。该模拟信号经过抽样后还应当包含原信号中所有信息，也就是说能无失真的恢复原模拟信号。它的抽样速率的下限是由抽样定理确定的。抽样速率采用8KHZ。
 量化，就是把经过抽样得到的瞬时值将其幅度离散，即用一组规定的电平，把瞬时抽样值用最接近的电平值来表示,通常是用二进制表示。
 量化误差：量化后的信号和抽样信号的差值。量化误差在接收端表现为噪声，称为量化噪声。 量化级数越多误差越小，相应的二进制码位数越多，要求传输速率越高，频带越宽。 为使量化噪声尽可能小而所需码位数又不太多，通常采用非均匀量化的方法进行量化。 非均匀量化根据幅度的不同区间来确定量化间隔，幅度小的区间量化间隔取得小，幅度大的区间量化间隔取得大。
 一个模拟信号经过抽样量化后，得到已量化的脉冲幅度调制信号，它仅为有限个数值。
 编码，就是用一组二进制码组来表示每一个有固定电平的量化值。然而，实际上量化是在编码过程中同时完成的，故编码过程也称为模/数变换，可记作A/D。
-    奈奎斯特抽样定理：若频带宽度有限的，要从抽样信号中无失真地恢复原信号，抽样频率应大于2倍信号最高频率</code></pre><h4 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h4><p>xDSL<br>    x数字用户线：使用的是数字用户技术<br>DMT</p>
+    奈奎斯特抽样定理：若频带宽度有限的，要从抽样信号中无失真地恢复原信号，抽样频率应大于2倍信号最高频率</code></pre><h4 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h4><p>ADSL<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/adsl.jpg" alt></p>
+<p>xDSL<br>    x数字用户线：使用的是数字用户技术<br>DMT</p>
 <h2 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3.数据链路层"></a>3.数据链路层</h2><h4 id="数据链路层使用信道有两种类型："><a href="#数据链路层使用信道有两种类型：" class="headerlink" title="数据链路层使用信道有两种类型："></a>数据链路层使用信道有两种类型：</h4><p>1.点对点信道<br>2.广播信道 一点多</p>
 <p>链路：一条点对点的物理线路段，中间没有任何其他交换节点</p>
 <p>数据链路层传输的是帧</p>
@@ -2196,7 +2253,7 @@ D、对余数继续做除，应使余数循环。
 E、CRC校验码位数 = 生成多项式位数 - 1。
 
 ————————————————
-版权声明：本文为CSDN博主「zhangfan_lovebk」的原创文章，遵循 CC 4.0 BY-SA 版权协议。</code></pre><h4 id="如何组帧："><a href="#如何组帧：" class="headerlink" title="如何组帧："></a>如何组帧：</h4><pre><code>字符计数法：在帧头部使用一个计数字段老表明帧内字符数。
+版权声明：本文为CSDN博主「zhangfan_lovebk」的原创文章，遵循 CC 4.0 BY-SA 版权协议。</code></pre><h3 id="ppp"><a href="#ppp" class="headerlink" title="ppp"></a>ppp</h3><h4 id="如何组帧："><a href="#如何组帧：" class="headerlink" title="如何组帧："></a>如何组帧：</h4><pre><code>字符计数法：在帧头部使用一个计数字段老表明帧内字符数。
     缺点:计数字段出错，帧分界出错。
 
 字符填充的首尾定界法：使用一些特定字符定界一个帧的开始和结束
@@ -2209,17 +2266,22 @@ E、CRC校验码位数 = 生成多项式位数 - 1。
 <p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%BB%BA%E7%AB%8B%E8%BF%87%E7%A8%8B.jpg" alt><br>ＰＰＰ连接的每一端都必须首先发送ＬＣＰ数据 包来配置和测试数据连接。在连接建立后，对等实体还有可能需要认证。<br>然后，ＰＰＰ必须发送ＮＣＰ数据包来选择一种或多种网络层协议来配置。一旦被选中的网络层协议被配置好后，该网络层的数据报就可以在链路上传送了。 链路将保持可配置的状态直到有ＬＣＰ数据包和ＮＣＰ数据包终止连接，或者由其他外部事件发生时（例如非活动时钟计时已满或网络管理人员的干涉）</p>
 <p>ppp协议三个组成部分<br>1.数据链路层协议支持异步串行或同步串行介质<br>2.使用LCP链路控制协议建立维护链路连接<br>3.网络控制协议NCP允许点对点连接的多种协议<br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/ppp%E5%8D%8F%E8%AE%AE%E7%BB%86%E8%8A%82.jpg" alt></p>
 <h4 id="ppp实现透明传输"><a href="#ppp实现透明传输" class="headerlink" title="ppp实现透明传输"></a>ppp实现透明传输</h4><pre><code>差错处理
-    零比特填充</code></pre><h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p>不能随意延长网线</p>
+    零比特填充</code></pre><h3 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h3><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%85%B1%E4%BA%AB%E4%BF%A1%E9%81%93.jpg" alt></p>
+<p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E5%AA%92%E4%BD%93%E6%8E%A5%E5%85%A5%E6%8E%A7%E5%88%B6.jpg" alt></p>
+<p>不能随意延长网线</p>
 <h4 id="争用期"><a href="#争用期" class="headerlink" title="争用期"></a>争用期</h4><pre><code>数据发送到接收这个时间段，乘坐争用期。没有发生数据碰撞算发送成功。
 
 时间为2t（实际为端到端往返时间）
 
-以太网最短有效帧 64字节</code></pre><h5 id="二进制指数类型退避算法"><a href="#二进制指数类型退避算法" class="headerlink" title="二进制指数类型退避算法"></a>二进制指数类型退避算法</h5><pre><code>基本退避时间 2t
+以太网最短有效帧 64字节</code></pre><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%9C%80%E7%9F%AD%E5%B8%A7%E9%95%BF%E5%88%86%E6%9E%902.jpg" alt></p>
+<p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E6%9C%80%E5%B0%8F%E5%B8%A7%E9%95%BF.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%9C%80%E7%9F%AD%E5%B8%A7%E9%95%BF%E5%88%86%E6%9E%90.jpg" alt><br>以太网侦听是在发送数据前或过程中，一旦数据发送过去，停止侦听，之后在信道中的数据也有可能发生碰撞。</p>
+<h5 id="二进制指数类型退避算法"><a href="#二进制指数类型退避算法" class="headerlink" title="二进制指数类型退避算法"></a>二进制指数类型退避算法</h5><pre><code>基本退避时间 2t
 定义参数k
 k=Min(重传次数，10)
 从【0，1，...,（2的k次方-1）】随机选一个数，记为r
 重传所需的延时 为 2t*r</code></pre><p>为了使数据链路层更好的适应多种局域网标准<br>局域网的数据链路层分为两个子层：<br>        逻辑链路控制LLC<br>        媒体接入控制MAC<br>以太网提供的是不可靠的服务，尽最大努力传输</p>
 <h4 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h4><p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87.jpg" alt><br><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87%E6%9C%80%E5%A4%A7%E5%8C%96.jpg" alt></p>
+<p><img src="/2020/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C01/%E7%90%86%E6%83%B3%E4%BF%A1%E9%81%93%E6%9E%81%E9%99%90%E4%BC%A0%E8%BE%93%E5%88%A9%E7%94%A8%E7%8E%87.jpg" alt></p>
 <p>mac地址<br>    前24位指定厂家<br>    mac地址接受以太网单播，多播，广播</p>
 <p>交换机生成树算法<br>多个交换机互联后，通过优先级实现根交换机和生成树</p>
 <h4 id="虚拟局域网"><a href="#虚拟局域网" class="headerlink" title="虚拟局域网"></a>虚拟局域网</h4><p>LAN和VLAN<br>LAN是交换机网络<br>VLAN划分LAN局域网,更小的LAN</p>
@@ -2359,53 +2421,6 @@ k=Min(重传次数，10)
       </categories>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matlap学习</title>
-    <url>/2020/01/31/Matlap%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>矩阵处理<br>科学计算</p>
-<h2 id="专题预览"><a href="#专题预览" class="headerlink" title="专题预览"></a>专题预览</h2><p>专题一： matlap基础知识<br>专题二： matlap矩阵处理<br>专题三： matlap程序流程控制<br>专题四： matlap绘图<br>专题五： 数据分析和多项式计算<br>专题六： 数值微积分与方程求解<br>专题七： matlap符号计算<br>专题八： matlap图形用户界面<br>专题九： simulink系统仿真<br>专题十： 外部程序接口</p>
-<h3 id="专题一：-matlap基础知识"><a href="#专题一：-matlap基础知识" class="headerlink" title="专题一： matlap基础知识"></a>专题一： matlap基础知识</h3><p>… //续行符</p>
-<p><img src="/2020/01/31/Matlap%E5%AD%A6%E4%B9%A0/matlap%E7%95%8C%E9%9D%A2.png" alt></p>
-<h4 id="数值数据类型分类"><a href="#数值数据类型分类" class="headerlink" title="数值数据类型分类"></a>数值数据类型分类</h4><pre><code>整型，浮点型，复数型
-
-format 只改变数据输出形式，不改变存储和计算。
-
-函数的调用格式: 函数名（参数）
-
-常用函数的应用
-    &gt;&gt;sin()
-
-    &gt;&gt;abs(-4) //绝对值，复数的模，字符串deascll值
-
-    &gt;&gt;round（）四舍五入取整
-
-    //求1到100之间的所有素数
-    &gt;&gt; x=1:100
-    &gt;&gt; k=isprime(x)
-    &gt;&gt; k1=find(k)
-    &gt;&gt; p=x(k1)</code></pre><h4 id="变量及其操作"><a href="#变量及其操作" class="headerlink" title="变量及其操作"></a>变量及其操作</h4><pre><code>变量是内存单元的一个抽象。以字母开头区分大小写。
-标准函数名必须小写。
-
-赋值语句
-    变量=表达式
-    表达式</code></pre><p>who ,whos 输出所有变量</p>
-<h4 id="内存变量文件"><a href="#内存变量文件" class="headerlink" title="内存变量文件"></a>内存变量文件</h4><p>save ，创建内存变量文件<br>load，</p>
-<h4 id="矩阵表示"><a href="#矩阵表示" class="headerlink" title="矩阵表示"></a>矩阵表示</h4><pre><code>基本数据对象
-建立矩阵
-1.直接输入法
-    A=[1,2,3;4,5,6,;7,8,9]
-2.利用要建立好的矩阵建立更好的矩阵。
-    A=[1,2,3]
-    B=[4,5,6]
-    C=[A,B;B,A]</code></pre>]]></content>
-      <categories>
-        <category>生活</category>
-        <category>matlap</category>
-      </categories>
-      <tags>
-        <tag>matlap</tag>
       </tags>
   </entry>
   <entry>
