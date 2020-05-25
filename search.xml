@@ -70,6 +70,17 @@
 <h5 id="总线通信控制"><a href="#总线通信控制" class="headerlink" title="总线通信控制"></a>总线通信控制</h5><p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%80%BB%E7%BA%BF%E4%BC%A0%E8%BE%93%E5%91%A8%E6%9C%9F.jpg" alt></p>
 <p>总线通信方式：<br>    1.同步通信<br>    2.异步通信<br>    3.半同步通信<br>    4.分离式通信<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%8A%E5%90%8C%E6%AD%A5%E5%90%8C%E4%BF%A1.jpg" alt></p>
 <p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%88%86%E7%A6%BB%E5%BC%8F%E9%80%9A%E4%BF%A1%E7%89%B9%E7%82%B9.jpg" alt></p>
+<h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>1.按存储介质<br>（1）半导体存储器<br>（2）磁表面存储器<br>（3）磁芯存储器<br>（4）光盘存储器</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E7%BC%93%E5%AD%98%E4%B8%BB%E5%AD%98.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E7%BC%93%E5%AD%98%E4%B8%BB%E5%AD%982.jpg" alt></p>
+<h4 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h4><p>主存的基本组成</p>
+<p>主存与cpu的联系：数据总线，控制总线，地址总线</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%BB%E5%AD%98%E4%B8%8Ecpu%E8%81%94%E7%B3%BB.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%B8%BB%E5%AD%98%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F.jpg" alt></p>
+<p>半导体存储芯片<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E7%89%87%E9%80%89%E7%BA%BF.jpg" alt></p>
+<p>片选线 cs 选择 ce 使能<br>读、写控制线 we 低电平写，高电平读</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E8%AF%91%E7%A0%81%E9%A9%B1%E5%8A%A8%E6%96%B9%E5%BC%8F.jpg" alt><br>重合法<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E8%AF%91%E7%A0%81%E9%A9%B1%E5%8A%A8%E6%96%B9%E5%BC%8F2.jpg" alt></p>
+<h5 id="随机存取存储器"><a href="#随机存取存储器" class="headerlink" title="随机存取存储器"></a>随机存取存储器</h5><p>静态ram<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram%E8%AF%BB%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram%E5%86%99%E6%93%8D%E4%BD%9C.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%95%E7%AE%A1%E5%8A%A8%E6%80%81ram.jpg" alt></p>
 ]]></content>
       <categories>
         <category>计算机组成</category>
