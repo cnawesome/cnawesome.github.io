@@ -180,6 +180,25 @@
 <p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E8%AF%91%E7%A0%81%E9%A9%B1%E5%8A%A8%E6%96%B9%E5%BC%8F.jpg" alt><br>重合法<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E8%AF%91%E7%A0%81%E9%A9%B1%E5%8A%A8%E6%96%B9%E5%BC%8F2.jpg" alt></p>
 <h5 id="随机存取存储器"><a href="#随机存取存储器" class="headerlink" title="随机存取存储器"></a>随机存取存储器</h5><p>静态ram<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram%E8%AF%BB%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E9%9D%99%E6%80%81ram%E5%86%99%E6%93%8D%E4%BD%9C.jpg" alt></p>
 <p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%8D%95%E7%AE%A1%E5%8A%A8%E6%80%81ram.jpg" alt></p>
+<h6 id="只读存储器"><a href="#只读存储器" class="headerlink" title="只读存储器"></a>只读存储器</h6><p>掩膜rom</p>
+<p>行列选择线交叉处mos管为1</p>
+<p>2的10次方=1k</p>
+<p>位扩展<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E4%BD%8D%E6%89%A9%E5%B1%95.jpg" alt></p>
+<p>字位扩展<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E5%AD%97%E4%BD%8D%E6%89%A9%E5%B1%95.jpg" alt></p>
+<p>存储器校验</p>
+<p>编码的最小距离：任意两组合法代码之间 二进制位数 的 最小差异</p>
+<p>编码的纠错检错与编码的最小距离有关</p>
+<p>汉明码：<br>采用奇偶校验和分组校验</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%B1%89%E6%98%8E%E7%A0%81.jpg" alt></p>
+<p>汉明码的组成:<br>    汉明码的组成要组成多少位检测位：<br>    检测位的位置：2的i次方位置<br>    检测位的取值：与该位所在的检测“小组”承担的奇偶校验任务有关</p>
+<p>cache 是静态ram</p>
+<p>单体多字系统：扩大了数据寄存器，多个字节以整体方式存储<br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%8F%90%E9%AB%98%E8%AE%BF%E5%AD%98.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%8F%90%E9%AB%98%E8%AE%BF%E5%AD%982.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/%E6%8F%90%E9%AB%98%E8%AE%BF%E5%AD%983.jpg" alt></p>
+<h4 id="高速缓冲存储器"><a href="#高速缓冲存储器" class="headerlink" title="高速缓冲存储器"></a>高速缓冲存储器</h4><p>目的：为了避免cpu空等问题，提高访问数据速度</p>
+<p>为什么cache不需要块内地址：内存块内地址和cache的块内地址是匹配的<br>内存编址与cache编址需要匹配</p>
+<p>cache命中率与cache的容量与块长有关</p>
+<p>块长 取一个存储周期内从内存调出的信息长度</p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/cache%E8%AF%BB%E6%93%8D%E4%BD%9C.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/cache%E5%86%99%E6%93%8D%E4%BD%9C.jpg" alt></p>
+<p><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/cache%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84.jpg" alt><br><img src="/2020/05/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%901-0/cache%E5%85%A8%E7%9B%B8%E8%81%94%E6%98%A0%E5%B0%84.jpg" alt></p>
 
     </div>
 </article>
