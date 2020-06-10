@@ -122,28 +122,43 @@
             <article class="post">
     
     
-    <h4 class="post-cat">
-        <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
-            深度学习
-        </a>
-    </h4>
-    
     
     <h2 class="post-title">
-        差分私人生成对抗网络
+        机器学习2.0
     </h2>
     <ul class="post-date">
         <li>
-            2020-05-30
+            2020-06-08
         </li>
         <li>
             alei
         </li>
     </ul>
     <div class="post-content">
-        <p>Differentially Private Generative Adversarial Network</p>
-<p>生成对抗网络（GAN）：Generative Adversarial Network</p>
-<h3 id="前情提要-GAN"><a href="#前情提要-GAN" class="headerlink" title="前情提要 GAN"></a>前情提要 GAN</h3><p>问题：图像的比较怎么比？图像在计算机中不都是二进制，怎么判断图片的好坏</p>
+        <hr>
+<p>对数据做标签，即定义处理数据后的正确结果</p>
+<p>监督学习：<br>根据当前步骤给出下一步操作</p>
+<p>强化学习：<br>通过自己与自己训练，不需要标注</p>
+<p>使用何种函数，即使用什么模型model</p>
+<p>loss function ：损耗函数。输入是一个函数，输出是一个判断好不好的数，标量</p>
+<p>根据损耗函数，挑选最好的函数。</p>
+<p>梯度下降</p>
+<p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E8%BF%87%E6%8B%9F%E5%90%88.jpg" alt></p>
+<p>处理过拟合情况：正则化<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%96.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%962.jpg" alt></p>
+<p>偏差与方差</p>
+<p>偏差表示样本点与测试值的差距，方差表示样本与方差的差距</p>
+<p>一般，简单的model函数，偏差大，方差小，这种情况model underfitting；复杂的model偏差小，方差大，这种情况model overfitting</p>
+<p>梯度下降：</p>
+<p>1.调整学习率</p>
+<p>学习率不能太大，也不能太小，太大会始终到不了</p>
+<p>自动调整学习率。因为正常情况下学习率在梯度下降过程中是会越来越小的，所以自动调整实现成为可能。</p>
+<p>使用梯度下降法，梯度不一定会下降。</p>
+<p>梯度下降推导：</p>
+<p>随机选取一个点，在这个点的周围画一个圆圈范围。<br>在该点的圆圈中找出一个最小值。</p>
+<p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E3.jpg" alt><br>如何找最小值？使用泰勒展开<br>泰勒展开：任意一个点的函数可以使用邻近的点近似表示<br>将损耗函数使用该点的泰勒展开表示。<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E4.jpg" alt><br>只需要确定后面u，v什么时候最小</p>
+<p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E5.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E2.jpg" alt><br>当该点为周围最小值，停止下降<br>这样算出来的loss function 局部最小</p>
+<p>但未必是全局最小</p>
+<p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt></p>
 
     </div>
 </article>
