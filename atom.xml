@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cnawesome.github.io/"/>
-  <updated>2020-06-10T08:54:10.421Z</updated>
+  <updated>2020-06-30T01:52:06.134Z</updated>
   <id>https://cnawesome.github.io/</id>
   
   <author>
@@ -17,13 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>机器学习总结录</title>
+    <link href="https://cnawesome.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E5%BD%95/"/>
+    <id>https://cnawesome.github.io/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E5%BD%95/</id>
+    <published>2020-06-30T01:46:44.000Z</published>
+    <updated>2020-06-30T01:52:06.134Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h3 id="线性回归步骤总结"><a href="#线性回归步骤总结" class="headerlink" title="线性回归步骤总结"></a>线性回归步骤总结</h3><p>1.处理数据格式，将所拥有的数据处理成相应的格式<br>2.设置loss函数，计算样本之间的差别<br>3.目的是为了使预测的数据与样本之间的差别越来越小。即调整线性函数的参数，使得该函数能更好的拟合样本集。可以使用梯度下降算法<br>4.确定了线性函数，使用该函数生成预测数据</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h3 id=&quot;线性回归步骤总结&quot;&gt;&lt;a href=&quot;#线性回归步骤总结&quot; class=&quot;headerlink&quot; title=&quot;线性回归步骤总结&quot;&gt;&lt;/a&gt;线性回归步骤总结&lt;/h3&gt;&lt;p&gt;1.处理数据格式，将所拥有的数据处理成相应的格式&lt;br&gt;2.设置loss函数，计算
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://cnawesome.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python note</title>
+    <link href="https://cnawesome.github.io/2020/06/11/python-note/"/>
+    <id>https://cnawesome.github.io/2020/06/11/python-note/</id>
+    <published>2020-06-11T04:30:44.000Z</published>
+    <updated>2020-06-29T14:14:07.856Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h4 id="Numpy-下-array"><a href="#Numpy-下-array" class="headerlink" title="Numpy 下 array"></a>Numpy 下 array</h4><p>NumPy数组的下标从0开始。<br>同一个NumPy数组中所有元素的类型必须是相同的。</p><p>在详细介绍NumPy数组之前。先详细介绍下NumPy数组的基本属性。NumPy数组的维数称为秩（rank），一维数组的秩为1，二维数组的秩为2，以此类推。在NumPy中，每一个线性的数组称为是一个轴（axes），秩其实是描述轴的数量。比如说，二维数组相当于是两个一维数组，其中第一个一维数组中每个元素又是一个一维数组。所以一维数组就是NumPy中的轴（axes），第一个轴相当于是底层数组，第二个轴是底层数组里的数组。而轴的数量——秩，就是数组的维数。</p><h4 id="数据切分问题"><a href="#数据切分问题" class="headerlink" title="数据切分问题"></a>数据切分问题</h4><pre><code>对于二维数据有以下办法：    1.使用data[：，0]类似列表切分的方式，不是列表切分，更像是矩阵切分。    2.使用loc,iloc函数，读取需要的矩阵部分。</code></pre><p>shape是查看数据有多少行多少列<br>reshape()是数组array中的方法，作用是将数据重新组织。reshape新生成数组和原数组公用一个内存，不管改变哪个都会互相影响</p><p>mean()函数功能：求取均值<br>经常操作的参数为axis，以m * n矩阵举例：<br>    axis 不设置值，对 m<em>n 个数求均值，返回一个实数<br>    axis = 0：压缩行，对各列求均值，返回 1</em> n 矩阵<br>    axis =1 ：压缩列，对各行求均值，返回 m *1 矩阵</p><p>#math函数<br>math — 数学函数<br>该模块提供了对C标准定义的数学函数的访问。</p><p>这些函数不适用于复数；如果你需要计算复数，请使用 cmath 模块中的同名函数。<br>将支持计算复数的函数区分开的目的，来自于大多数开发者并不愿意像数学家一样需要学习复数的概念。得到一个异常而不是一个复数结果使得开发者能够更早地监测到传递给这些函数的参数中包含复数，进而调查其产生的原因。</p><p>math.ceil(x)<br>返回 x 的上限，即大于或者等于 x 的最小整数。如果 x 不是一个浮点数，则委托 x.<strong>ceil</strong>(), 返回一个 Integral 类的值</p><p>math.floor(x)<br>返回 x 的向下取整，小于或等于 x 的最大整数。如果 x 不是浮点数，则委托 x.<strong>floor</strong>() ，它应返回 Integral 值。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h4 id=&quot;Numpy-下-array&quot;&gt;&lt;a href=&quot;#Numpy-下-array&quot; class=&quot;headerlink&quot; title=&quot;Numpy 下 array&quot;&gt;&lt;/a&gt;Numpy 下 array&lt;/h4&gt;&lt;p&gt;NumPy数组的下标从0开始。&lt;br&gt;同一
+      
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://cnawesome.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>机器学习2.0</title>
     <link href="https://cnawesome.github.io/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/"/>
     <id>https://cnawesome.github.io/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/</id>
     <published>2020-06-08T04:26:18.000Z</published>
-    <updated>2020-06-10T08:54:10.421Z</updated>
+    <updated>2020-06-15T07:17:11.121Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>对数据做标签，即定义处理数据后的正确结果</p><p>监督学习：<br>根据当前步骤给出下一步操作</p><p>强化学习：<br>通过自己与自己训练，不需要标注</p><p>使用何种函数，即使用什么模型model</p><p>loss function ：损耗函数。输入是一个函数，输出是一个判断好不好的数，标量</p><p>根据损耗函数，挑选最好的函数。</p><p>梯度下降</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E8%BF%87%E6%8B%9F%E5%90%88.jpg" alt></p><p>处理过拟合情况：正则化<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%96.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%962.jpg" alt></p><p>偏差与方差</p><p>偏差表示样本点与测试值的差距，方差表示样本与方差的差距</p><p>一般，简单的model函数，偏差大，方差小，这种情况model underfitting；复杂的model偏差小，方差大，这种情况model overfitting</p><p>梯度下降：</p><p>1.调整学习率</p><p>学习率不能太大，也不能太小，太大会始终到不了</p><p>自动调整学习率。因为正常情况下学习率在梯度下降过程中是会越来越小的，所以自动调整实现成为可能。</p><p>使用梯度下降法，梯度不一定会下降。</p><p>梯度下降推导：</p><p>随机选取一个点，在这个点的周围画一个圆圈范围。<br>在该点的圆圈中找出一个最小值。</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E3.jpg" alt><br>如何找最小值？使用泰勒展开<br>泰勒展开：任意一个点的函数可以使用邻近的点近似表示<br>将损耗函数使用该点的泰勒展开表示。<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E4.jpg" alt><br>只需要确定后面u，v什么时候最小</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E5.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E2.jpg" alt><br>当该点为周围最小值，停止下降<br>这样算出来的loss function 局部最小</p><p>但未必是全局最小</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt></p>]]></content>
+    <content type="html"><![CDATA[<hr><p>对数据做标签，即定义处理数据后的正确结果</p><p>监督学习：<br>根据当前步骤给出下一步操作</p><p>强化学习：<br>通过自己与自己训练，不需要标注</p><p>使用何种函数，即使用什么模型model</p><p>loss function ：损耗函数。输入是一个函数，输出是一个判断好不好的数，标量</p><p>根据损耗函数，挑选最好的函数。</p><p>梯度下降</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E8%BF%87%E6%8B%9F%E5%90%88.jpg" alt></p><p>处理过拟合情况：正则化<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%96.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%AD%A3%E5%88%99%E5%8C%962.jpg" alt></p><p>偏差与方差</p><p>偏差表示样本点与测试值的差距，方差表示样本与方差的差距</p><p>一般，简单的model函数，偏差大，方差小，这种情况model underfitting；复杂的model偏差小，方差大，这种情况model overfitting</p><p>梯度下降：</p><p>1.调整学习率</p><p>学习率不能太大，也不能太小，太大会始终到不了</p><p>自动调整学习率。因为正常情况下学习率在梯度下降过程中是会越来越小的，所以自动调整实现成为可能。</p><p>使用梯度下降法，梯度不一定会下降。</p><p>梯度下降推导：</p><p>随机选取一个点，在这个点的周围画一个圆圈范围。<br>在该点的圆圈中找出一个最小值。</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E3.jpg" alt><br>如何找最小值？使用泰勒展开<br>泰勒展开：任意一个点的函数可以使用邻近的点近似表示<br>将损耗函数使用该点的泰勒展开表示。<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E4.jpg" alt><br>只需要确定后面u，v什么时候最小</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E5.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E2.jpg" alt><br>当该点为周围最小值，停止下降<br>这样算出来的loss function 局部最小</p><p>但未必是全局最小</p><p><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E8%AF%81%E6%98%8E.jpg" alt></p><p>逻辑回归的限制如何解决：<br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E8%A7%A3%E5%86%B3%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98.jpg" alt><br><img src="/2020/06/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A02-0/%E5%BC%95%E5%87%BA%E7%B1%BB%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.jpg" alt></p><h4 id="tip-for-training-DNN"><a href="#tip-for-training-DNN" class="headerlink" title="tip for training DNN"></a>tip for training DNN</h4>]]></content>
     
     <summary type="html">
     
@@ -480,62 +530,6 @@
     
     
       <category term="mybatis" scheme="https://cnawesome.github.io/tags/mybatis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java项目基础知识</title>
-    <link href="https://cnawesome.github.io/2020/03/11/java%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/"/>
-    <id>https://cnawesome.github.io/2020/03/11/java%E9%A1%B9%E7%9B%AE%E5%9F%BA%E7%A1%80/</id>
-    <published>2020-03-11T13:08:33.143Z</published>
-    <updated>2020-02-23T08:18:38.683Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>学习项目时<br>构件新项目使用到maven了解类似maven的内容</p><p>Maven是一个软件项目管理工具</p><p>创建项目时可选择该种模式开发项目，是一种为了开发管理的工具。</p><p>Maven项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。<br>Maven(翻译为”专家”，”内行”)是跨平台的项目管理工具。主要服务于基于Java平台的项目构建，依赖管理和项目信息管理。</p><p>Maven 除了以程序构建能力为特色之外，还提供高级项目管理工具。由于 Maven 的缺省构建规则有较高的可重用性，所以常常用两三行 Maven 构建脚本就可以构建简单的项目。由于 Maven 的面向项目的方法，许多 Apache Jakarta 项目发文时使用 Maven，而且公司项目采用 Maven 的比例在持续增长。</p><p>Maven是一个项目管理工具，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。</p><p>1.项目构建<br>项目构建过程包括【清理项目】→【编译项目】→【测试项目】→【生成测试报告】→【打包项目】→【部署项目】这几个步骤，这六个步骤就是一个项目的完整构建过程。</p><p>2.依赖管理<br>依赖指的是jar包之间的相互依赖，比如我们搭建一个Struts2的开发框架时，光光有struts2-core-2.3.16.3.jar这个jar包是不行的，struts2-core-2.3.16.3.jar还依赖其它的jar包，依赖管理指的就是使用Maven来管理项目中使用到的jar包，Maven管理的方式就是“自动下载项目所需要的jar包，统一管理jar包之间的依赖关系”。</p><p>3.使用Maven的好处<br>　　Maven中使用约定，约定java源代码代码必须放在哪个目录下，编译好的java代码又必须放到哪个目录下，这些目录都有明确的约定。<br>  Maven的每一个动作都拥有一个生命周期，例如执行 mvn install 就可以自动执行编译，测试，打包等构建过程<br>　　只需要定义一个pom.xml,然后把源码放到默认的目录，Maven帮我们处理其他事情<br>　　使用Maven可以进行项目高度自动化构建，依赖管理(这是使用Maven最大的好处)，仓库管理。</p><p>4.Maven项目的目录约定<br>MavenProjectRoot(项目根目录)<br>   |—-src<br>   |     |—-main<br>   |     |         |—-java ——存放项目的.java文件<br>   |     |         |—-resources ——存放项目资源文件，如spring, hibernate配置文件<br>   |     |—-test<br>   |     |         |—-java ——存放所有测试.java文件，如JUnit测试类<br>   |     |         |—-resources ——存放项目资源文件，如spring, hibernate配置文件<br>   |—-target ——项目输出位置<br>   |—-pom.xml —-用于标识该项目是一个Maven项目</p><p>pom.xml文件中的内容如下：</p> <?xml version="1.0" encoding="UTF-8"?><p>  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/POM/4.0.0   http://maven.apache.org/xsd/maven-4.0.0.xsd"><br>      <!--所有的Maven项目都必须配置这四个配置项--><br>      <modelVersion>4.0.0</modelVersion><br>      <!--groupId指的是项目名的项目组，默认就是包名--><br>      <groupId>cn.gacl.maven.hello</groupId><br>     <!--artifactId指的是项目中的某一个模块，默认命名方式是"项目名-模块名"--><br>     <artifactId>hello-first</artifactId><br>     <!--version指的是版本，这里使用的是Maven的快照版本--><br>     <version>SNAPSHOT-0.0.1</version><br> </project></p><p>编写好java代码后，使用Maven编译完成之后，在项目根目录下会生成一个target文件夹</p><p>在终端使用”mvn clean”命令清除编译结果，也就是把编译生成的target文件夹删掉</p><p>Maven中心仓库下载到本地的jar包的默认存放在”${user.home}/.m2/repository”中，${user.home}表示当前登录系统的用户目录(如”C:\Users\gacl”)，我们可以自己设置下载到本地时的jar包的存放目录，在“E:\”目录下创建一个“repository”文件夹，找到apache-maven-3.2.3\conf目录下的settings.xml文件，编辑setting.xml文件在后面加上代码 <localRepository>E:/repository</localRepository></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Maven&quot;&gt;&lt;a href=&quot;#Maven&quot; class=&quot;headerlink&quot; title=&quot;Maven&quot;&gt;&lt;/a&gt;Maven&lt;/h2&gt;&lt;p&gt;学习项目时&lt;br&gt;构件新项目使用到maven了解类似maven的内容&lt;/p&gt;
-&lt;p&gt;Maven是一个软件项目管理工具
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://cnawesome.github.io/categories/java/"/>
-    
-    
-      <category term="maven" scheme="https://cnawesome.github.io/tags/maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java线程</title>
-    <link href="https://cnawesome.github.io/2020/03/11/java%E7%BA%BF%E7%A8%8B/"/>
-    <id>https://cnawesome.github.io/2020/03/11/java%E7%BA%BF%E7%A8%8B/</id>
-    <published>2020-03-11T13:08:33.138Z</published>
-    <updated>2020-02-24T03:21:33.637Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>runnable 无返回类型 callable 有返回类型</code></pre><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>//申请线程池<br>ExecutorServide service = Executors.newFixedCachedPool();//线程受线程池指挥拿取任务<br>ExecutorServide service = Executors.newCacheThreadPool();<br>ScheduleExecutorServide service = Executor.newScheduleThreadPool();//已一定的频率执行线程</p><p>//关闭线程池<br>service.shutdown();</p><p>WorkStealPool//线程窃取，线程主动去拿任务执行</p><p>static class R implentments runnable{ //runnable 任务实现类<br>        int time;</p><pre><code>R(int t){    this.time=t;}    public void run (){            timeUnit.MILLISECONDS.sleep(500);    }    system.out.println(time+&quot; &quot;+Thread.currentThread().getName());</code></pre><p>}</p><p>service.execute(new R(1000));//开启线程执行runable任务</p><h3 id="处理大型数组求和问题"><a href="#处理大型数组求和问题" class="headerlink" title="处理大型数组求和问题"></a>处理大型数组求和问题</h3><p>1.ForkJoinPool方式</p><p>public class T1_ForkJoinPool {<br>    static int[]nums= new int[1000000];<br>    static final int MAX_NUM=50000;<br>    static Random r=new Random();</p><pre><code>static {    for(int i=0;i&lt;nums.length;i++)     {        nums[i]=r.nextInt();    }    System.out.println(Arrays.stream(nums).sum());//stream api,把数组转化为流}static class AddTask extends RecursiveAction{ //继承forkjoin类    int start,end;    AddTask(int s,int e) {        start=s;        end=e;    }    @Override    protected void compute() {        if(end-start&lt;=MAX_NUM)         {            long sum = 0L;            for(int i=start;i&lt;end;i++) sum += nums[i];            System.out.println(&quot;from:&quot;+start+&quot; to:&quot;+end+&quot;=&quot;+sum);        }        else        {            int middle=start+(end-start)/2;            AddTask subTask1=new AddTask(start, middle);            AddTask subTask2=new AddTask(middle, end);            subTask1.fork();            subTask2.fork();        }    }}public static void main(String[] args) throws IOException {    ForkJoinPool fjp=new ForkJoinPool();    AddTask task=new AddTask(0, nums.length);    fjp.execute(task);    System.in.read();}</code></pre><p>}</p><p>大多数使用的线程池来自于threadpoolExecutor</p><p>//自定义线程池<br>public class threadpoolExecutor｛｝</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code&gt;runnable 无返回类型 
-callable 有返回类型&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;线程池&quot;&gt;&lt;a href=&quot;#线程池&quot; class=&quot;headerlink&quot; title=&quot;线程池&quot;&gt;&lt;/a&gt;线程池&lt;/h3&gt;&lt;p&gt;//申请线程池&lt;br&gt;E
-      
-    
-    </summary>
-    
-    
-      <category term="java" scheme="https://cnawesome.github.io/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://cnawesome.github.io/tags/java/"/>
-    
-      <category term="线程" scheme="https://cnawesome.github.io/tags/%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
