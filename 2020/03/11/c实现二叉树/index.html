@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta name="keywords" content="hexo, autumn" />
     <title>
@@ -74,11 +74,11 @@
             }
         })
     </script>
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Life && Study" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
-    <div class="container">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container">
         <header class="header">
     <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
         <h3 class="invisibile">
@@ -142,340 +142,12 @@
     </ul>
     <div class="post-content">
         <p>btree.h  //二叉树头文件，用于声明数据类型和相关函数</p>
-<p>‘’’    #ifndef <strong>BTREE_H</strong><br>    #define <strong>BTREE_H</strong></p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;stdbool.h&gt;
-
-typedef char dataype_bt;  //声明二叉树中存放的数据类型，便于后续更改
-
-typedef struct btreenode{   //二叉树的节点结构：存放的数据 该节点的左子节点地址及右子节点地址。注意和单链表的区别，二叉树是非线性存储，单链表是线性存储
-    dataype_bt data;
-    struct btreenode *lchild,*rchild;
-}btree_node,*btree_pnode;
-
-extern btree_pnode create_btree1(void);    //通过递归方法创建一个二叉树
-extern void create_btree(btree_pnode *T);  //通过递归方法创建一个二叉树（功能同上）
-extern void pre_order(btree_pnode t);    //采用递归方法先序遍历
-extern void unpre_order(btree_pnode t);  //采用非递归方法先序遍历
-extern void mid_order(btree_pnode t);    //采用递归方法中序遍历
-extern void post_order(btree_pnode t);   //采用递归方法后序遍历
-extern void level_order(btree_pnode t);  //层次遍历
-extern void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t);   //将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述
-#endif&apos;&apos;&apos;
+<figure class="highlight plain"><figcaption><span>__BTREE_H__</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#define __BTREE_H__</span><br><span class="line"> </span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;stdbool.h&gt;</span><br><span class="line"> </span><br><span class="line">typedef char dataype_bt;  &#x2F;&#x2F;声明二叉树中存放的数据类型，便于后续更改</span><br><span class="line"> </span><br><span class="line">typedef struct btreenode&#123;   &#x2F;&#x2F;二叉树的节点结构：存放的数据 该节点的左子节点地址及右子节点地址。注意和单链表的区别，二叉树是非线性存储，单链表是线性存储</span><br><span class="line">	dataype_bt data;</span><br><span class="line">	struct btreenode *lchild,*rchild;</span><br><span class="line">&#125;btree_node,*btree_pnode;</span><br><span class="line"> </span><br><span class="line">extern btree_pnode create_btree1(void);    &#x2F;&#x2F;通过递归方法创建一个二叉树</span><br><span class="line">extern void create_btree(btree_pnode *T);  &#x2F;&#x2F;通过递归方法创建一个二叉树（功能同上）</span><br><span class="line">extern void pre_order(btree_pnode t);    &#x2F;&#x2F;采用递归方法先序遍历</span><br><span class="line">extern void unpre_order(btree_pnode t);  &#x2F;&#x2F;采用非递归方法先序遍历</span><br><span class="line">extern void mid_order(btree_pnode t);    &#x2F;&#x2F;采用递归方法中序遍历</span><br><span class="line">extern void post_order(btree_pnode t);   &#x2F;&#x2F;采用递归方法后序遍历</span><br><span class="line">extern void level_order(btree_pnode t);  &#x2F;&#x2F;层次遍历</span><br><span class="line">extern void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t);   &#x2F;&#x2F;将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 
 
 
-btree.c  //二叉树相关函数的实现方法</code></pre><p>‘’’    #include “btree.h”<br>    #include “linkqueue.h”   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲<br>    #include “linkstack.h”   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</p>
-<pre><code>btree_pnode create_btree1(void)        //通过递归方法创建一个二叉树
-{
-    dataype_bt ch;
-    btree_pnode new;
-    scanf(&quot;%c&quot;,&amp;ch);
-    if(&apos;#&apos;==ch)
-    {
-        return NULL;
-    }
-    else
-    {
-        //创建根结点
-        new=(btree_pnode)malloc(sizeof(btree_node));
-        if(NULL==new)
-        {
-            perror(&quot;malloc&quot;);
-            exit(-1);
-        }
-        new-&gt;data=ch;
-        //用相同方法创建左子数
-        new-&gt;lchild=create_btree1();
-        //用相同方法创建右子数
-        new-&gt;rchild=create_btree1();
-    }
-    return new;
-}
-
-void create_btree(btree_pnode *T)          //通过递归方法创建一个二叉树（功能同上）
-{
-    dataype_bt ch;
-    scanf(&quot;%c&quot;,&amp;ch);
-    if(&apos;#&apos;==ch)
-    {
-        return ;
-    }
-    else{
-        //创建根结点
-        (*T)=(btree_pnode)malloc(sizeof(btree_node));
-        if(NULL==(*T))
-        {
-            perror(&quot;malloc&quot;);
-            exit(-1);
-        }
-        (*T)-&gt;data=ch;
-        //用相同方法创建左子数
-        create_btree(&amp;((*T)-&gt;lchild));
-        //用相同方法创建右子数
-        create_btree(&amp;((*T)-&gt;rchild));
-    }
-}
-
-void pre_order(btree_pnode t)          //采用递归方法先序遍历
-{
-    if(t!=NULL)
-    {
-        //访问根结点
-        printf(&quot;%c&quot;,t-&gt;data);
-        //先序遍历左子树
-        pre_order(t-&gt;lchild);
-        //先序遍历右子树
-        pre_order(t-&gt;rchild);
-    }
-}
-
-void unpre_order(btree_pnode t)          //采用非递归方法先序遍历
-{
-    linklist top;//top为指向栈顶结点的指针
-
-    top=stack_create();//初始化链式栈
-    /*
-        该函数包含的头文件 和 实现方法如下：
-        #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-        linklist stack_create()
-        {
-            linklist s;
-
-            if((s=(linklist)malloc(sizeof(listnode)))==NULL){
-                puts(&quot;malloc failed&quot;);
-                return NULL;
-            }
-            s-&gt;next=NULL;
-
-            return s;
-        }
-    */
-    while(t!=NULL || !(stack_empty(top))){
-        /*
-            该函数包含的头文件 和 实现方法如下：
-            #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-            int stack_empty(linklist s)  //判断栈是否为空（1表示空，0表示非空）
-            {
-                return (s-&gt;next==NULL ? 1:0);
-            }
-        */
-        if(t!=NULL){
-            printf(&quot;%c&quot;,t-&gt;data);
-            if(t-&gt;rchild !=NULL)
-                stack_push(top,t-&gt;rchild);  //入栈
-            /*
-                该函数包含的头文件 和 实现方法如下：
-                #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-                int stack_push(linklist s,datatype_ls value)  //入栈
-                {
-                    linklist p;
-                    if((p=(linklist)malloc(sizeof(listnode)))==NULL)
-                    {
-                        puts(&quot;malloc failed&quot;);
-                        return -1;
-                    }
-
-                    p-&gt;data = value;
-                    p-&gt;next=s-&gt;next;
-                    s-&gt;next = p;
-
-                    return 0;
-                }
-            */
-            t=t-&gt;lchild;
-        }else
-            t=stack_pop(top);   //出栈
-        /*
-            该函数包含的头文件 和 实现方法如下：
-            #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-            datatype_ls stack_pop(linklist s)    //出栈
-            {
-                linklist p;
-                datatype_ls ret;
-
-                p=s-&gt;next;
-                s-&gt;next=p-&gt;next;
-                ret=p-&gt;data;
-
-                free(p);
-                p=NULL;
-
-                return ret;
-            }
-        */
-    }
-
-    stack_free(top);   //释放栈
-    /*
-        该函数包含的头文件 和 实现方法如下：
-        #include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-        void stack_free(linklist s)    //释放栈
-        {
-            linklist p;
-
-            printf(&quot;free:&quot;);
-            p=s;
-            while(p)
-            {
-                s=s-&gt;next;
-                printf(&quot;%d &quot;,p-&gt;data);
-                free(p);
-                p=s;
-            }
-            putchar(10);    //10 表示 回车符（&apos;\n&apos;）
-
-        }
-    */
-}
-
-void mid_order(btree_pnode t)           //采用递归方法中序遍历
-{
-    if(t!=NULL)
-    {
-        //中序遍历左子树
-        mid_order(t-&gt;lchild);
-        //访问根结点
-        printf(&quot;%c&quot;,t-&gt;data);
-        //中序遍历右子树
-        mid_order(t-&gt;rchild);
-    }
-}
-
-void post_order(btree_pnode t)          //采用递归方法后序遍历
-{
-    if(t!=NULL)
-    {
-        //后序遍历左子树
-        post_order(t-&gt;lchild);
-        //后序遍历右子树
-        post_order(t-&gt;rchild);
-        //访问根结点
-        printf(&quot;%c&quot;,t-&gt;data);
-    }
-}
-
-void level_order(btree_pnode t)        //层次遍历
-{
-    link_pqueue q;
-    init_linkqueue(&amp;q);//初始化链式队列
-    /*
-        该函数包含的头文件 和 实现方法如下：
-        #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
-        void init_linkqueue(link_pqueue *Q)     //创建队列
-        {
-            //申请front和rear的空间
-            *Q=(link_pqueue)malloc(sizeof(link_queue));
-            if((*Q)==NULL)
-            {
-                perror(&quot;malloc&quot;);
-                exit(-1);
-            }
-            //申请头结点空间
-            (*Q)-&gt;front=(linkqueue_pnode)malloc(sizeof(linkqueue_node));
-            if((*Q)-&gt;front==NULL)
-            {
-                perror(&quot;malloc&quot;);
-                exit(-1) ;
-            }
-
-            (*Q)-&gt;front-&gt;next=NULL;
-            (*Q)-&gt;rear=(*Q)-&gt;front;
-
-            return;
-        }
-    */
-
-    while(t!=NULL)
-    {
-        //访问t指向的结点数据
-        printf(&quot;%c&quot;,t-&gt;data);
-        //当t的左指针不为空，则入队
-        if(t-&gt;lchild!=NULL)
-            in_linkqueue(t-&gt;lchild,q);
-        /*
-            该函数包含的头文件 和 实现方法如下：
-            #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
-            bool in_linkqueue(datatype data,link_pqueue q)   //入队
-            {
-                linkqueue_pnode  new;
-
-                //申请数据结点空间
-                new=(linkqueue_pnode)malloc(sizeof(linkqueue_node));
-                if(new==NULL)
-                {
-                    puts(&quot;入队失败！&quot;);
-                    return false;
-                }
-                //将数据存储在申请的空间
-                new-&gt;data=data;
-
-                //将new指向的结点插入到链式队列中
-                new-&gt;next=q-&gt;rear-&gt;next;            //这里等价于new-&gt;next = NULL;
-                q-&gt;rear-&gt;next=new;         
-
-                //让rear指针指向新的队尾结点
-                q-&gt;rear=q-&gt;rear-&gt;next;          //等价于q-&gt;rear = new;
-
-                return true;
-            }
-        */
-        //当t的右指针不为空，则入队
-        if(t-&gt;rchild!=NULL)
-            in_linkqueue(t-&gt;rchild,q);
-        //队列不为空，则出队
-        if(!is_empty_linkqueue(q))
-            out_linkqueue(q,&amp;t);
-        /*
-            该函数包含的头文件 和 实现方法如下：
-            #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
-            bool out_linkqueue(link_pqueue q,datatype *D)      //出队
-            {
-                linkqueue_pnode t;
-                //判断队列是否空
-                if(is_empty_linkqueue(q)){
-                    printf(&quot;队列已空!\n&quot;);
-                    return false;
-                }
-
-                //出队
-                t=q-&gt;front;
-                q-&gt;front =q-&gt;front-&gt;next;
-                *D=q-&gt;front-&gt;data;
-                free(t);
-
-                return true;
-            }
-        */
-        else
-            break;
-    }
-    free_linkqueue(q);           //释放队列
-    /*
-        该函数包含的头文件 和 实现方法如下：
-        #include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
-        void free_linkqueue(link_pqueue q)           //释放队列
-        {
-            link_pqueue p;
-            p = q-&gt;front;
-            while(p)
-            {
-                q-&gt;front = q-&gt;front-&gt;next;
-                free(p);
-                p = q-&gt;front;
-            }
-            free(q);
-        }
-    */
-}
-
-void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述
-{
-    printf(&quot;%s&quot;,str);
-    pfun(t);
-    puts(&quot;&quot;);
-}</code></pre><p>‘’’<br>————————————————<br>版权声明：本文为CS80960356DN博主「许新天」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_39148042/article/details/" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39148042/article/details/</a></p>
+<pre><code>btree.c  //二叉树相关函数的实现方法</code></pre><figure class="highlight plain"><figcaption><span>"btree.h"</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;linkqueue.h&quot;   &#x2F;&#x2F;链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲</span><br><span class="line">#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line"> </span><br><span class="line">btree_pnode create_btree1(void)        &#x2F;&#x2F;通过递归方法创建一个二叉树</span><br><span class="line">&#123;</span><br><span class="line">	dataype_bt ch;</span><br><span class="line">	btree_pnode new;</span><br><span class="line">	scanf(&quot;%c&quot;,&amp;ch);</span><br><span class="line">	if(&#39;#&#39;&#x3D;&#x3D;ch)</span><br><span class="line">	&#123;</span><br><span class="line">		return NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;创建根结点</span><br><span class="line">		new&#x3D;(btree_pnode)malloc(sizeof(btree_node));</span><br><span class="line">		if(NULL&#x3D;&#x3D;new)</span><br><span class="line">		&#123;</span><br><span class="line">			perror(&quot;malloc&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		new-&gt;data&#x3D;ch;</span><br><span class="line">		&#x2F;&#x2F;用相同方法创建左子数</span><br><span class="line">		new-&gt;lchild&#x3D;create_btree1();</span><br><span class="line">		&#x2F;&#x2F;用相同方法创建右子数</span><br><span class="line">		new-&gt;rchild&#x3D;create_btree1();</span><br><span class="line">	&#125;</span><br><span class="line">	return new;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void create_btree(btree_pnode *T)          &#x2F;&#x2F;通过递归方法创建一个二叉树（功能同上）</span><br><span class="line">&#123;</span><br><span class="line">	dataype_bt ch;</span><br><span class="line">	scanf(&quot;%c&quot;,&amp;ch);</span><br><span class="line">	if(&#39;#&#39;&#x3D;&#x3D;ch)</span><br><span class="line">	&#123;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	else&#123;</span><br><span class="line">		&#x2F;&#x2F;创建根结点</span><br><span class="line">		(*T)&#x3D;(btree_pnode)malloc(sizeof(btree_node));</span><br><span class="line">		if(NULL&#x3D;&#x3D;(*T))</span><br><span class="line">		&#123;</span><br><span class="line">			perror(&quot;malloc&quot;);</span><br><span class="line">			exit(-1);</span><br><span class="line">		&#125;</span><br><span class="line">		(*T)-&gt;data&#x3D;ch;</span><br><span class="line">		&#x2F;&#x2F;用相同方法创建左子数</span><br><span class="line">		create_btree(&amp;((*T)-&gt;lchild));</span><br><span class="line">		&#x2F;&#x2F;用相同方法创建右子数</span><br><span class="line">		create_btree(&amp;((*T)-&gt;rchild));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void pre_order(btree_pnode t)          &#x2F;&#x2F;采用递归方法先序遍历</span><br><span class="line">&#123;</span><br><span class="line">	if(t!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;访问根结点</span><br><span class="line">		printf(&quot;%c&quot;,t-&gt;data);</span><br><span class="line">		&#x2F;&#x2F;先序遍历左子树</span><br><span class="line">		pre_order(t-&gt;lchild);</span><br><span class="line">		&#x2F;&#x2F;先序遍历右子树</span><br><span class="line">		pre_order(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void unpre_order(btree_pnode t)          &#x2F;&#x2F;采用非递归方法先序遍历</span><br><span class="line">&#123;</span><br><span class="line">	linklist top;&#x2F;&#x2F;top为指向栈顶结点的指针</span><br><span class="line"> </span><br><span class="line">	top&#x3D;stack_create();&#x2F;&#x2F;初始化链式栈</span><br><span class="line">	&#x2F;*</span><br><span class="line">		该函数包含的头文件 和 实现方法如下：</span><br><span class="line">		#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line">		linklist stack_create()</span><br><span class="line">		&#123;</span><br><span class="line">			linklist s;</span><br><span class="line"> </span><br><span class="line">			if((s&#x3D;(linklist)malloc(sizeof(listnode)))&#x3D;&#x3D;NULL)&#123;</span><br><span class="line">				puts(&quot;malloc failed&quot;);</span><br><span class="line">				return NULL;</span><br><span class="line">			&#125;</span><br><span class="line">			s-&gt;next&#x3D;NULL;</span><br><span class="line"> </span><br><span class="line">			return s;</span><br><span class="line">		&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">	while(t!&#x3D;NULL || !(stack_empty(top)))&#123;</span><br><span class="line">		&#x2F;*</span><br><span class="line">			该函数包含的头文件 和 实现方法如下：</span><br><span class="line">			#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line">			int stack_empty(linklist s)  &#x2F;&#x2F;判断栈是否为空（1表示空，0表示非空）</span><br><span class="line">			&#123;</span><br><span class="line">				return (s-&gt;next&#x3D;&#x3D;NULL ? 1:0);</span><br><span class="line">			&#125;</span><br><span class="line">		*&#x2F;</span><br><span class="line">		if(t!&#x3D;NULL)&#123;</span><br><span class="line">			printf(&quot;%c&quot;,t-&gt;data);</span><br><span class="line">			if(t-&gt;rchild !&#x3D;NULL)</span><br><span class="line">				stack_push(top,t-&gt;rchild);  &#x2F;&#x2F;入栈</span><br><span class="line">			&#x2F;*</span><br><span class="line">				该函数包含的头文件 和 实现方法如下：</span><br><span class="line">				#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line">				int stack_push(linklist s,datatype_ls value)  &#x2F;&#x2F;入栈</span><br><span class="line">				&#123;</span><br><span class="line">					linklist p;</span><br><span class="line">					if((p&#x3D;(linklist)malloc(sizeof(listnode)))&#x3D;&#x3D;NULL)</span><br><span class="line">					&#123;</span><br><span class="line">						puts(&quot;malloc failed&quot;);</span><br><span class="line">						return -1;</span><br><span class="line">					&#125;</span><br><span class="line"> </span><br><span class="line">					p-&gt;data &#x3D; value;</span><br><span class="line">					p-&gt;next&#x3D;s-&gt;next;</span><br><span class="line">					s-&gt;next &#x3D; p;</span><br><span class="line"> </span><br><span class="line">					return 0;</span><br><span class="line">				&#125;</span><br><span class="line">			*&#x2F;</span><br><span class="line">			t&#x3D;t-&gt;lchild;</span><br><span class="line">		&#125;else</span><br><span class="line">			t&#x3D;stack_pop(top);   &#x2F;&#x2F;出栈</span><br><span class="line">		&#x2F;*</span><br><span class="line">			该函数包含的头文件 和 实现方法如下：</span><br><span class="line">			#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line">			datatype_ls stack_pop(linklist s)    &#x2F;&#x2F;出栈</span><br><span class="line">			&#123;</span><br><span class="line">				linklist p;</span><br><span class="line">				datatype_ls ret;</span><br><span class="line"> </span><br><span class="line">				p&#x3D;s-&gt;next;</span><br><span class="line">				s-&gt;next&#x3D;p-&gt;next;</span><br><span class="line">				ret&#x3D;p-&gt;data;</span><br><span class="line"> </span><br><span class="line">				free(p);</span><br><span class="line">				p&#x3D;NULL;</span><br><span class="line"> </span><br><span class="line">				return ret;</span><br><span class="line">			&#125;</span><br><span class="line">		*&#x2F;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	stack_free(top);   &#x2F;&#x2F;释放栈</span><br><span class="line">	&#x2F;*</span><br><span class="line">		该函数包含的头文件 和 实现方法如下：</span><br><span class="line">		#include &quot;linkstack.h&quot;   &#x2F;&#x2F;链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</span><br><span class="line">		void stack_free(linklist s)    &#x2F;&#x2F;释放栈</span><br><span class="line">		&#123;</span><br><span class="line">			linklist p;</span><br><span class="line"> </span><br><span class="line">			printf(&quot;free:&quot;);</span><br><span class="line">			p&#x3D;s;</span><br><span class="line">			while(p)</span><br><span class="line">			&#123;</span><br><span class="line">				s&#x3D;s-&gt;next;</span><br><span class="line">				printf(&quot;%d &quot;,p-&gt;data);</span><br><span class="line">				free(p);</span><br><span class="line">				p&#x3D;s;</span><br><span class="line">			&#125;</span><br><span class="line">			putchar(10);    &#x2F;&#x2F;10 表示 回车符（&#39;\n&#39;）</span><br><span class="line"> </span><br><span class="line">		&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void mid_order(btree_pnode t)           &#x2F;&#x2F;采用递归方法中序遍历</span><br><span class="line">&#123;</span><br><span class="line">	if(t!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;中序遍历左子树</span><br><span class="line">		mid_order(t-&gt;lchild);</span><br><span class="line">		&#x2F;&#x2F;访问根结点</span><br><span class="line">		printf(&quot;%c&quot;,t-&gt;data);</span><br><span class="line">		&#x2F;&#x2F;中序遍历右子树</span><br><span class="line">		mid_order(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void post_order(btree_pnode t)          &#x2F;&#x2F;采用递归方法后序遍历</span><br><span class="line">&#123;</span><br><span class="line">	if(t!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;后序遍历左子树</span><br><span class="line">		post_order(t-&gt;lchild);</span><br><span class="line">		&#x2F;&#x2F;后序遍历右子树</span><br><span class="line">		post_order(t-&gt;rchild);</span><br><span class="line">		&#x2F;&#x2F;访问根结点</span><br><span class="line">		printf(&quot;%c&quot;,t-&gt;data);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void level_order(btree_pnode t)        &#x2F;&#x2F;层次遍历</span><br><span class="line">&#123;</span><br><span class="line">	link_pqueue q;</span><br><span class="line">	init_linkqueue(&amp;q);&#x2F;&#x2F;初始化链式队列</span><br><span class="line">	&#x2F;*</span><br><span class="line">		该函数包含的头文件 和 实现方法如下：</span><br><span class="line">		#include &quot;linkqueue.h&quot;   &#x2F;&#x2F;链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲</span><br><span class="line">		void init_linkqueue(link_pqueue *Q)     &#x2F;&#x2F;创建队列</span><br><span class="line">		&#123;</span><br><span class="line">			&#x2F;&#x2F;申请front和rear的空间</span><br><span class="line">			*Q&#x3D;(link_pqueue)malloc(sizeof(link_queue));</span><br><span class="line">			if((*Q)&#x3D;&#x3D;NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				perror(&quot;malloc&quot;);</span><br><span class="line">				exit(-1);</span><br><span class="line">			&#125;</span><br><span class="line">			&#x2F;&#x2F;申请头结点空间</span><br><span class="line">			(*Q)-&gt;front&#x3D;(linkqueue_pnode)malloc(sizeof(linkqueue_node));</span><br><span class="line">			if((*Q)-&gt;front&#x3D;&#x3D;NULL)</span><br><span class="line">			&#123;</span><br><span class="line">				perror(&quot;malloc&quot;);</span><br><span class="line">				exit(-1) ;</span><br><span class="line">			&#125;</span><br><span class="line"> </span><br><span class="line">			(*Q)-&gt;front-&gt;next&#x3D;NULL;</span><br><span class="line">			(*Q)-&gt;rear&#x3D;(*Q)-&gt;front;</span><br><span class="line"> </span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line"> </span><br><span class="line">	while(t!&#x3D;NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;访问t指向的结点数据</span><br><span class="line">		printf(&quot;%c&quot;,t-&gt;data);</span><br><span class="line">		&#x2F;&#x2F;当t的左指针不为空，则入队</span><br><span class="line">		if(t-&gt;lchild!&#x3D;NULL)</span><br><span class="line">			in_linkqueue(t-&gt;lchild,q);</span><br><span class="line">		&#x2F;*</span><br><span class="line">			该函数包含的头文件 和 实现方法如下：</span><br><span class="line">			#include &quot;linkqueue.h&quot;   &#x2F;&#x2F;链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲</span><br><span class="line">			bool in_linkqueue(datatype data,link_pqueue q)   &#x2F;&#x2F;入队</span><br><span class="line">			&#123;</span><br><span class="line">				linkqueue_pnode  new;</span><br><span class="line"> </span><br><span class="line">				&#x2F;&#x2F;申请数据结点空间</span><br><span class="line">				new&#x3D;(linkqueue_pnode)malloc(sizeof(linkqueue_node));</span><br><span class="line">				if(new&#x3D;&#x3D;NULL)</span><br><span class="line">				&#123;</span><br><span class="line">					puts(&quot;入队失败！&quot;);</span><br><span class="line">					return false;</span><br><span class="line">				&#125;</span><br><span class="line">				&#x2F;&#x2F;将数据存储在申请的空间</span><br><span class="line">				new-&gt;data&#x3D;data;</span><br><span class="line">	</span><br><span class="line">				&#x2F;&#x2F;将new指向的结点插入到链式队列中</span><br><span class="line">				new-&gt;next&#x3D;q-&gt;rear-&gt;next;            &#x2F;&#x2F;这里等价于new-&gt;next &#x3D; NULL;</span><br><span class="line">				q-&gt;rear-&gt;next&#x3D;new;         </span><br><span class="line">	</span><br><span class="line">				&#x2F;&#x2F;让rear指针指向新的队尾结点</span><br><span class="line">				q-&gt;rear&#x3D;q-&gt;rear-&gt;next;          &#x2F;&#x2F;等价于q-&gt;rear &#x3D; new;</span><br><span class="line"> </span><br><span class="line">				return true;</span><br><span class="line">			&#125;</span><br><span class="line">		*&#x2F;</span><br><span class="line">		&#x2F;&#x2F;当t的右指针不为空，则入队</span><br><span class="line">		if(t-&gt;rchild!&#x3D;NULL)</span><br><span class="line">			in_linkqueue(t-&gt;rchild,q);</span><br><span class="line">		&#x2F;&#x2F;队列不为空，则出队</span><br><span class="line">		if(!is_empty_linkqueue(q))</span><br><span class="line">			out_linkqueue(q,&amp;t);</span><br><span class="line">		&#x2F;*</span><br><span class="line">			该函数包含的头文件 和 实现方法如下：</span><br><span class="line">			#include &quot;linkqueue.h&quot;   &#x2F;&#x2F;链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲</span><br><span class="line">			bool out_linkqueue(link_pqueue q,datatype *D)      &#x2F;&#x2F;出队</span><br><span class="line">			&#123;</span><br><span class="line">				linkqueue_pnode t;</span><br><span class="line">				&#x2F;&#x2F;判断队列是否空</span><br><span class="line">				if(is_empty_linkqueue(q))&#123;</span><br><span class="line">					printf(&quot;队列已空!\n&quot;);</span><br><span class="line">					return false;</span><br><span class="line">				&#125;</span><br><span class="line"> </span><br><span class="line">				&#x2F;&#x2F;出队</span><br><span class="line">				t&#x3D;q-&gt;front;</span><br><span class="line">				q-&gt;front &#x3D;q-&gt;front-&gt;next;</span><br><span class="line">				*D&#x3D;q-&gt;front-&gt;data;</span><br><span class="line">				free(t);</span><br><span class="line"> </span><br><span class="line">				return true;</span><br><span class="line">			&#125;</span><br><span class="line">		*&#x2F;</span><br><span class="line">		else</span><br><span class="line">			break;</span><br><span class="line">	&#125;</span><br><span class="line">	free_linkqueue(q);           &#x2F;&#x2F;释放队列</span><br><span class="line">	&#x2F;*</span><br><span class="line">		该函数包含的头文件 和 实现方法如下：</span><br><span class="line">		#include &quot;linkqueue.h&quot;   &#x2F;&#x2F;链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲</span><br><span class="line">		void free_linkqueue(link_pqueue q)           &#x2F;&#x2F;释放队列</span><br><span class="line">		&#123;</span><br><span class="line">			link_pqueue p;</span><br><span class="line">			p &#x3D; q-&gt;front;</span><br><span class="line">			while(p)</span><br><span class="line">			&#123;</span><br><span class="line">				q-&gt;front &#x3D; q-&gt;front-&gt;next;</span><br><span class="line">				free(p);</span><br><span class="line">				p &#x3D; q-&gt;front;</span><br><span class="line">			&#125;</span><br><span class="line">			free(q);</span><br><span class="line">		&#125;</span><br><span class="line">	*&#x2F;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      &#x2F;&#x2F;将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%s&quot;,str);</span><br><span class="line">	pfun(t);</span><br><span class="line">	puts(&quot;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>————————————————<br>版权声明：本文为CS80960356DN博主「许新天」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_39148042/article/details/" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39148042/article/details/</a></p>
 
     </div>
 </article>
@@ -505,7 +177,7 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
 
             </section>
         </aside>
-    </div>
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
