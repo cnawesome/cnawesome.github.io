@@ -142,10 +142,8 @@
     </ul>
     <div class="post-content">
         <p>btree.h  //二叉树头文件，用于声明数据类型和相关函数</p>
-<pre><code>#ifndef __BTREE_H__
-#define __BTREE_H__
-
-#include &lt;stdio.h&gt;
+<p>‘’’    #ifndef <strong>BTREE_H</strong><br>    #define <strong>BTREE_H</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;stdbool.h&gt;
 
@@ -164,18 +162,12 @@ extern void mid_order(btree_pnode t);    //采用递归方法中序遍历
 extern void post_order(btree_pnode t);   //采用递归方法后序遍历
 extern void level_order(btree_pnode t);  //层次遍历
 extern void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t);   //将上面的函数作为参数传入该函数（函数的回调），实现二叉树的创建 和 遍历，其中参数str可以是回调函数的功能描述
-#endif
+#endif&apos;&apos;&apos;
 
 
 
-
-btree.c  //二叉树相关函数的实现方法
-
-#include &quot;btree.h&quot;
-#include &quot;linkqueue.h&quot;   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲
-#include &quot;linkstack.h&quot;   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲
-
-btree_pnode create_btree1(void)        //通过递归方法创建一个二叉树
+btree.c  //二叉树相关函数的实现方法</code></pre><p>‘’’    #include “btree.h”<br>    #include “linkqueue.h”   //链式队列的头文件，关于链式队列的相关函数实现方法请查看博主相关链式队列的文章，这里不做细讲<br>    #include “linkstack.h”   //链式栈的头文件，关于链式栈的相关函数实现方法请查看博主相关链式栈的文章，这里不做细讲</p>
+<pre><code>btree_pnode create_btree1(void)        //通过递归方法创建一个二叉树
 {
     dataype_bt ch;
     btree_pnode new;
@@ -483,7 +475,7 @@ void travel(char const *str,void (*pfun)(btree_pnode),btree_pnode t)      //将�
     printf(&quot;%s&quot;,str);
     pfun(t);
     puts(&quot;&quot;);
-}</code></pre><p>————————————————<br>版权声明：本文为CS80960356DN博主「许新天」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_39148042/article/details/" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39148042/article/details/</a></p>
+}</code></pre><p>‘’’<br>————————————————<br>版权声明：本文为CS80960356DN博主「许新天」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_39148042/article/details/" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39148042/article/details/</a></p>
 
     </div>
 </article>

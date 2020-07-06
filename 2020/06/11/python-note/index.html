@@ -138,6 +138,10 @@
         <hr>
 <h4 id="Numpy-下-array"><a href="#Numpy-下-array" class="headerlink" title="Numpy 下 array"></a>Numpy 下 array</h4><p>NumPy数组的下标从0开始。<br>同一个NumPy数组中所有元素的类型必须是相同的。</p>
 <p>在详细介绍NumPy数组之前。先详细介绍下NumPy数组的基本属性。NumPy数组的维数称为秩（rank），一维数组的秩为1，二维数组的秩为2，以此类推。在NumPy中，每一个线性的数组称为是一个轴（axes），秩其实是描述轴的数量。比如说，二维数组相当于是两个一维数组，其中第一个一维数组中每个元素又是一个一维数组。所以一维数组就是NumPy中的轴（axes），第一个轴相当于是底层数组，第二个轴是底层数组里的数组。而轴的数量——秩，就是数组的维数。</p>
+<p>Numpy是科学计算库,是一个强大的N维数组对象ndarray，是广播功能函数。其整合C/C++.fortran代码的工具 ，更是Scipy、Pandas等的基础.ndim ：维度<br>.shape ：各维度的尺度 （2，5）<br>.size ：元素的个数 10<br>.dtype ：元素的类型 dtype(‘int32’)<br>.itemsize ：每个元素的大小，以字节为单位 ，每个元素占4个字节<br>ndarray数组的创建<br>np.arange(n) ; 元素从0到n-1的ndarray类型<br>np.ones(shape): 生成全1<br>np.zeros((shape)， ddtype = np.int32) ： 生成int32型的全0<br>np.full(shape, val): 生成全为val<br>np.eye(n) : 生成单位矩阵np.ones_like(a) : 按数组a的形状生成全1的数组<br>np.zeros_like(a): 同理<br>np.full_like (a, val) : 同理np.linspace（1,10,4）： 根据起止数据等间距地生成数组<br>np.linspace（1,10,4, endpoint = False）：endpoint 表示10是否作为生成的元素 </p>
+<p>np.concatenate<br>沿着给定的(axis=0 by default)axis拼接列表<br>参数：<br>a1,a2,… : 相同shape的一系列数组<br>axis : 数组将要连接的axis,默认为0（0代表的是列方向，1代表的是行的方向</p>
+<p>.swapaxes(ax1, ax2) : 将两个维度调换<br>.flatten() : 对数组进行降维，返回折叠后的一位数组数组的类型变换数据类型的转换 </p>
+<p>numpy线性代数<br>函数    描述<br>dot()    两个数组的点积，即元素对应相乘<br>vdot()    两个向量的点积<br>inner()    两个数组的内积<br>matmul()    两个数组的矩阵积<br>linalg.det()    计算输入矩阵的行列式<br>linalg.solve()    求解线性矩阵方程<br>linalg.inv()    计算矩阵的乘法逆矩阵</p>
 <h4 id="数据切分问题"><a href="#数据切分问题" class="headerlink" title="数据切分问题"></a>数据切分问题</h4><pre><code>对于二维数据有以下办法：
     1.使用data[：，0]类似列表切分的方式，不是列表切分，更像是矩阵切分。
     2.使用loc,iloc函数，读取需要的矩阵部分。</code></pre><p>shape是查看数据有多少行多少列<br>reshape()是数组array中的方法，作用是将数据重新组织。reshape新生成数组和原数组公用一个内存，不管改变哪个都会互相影响</p>
@@ -146,6 +150,9 @@
 <p>这些函数不适用于复数；如果你需要计算复数，请使用 cmath 模块中的同名函数。<br>将支持计算复数的函数区分开的目的，来自于大多数开发者并不愿意像数学家一样需要学习复数的概念。得到一个异常而不是一个复数结果使得开发者能够更早地监测到传递给这些函数的参数中包含复数，进而调查其产生的原因。</p>
 <p>math.ceil(x)<br>返回 x 的上限，即大于或者等于 x 的最小整数。如果 x 不是一个浮点数，则委托 x.<strong>ceil</strong>(), 返回一个 Integral 类的值</p>
 <p>math.floor(x)<br>返回 x 的向下取整，小于或等于 x 的最大整数。如果 x 不是浮点数，则委托 x.<strong>floor</strong>() ，它应返回 Integral 值。</p>
+<hr>
+<h4 id="读python基础教程笔记"><a href="#读python基础教程笔记" class="headerlink" title="读python基础教程笔记"></a>读python基础教程笔记</h4><p>python里，<br>对象的属性表示对象中的变量和方法。<br>对象的状态由其属性（如名称）描述。</p>
+<p>是类的定义————一种对象</p>
 
     </div>
 </article>
