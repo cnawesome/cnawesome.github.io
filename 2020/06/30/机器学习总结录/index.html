@@ -141,8 +141,7 @@
         </li>
     </ul>
     <div class="post-content">
-        <hr>
-<h3 id="线性回归步骤总结"><a href="#线性回归步骤总结" class="headerlink" title="线性回归步骤总结"></a>线性回归步骤总结</h3><p>1.处理数据格式，将所拥有的数据处理成相应的格式<br>2.设置loss函数，计算样本之间的差别 $f(x)<br>3.目的是为了使预测的数据与样本之间的差别越来越小。即调整线性函数的参数，使得该函数能更好的拟合样本集。可以使用梯度下降算法<br>4.确定了线性函数，使用该函数生成预测数据</p>
+        <h3 id="线性回归步骤总结"><a href="#线性回归步骤总结" class="headerlink" title="线性回归步骤总结"></a>线性回归步骤总结</h3><p>1.处理数据格式，将所拥有的数据处理成相应的格式<br>2.设置loss函数，计算样本之间的差别 $L(x)=[(ax+b)-y]^2$<br>3.目的是为了使预测的数据与样本之间的差别越来越小。即调整线性函数的参数，使得该函数能更好的拟合样本集。可以使用梯度下降算法<br>4.确定了线性函数，使用该函数生成预测数据</p>
 
     </div>
 </article>
@@ -172,7 +171,22 @@
 
             </section>
         </aside>
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>

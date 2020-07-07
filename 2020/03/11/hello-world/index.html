@@ -142,7 +142,39 @@
     </ul>
     <div class="post-content">
         <p>Welcome to my Chanal, This is my very first post. </p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="博客初体验"><a href="#博客初体验" class="headerlink" title="博客初体验"></a>博客初体验</h3><h4 id="new-blog-new-life"><a href="#new-blog-new-life" class="headerlink" title="new blog,new life"></a>new blog,new life</h4>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="博客初体验"><a href="#博客初体验" class="headerlink" title="博客初体验"></a>博客初体验</h3><h4 id="new-blog-new-life"><a href="#new-blog-new-life" class="headerlink" title="new blog,new life"></a>new blog,new life</h4><h4 id="hexo-数学公式使用方法"><a href="#hexo-数学公式使用方法" class="headerlink" title="hexo 数学公式使用方法"></a>hexo 数学公式使用方法</h4><h5 id="页面插入"><a href="#页面插入" class="headerlink" title="页面插入"></a>页面插入</h5><p>公式插入有两种形式，一种是在行内直接插入，不居中显示：</p>
+<p>$math$</p>
+<p>另一种是在行间插入公式，居中显示：</p>
+<script type="math/tex; mode=display">math</script><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><h5 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h5><p>^上标，_表示下标</p>
+<script type="math/tex; mode=display">a_{1} x^{2}</script><script type="math/tex; mode=display">e^{-alpha t}</script><script type="math/tex; mode=display">a^{i}_{ij}</script><script type="math/tex; mode=display">e^{x^2} neq {e^x}^2</script><script type="math/tex; mode=display">
+a_{1} x^{2}</script><script type="math/tex; mode=display">
+$$e^{-alpha t}</script><script type="math/tex; mode=display">
+
+此外，如果左右两边都有上下标，则使用 sideset 命令，效果如下：
+
+\sideset{^xy}{^xy}\bigotimes</script><p>\sideset{^xy}{^xy}\bigotimes</p>
+<script type="math/tex; mode=display">
+
+##### 平方根
+
+平方根输入命令为 sqrt，n次方根命令为 sqrt[n]，其符号大小由LaTeX 自动给定：
+
+$$\sqrt{x}$$ $$\sqrt{x^2+\sqrt{y}$$ $$\sqrt[3]{2}</script><script type="math/tex; mode=display">\sqrt{x}</script><script type="math/tex; mode=display">
+\sqrt{x}</script><h5 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h5><p>使用 overline 和 underline 分别在表达式上下方画出水平线：</p>
+<script type="math/tex; mode=display">\overline{m + n}</script><script type="math/tex; mode=display">\underline{m + n}</script><script type="math/tex; mode=display">
+\overline{m + n}</script><h5 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h5><p>命令 overbrace 和 underrace，效果如下：</p>
+<script type="math/tex; mode=display">\underbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">\overbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">
+\underbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">
+\overbrace{a+b+cdots+z}</script><h5 id="积分运算符"><a href="#积分运算符" class="headerlink" title="积分运算符"></a>积分运算符</h5><p>积分运算符使用 int 生成。求和运算符使用 sum 生成。乘积运算符使用 prod 生成。上下限使用^ 和_ 命令，类似 上下标：</p>
+<script type="math/tex; mode=display">\sum_{i=1}^{n}</script><script type="math/tex; mode=display">\int_{0}^{frac{pi}{2}}</script><script type="math/tex; mode=display">\prod_epsilon</script><script type="math/tex; mode=display">
+\sum_{i=1}^{n}</script><h5 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h5><p>\αα alpha ββ beta γγ gamma δδ delta ϵϵ epsilon</p>
+<p>字体转换<br>要对公式的某一部分字符进行字体转换，可以用{rm需转换的部分字符}命令，其中rm可以参照下表选择合适的字体。<br>一般情况下，公式默认为意大利体。</p>
+<p>rm 罗马体 rm test it 意大利体 it test</p>
+<p>bf 黑体 bf test cal 花体 cal test</p>
+<p>sl 倾斜体 sl test sf 等线体 sf test</p>
+<p>mit 数学斜体 mit test tt 打字机字体 tt test</p>
+<p>sc 小体大写字母 sc test</p>
+
     </div>
 </article>
         </main>
@@ -171,7 +203,22 @@
 
             </section>
         </aside>
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
