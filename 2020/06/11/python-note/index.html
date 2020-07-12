@@ -144,15 +144,18 @@
 <p>numpy线性代数<br>函数    描述<br>dot()    两个数组的点积，即元素对应相乘<br>vdot()    两个向量的点积<br>inner()    两个数组的内积<br>matmul()    两个数组的矩阵积<br>linalg.det()    计算输入矩阵的行列式<br>linalg.solve()    求解线性矩阵方程<br>linalg.inv()    计算矩阵的乘法逆矩阵</p>
 <h4 id="数据切分问题"><a href="#数据切分问题" class="headerlink" title="数据切分问题"></a>数据切分问题</h4><pre><code>对于二维数据有以下办法：
     1.使用data[：，0]类似列表切分的方式，不是列表切分，更像是矩阵切分。
-    2.使用loc,iloc函数，读取需要的矩阵部分。</code></pre><p>shape是查看数据有多少行多少列<br>reshape()是数组array中的方法，作用是将数据重新组织。reshape新生成数组和原数组公用一个内存，不管改变哪个都会互相影响</p>
-<p>mean()函数功能：求取均值<br>经常操作的参数为axis，以m * n矩阵举例：<br>    axis 不设置值，对 m<em>n 个数求均值，返回一个实数<br>    axis = 0：压缩行，对各列求均值，返回 1</em> n 矩阵<br>    axis =1 ：压缩列，对各行求均值，返回 m *1 矩阵</p>
-<p>#math函数<br>math — 数学函数<br>该模块提供了对C标准定义的数学函数的访问。</p>
+    2.使用loc,iloc函数，读取需要的矩阵部分。
+</code></pre><p>shape是查看数据有多少行多少列<br>reshape()是数组array中的方法，作用是将数据重新组织。reshape新生成数组和原数组公用一个内存，不管改变哪个都会互相影响</p>
+<p>mean()函数功能：求取均值<br>经常操作的参数为axis，以m <em> n矩阵举例：<br>    axis 不设置值，对 m</em>n 个数求均值，返回一个实数<br>    axis = 0：压缩行，对各列求均值，返回 1<em> n 矩阵<br>    axis =1 ：压缩列，对各行求均值，返回 m </em>1 矩阵</p>
+<h1 id="math函数"><a href="#math函数" class="headerlink" title="math函数"></a>math函数</h1><p>math —- 数学函数<br>该模块提供了对C标准定义的数学函数的访问。</p>
 <p>这些函数不适用于复数；如果你需要计算复数，请使用 cmath 模块中的同名函数。<br>将支持计算复数的函数区分开的目的，来自于大多数开发者并不愿意像数学家一样需要学习复数的概念。得到一个异常而不是一个复数结果使得开发者能够更早地监测到传递给这些函数的参数中包含复数，进而调查其产生的原因。</p>
 <p>math.ceil(x)<br>返回 x 的上限，即大于或者等于 x 的最小整数。如果 x 不是一个浮点数，则委托 x.<strong>ceil</strong>(), 返回一个 Integral 类的值</p>
 <p>math.floor(x)<br>返回 x 的向下取整，小于或等于 x 的最大整数。如果 x 不是浮点数，则委托 x.<strong>floor</strong>() ，它应返回 Integral 值。</p>
 <hr>
 <h4 id="读python基础教程笔记"><a href="#读python基础教程笔记" class="headerlink" title="读python基础教程笔记"></a>读python基础教程笔记</h4><p>python里，<br>对象的属性表示对象中的变量和方法。<br>对象的状态由其属性（如名称）描述。</p>
 <p>是类的定义————一种对象</p>
+<p>python中有魔法方法，如<strong>init</strong>,这种方法以横线开头和结尾。<br>python中协议的概念：规范行为的规则</p>
+<p>静态方法和类方法：包装在staticmethod和classmethod类的对象中</p>
 
     </div>
 </article>

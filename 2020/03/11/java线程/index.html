@@ -142,77 +142,10 @@
     </ul>
     <div class="post-content">
         <pre><code>runnable 无返回类型 
-callable 有返回类型</code></pre><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>//申请线程池<br>ExecutorServide service = Executors.newFixedCachedPool();//线程受线程池指挥拿取任务<br>ExecutorServide service = Executors.newCacheThreadPool();<br>ScheduleExecutorServide service = Executor.newScheduleThreadPool();//已一定的频率执行线程</p>
-<p>//关闭线程池<br>service.shutdown();</p>
-<p>WorkStealPool//线程窃取，线程主动去拿任务执行</p>
-<p>static class R implentments runnable{ //runnable 任务实现类<br>        int time;</p>
-<pre><code>R(int t){
-
-    this.time=t;
-
-
-}
-
-    public void run (){
-            timeUnit.MILLISECONDS.sleep(500);
-
-    }
-
-    system.out.println(time+&quot; &quot;+Thread.currentThread().getName());</code></pre><p>}</p>
-<p>service.execute(new R(1000));//开启线程执行runable任务</p>
+callable 有返回类型
+</code></pre><h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">ExecutorServide service &#x3D; Executors.newFixedCachedPool();&#x2F;&#x2F;线程受线程池指挥拿取任务</span><br><span class="line">ExecutorServide service &#x3D; Executors.newCacheThreadPool();</span><br><span class="line">ScheduleExecutorServide service &#x3D; Executor.newScheduleThreadPool();&#x2F;&#x2F;已一定的频率执行线程</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;关闭线程池</span><br><span class="line">service.shutdown();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">WorkStealPool&#x2F;&#x2F;线程窃取，线程主动去拿任务执行</span><br><span class="line"></span><br><span class="line">static class R implentments runnable&#123; &#x2F;&#x2F;runnable 任务实现类</span><br><span class="line">		int time;</span><br><span class="line"></span><br><span class="line">		R(int t)&#123;</span><br><span class="line">			</span><br><span class="line">			this.time&#x3D;t;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">			public void run ()&#123;</span><br><span class="line">					timeUnit.MILLISECONDS.sleep(500);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			system.out.println(time+&quot; &quot;+Thread.currentThread().getName());</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">service.execute(new R(1000));&#x2F;&#x2F;开启线程执行runable任务</span><br></pre></td></tr></table></figure>
 <h3 id="处理大型数组求和问题"><a href="#处理大型数组求和问题" class="headerlink" title="处理大型数组求和问题"></a>处理大型数组求和问题</h3><p>1.ForkJoinPool方式</p>
-<p>public class T1_ForkJoinPool {<br>    static int[]nums= new int[1000000];<br>    static final int MAX_NUM=50000;<br>    static Random r=new Random();</p>
-<pre><code>static {
-    for(int i=0;i&lt;nums.length;i++) 
-    {
-        nums[i]=r.nextInt();
-    }
-
-    System.out.println(Arrays.stream(nums).sum());//stream api,把数组转化为流
-
-}
-
-static class AddTask extends RecursiveAction{ //继承forkjoin类
-    int start,end;
-
-    AddTask(int s,int e) {
-        start=s;
-        end=e;
-    }
-    @Override
-    protected void compute() {
-        if(end-start&lt;=MAX_NUM) 
-        {
-            long sum = 0L;
-            for(int i=start;i&lt;end;i++) sum += nums[i];
-            System.out.println(&quot;from:&quot;+start+&quot; to:&quot;+end+&quot;=&quot;+sum);
-
-        }
-        else
-        {
-            int middle=start+(end-start)/2;
-
-            AddTask subTask1=new AddTask(start, middle);
-            AddTask subTask2=new AddTask(middle, end);
-            subTask1.fork();
-            subTask2.fork();
-
-        }
-
-    }
-
-
-
-
-}
-
-public static void main(String[] args) throws IOException {
-    ForkJoinPool fjp=new ForkJoinPool();
-    AddTask task=new AddTask(0, nums.length);
-    fjp.execute(task);
-
-    System.in.read();
-}</code></pre><p>}</p>
+<figure class="highlight plain"><figcaption><span>class T1_ForkJoinPool &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">	static int[]nums&#x3D; new int[1000000];</span><br><span class="line">	static final int MAX_NUM&#x3D;50000;</span><br><span class="line">	static Random r&#x3D;new Random();</span><br><span class="line">	</span><br><span class="line">	static &#123;</span><br><span class="line">		for(int i&#x3D;0;i&lt;nums.length;i++) </span><br><span class="line">		&#123;</span><br><span class="line">			nums[i]&#x3D;r.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(Arrays.stream(nums).sum());&#x2F;&#x2F;stream api,把数组转化为流</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	static class AddTask extends RecursiveAction&#123; &#x2F;&#x2F;继承forkjoin类</span><br><span class="line">		int start,end;</span><br><span class="line">		</span><br><span class="line">		AddTask(int s,int e) &#123;</span><br><span class="line">			start&#x3D;s;</span><br><span class="line">			end&#x3D;e;</span><br><span class="line">		&#125;</span><br><span class="line">		@Override</span><br><span class="line">		protected void compute() &#123;</span><br><span class="line">			if(end-start&lt;&#x3D;MAX_NUM) </span><br><span class="line">			&#123;</span><br><span class="line">				long sum &#x3D; 0L;</span><br><span class="line">				for(int i&#x3D;start;i&lt;end;i++) sum +&#x3D; nums[i];</span><br><span class="line">				System.out.println(&quot;from:&quot;+start+&quot; to:&quot;+end+&quot;&#x3D;&quot;+sum);</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				int middle&#x3D;start+(end-start)&#x2F;2;</span><br><span class="line">				</span><br><span class="line">				AddTask subTask1&#x3D;new AddTask(start, middle);</span><br><span class="line">				AddTask subTask2&#x3D;new AddTask(middle, end);</span><br><span class="line">				subTask1.fork();</span><br><span class="line">				subTask2.fork();</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">		ForkJoinPool fjp&#x3D;new ForkJoinPool();</span><br><span class="line">		AddTask task&#x3D;new AddTask(0, nums.length);</span><br><span class="line">		fjp.execute(task);</span><br><span class="line">		</span><br><span class="line">		System.in.read();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>大多数使用的线程池来自于threadpoolExecutor</p>
 <p>//自定义线程池<br>public class threadpoolExecutor｛｝</p>
 
