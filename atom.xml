@@ -254,10 +254,10 @@
   
   <entry>
     <title>概率论1.0</title>
-    <link href="https://cnawesome.github.io/2020/04/15/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A61-0/"/>
-    <id>https://cnawesome.github.io/2020/04/15/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A61-0/</id>
+    <link href="https://cnawesome.github.io/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/"/>
+    <id>https://cnawesome.github.io/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/</id>
     <published>2020-04-15T03:20:36.000Z</published>
-    <updated>2020-07-12T08:55:09.270Z</updated>
+    <updated>2020-07-12T09:00:47.803Z</updated>
     
     <content type="html"><![CDATA[<h4 id="随机过程-random-process"><a href="#随机过程-random-process" class="headerlink" title="随机过程 random process"></a>随机过程 random process</h4><p>easiest random process ：伯努利过程 Bernoulli process</p><p>伯努利过程：一直随机的抛一枚硬币,独立的</p><p>independent</p><p>at each trials:</p><pre><code>$$P(sucess) = P(X=1) = p$$$$P(failure) = P(X=0) = 1-p$$</code></pre><p>最简单的随机过程是把随机过程当做一串随机变量的随机序列</p><script type="math/tex; mode=display">x_1,x_2,x_3$$的联合分布    得这些随机变量的概率密度函数：$$p_{x_{1},x_{2},x_{3}}=p_{x_1}*p_{x_2}*p_{x_3}</script><pre><code>    由于这些随机变量是独立的</code></pre><p>小总结：随机过程只是随机变量的集合</p>]]></content>
     
@@ -270,6 +270,8 @@
     
     </summary>
     
+    
+      <category term="算法" scheme="https://cnawesome.github.io/categories/%E7%AE%97%E6%B3%95/"/>
     
     
   </entry>
