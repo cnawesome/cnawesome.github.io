@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python爬虫</title>
+    <url>/2020/07/14/python%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<hr>
+<h3 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h3><p>模拟浏览器去访问和获取互联网上的信息</p>
+<h4 id="爬虫分类"><a href="#爬虫分类" class="headerlink" title="爬虫分类"></a>爬虫分类</h4><p>通用爬虫<br>    特点：通过关键字锁定目标<br>聚焦网络爬虫<br>    特点：到互联网上有目标有选择的抓取目标或相关主题<br>增量式网络爬虫<br>    特点：只爬取新产生或者已经发生变化的网页，增量式更新<br>深层网络爬虫<br>    特点：不能通过静态页面爬取的内容。隐藏在表单中的一些数据</p>
+<h4 id="实例-爬取bilibili某个专栏的图片"><a href="#实例-爬取bilibili某个专栏的图片" class="headerlink" title="实例 爬取bilibili某个专栏的图片"></a>实例 爬取bilibili某个专栏的图片</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line">#定义一个函数用来获取每张要P的图片的地址</span><br><span class="line">def get_urls():</span><br><span class="line">    &#39;&#39;&#39;  </span><br><span class="line">    1.找到要爬的目标网页</span><br><span class="line">    2.用正则来匹配不同图片的地址，产生一个匹配之后的结果</span><br><span class="line">    3.通过源代码和匹配之后的结果来找到获取图片的地址</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    response &#x3D; requests.get(&#39;https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv6769711?from&#x3D;category_29&#39;)</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    .匹配不换行的字符，</span><br><span class="line">    #任意数量,</span><br><span class="line">    ?:非贪婪匹配，匹配尽可能短的字符</span><br><span class="line">    ():不仅要匹配字符，字符还要使用</span><br><span class="line">    &#39;&#39;&#39;</span><br><span class="line">    url_add &#x3D; r&#39;&lt;img data-src&#x3D;&quot;(&#x2F;&#x2F;i0.hdslb.com&#x2F;bfs&#x2F;article&#x2F;.*?.jpg)&quot; .*?&#x2F;&gt;&#39;</span><br><span class="line">    #在网页源代码中查找图片的地址，第二个参数要求网页源代码</span><br><span class="line">    url_list &#x3D; re.findall(url_add,response.text)</span><br><span class="line">    print(url_list)</span><br><span class="line">    return url_list</span><br><span class="line"></span><br><span class="line">#下载数据</span><br><span class="line">def get_jpg(url,name):</span><br><span class="line">    response &#x3D; requests.get(url)</span><br><span class="line">    #下载路径</span><br><span class="line">    with open(&#39;D:\\others\\resultset\\p%d.jpg&#39; %name,&#39;wb&#39;) as ft:</span><br><span class="line">        ft.write(response.content)</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    url_list &#x3D; get_urls()</span><br><span class="line">    name &#x3D; 1</span><br><span class="line">    for url in url_list:</span><br><span class="line">        com_url &#x3D; &#39;https:&#39; + url</span><br><span class="line">        get_jpg(com_url,name)</span><br><span class="line">        name +&#x3D; 1</span><br><span class="line">        print(com_url)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/07/14/python%E7%88%AC%E8%99%AB/爬虫流程1.jpg" alt><br><img src="/2020/07/14/python%E7%88%AC%E8%99%AB/爬虫流程2.jpg" alt><br><img src="/2020/07/14/python%E7%88%AC%E8%99%AB/爬虫流程3.jpg" alt></p>
+<p><img src="/2020/07/14/python%E7%88%AC%E8%99%AB/scrapy内容.jpg" alt></p>
+<h4 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h4>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习总结录</title>
     <url>/2020/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E5%BD%95/</url>
     <content><![CDATA[<h3 id="线性回归步骤总结"><a href="#线性回归步骤总结" class="headerlink" title="线性回归步骤总结"></a>线性回归步骤总结</h3><p>1.处理数据格式，将所拥有的数据处理成相应的格式<br>2.设置loss函数，计算样本之间的差别 $L(x)=[(ax+b)-y]^2$<br>3.目的是为了使预测的数据与样本之间的差别越来越小。即调整线性函数的参数，使得该函数能更好的拟合样本集。可以使用梯度下降算法<br>4.确定了线性函数，使用该函数生成预测数据</p>
@@ -33,6 +50,21 @@
 <p>是类的定义————一种对象</p>
 <p>python中有魔法方法，如<strong>init</strong>,这种方法以横线开头和结尾。<br>python中协议的概念：规范行为的规则</p>
 <p>静态方法和类方法：包装在staticmethod和classmethod类的对象中</p>
+<hr>
+<p>with创建临时运行环境：</p>
+<p>作用：with用于创建一个临时的运行环境，运行环境中的代码执行完后自动安全退出环境。</p>
+<p>文件操作：使用open进行文件操作时建议使用with创建运行环境，可以不用close()方法关闭文件，无论在文件使用中遇到什么问题都能安全的退出，即使发生错误退出运行环境时也可以安全退出文件并给出报错信息。</p>
+<hr>
+<h4 id="python-视频"><a href="#python-视频" class="headerlink" title="python 视频"></a>python 视频</h4><p>lambda用来创建匿名函数<br>    根据参数计算表达式结果并返回。</p>
+<h4 id="python-环境配置等问题"><a href="#python-环境配置等问题" class="headerlink" title="python 环境配置等问题"></a>python 环境配置等问题</h4><p><img src="/2020/06/11/python-note/python版本匹配问题.jpg" alt><br>可能有人在安装好的anaconda中，查看python版本发现是3.7怎么办呢？</p>
+<p>那就创建一个python3.6环境即可，要知道anaconda很擅长做这些事</p>
+<p>还是因为墙的问题，可能下载较慢，所以我们还是使用镜像网站吧，这次使用清华的：给anaconda添加该镜像网站：</p>
+<p>conda config —add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>conda config —set show_channel_urls yes<br>可以输入2次</p>
+<p>conda config —add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>这样该网站就置顶了</p>
+<p>好了，创建Python3.6环境的命令很简单了：</p>
+<p>conda create —name py36 python=3.6 anaconda<br>anaconda在这里的意思安装依赖包，所以要下载一会</p>
+<p>接下来就激活该环境吧：</p>
+<p>activate py36<br>然后再次输入如下命令验证python</p>
 ]]></content>
       <tags>
         <tag>python</tag>
@@ -337,16 +369,21 @@
     <title>概率论1.0</title>
     <url>/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/</url>
     <content><![CDATA[<h4 id="随机过程-random-process"><a href="#随机过程-random-process" class="headerlink" title="随机过程 random process"></a>随机过程 random process</h4><p>easiest random process ：伯努利过程 Bernoulli process</p>
-<p>伯努利过程：一直随机的抛一枚硬币,独立的</p>
-<p>independent</p>
-<p>at each trials:</p>
-<pre><code>$$P(sucess) = P(X=1) = p$$
-$$P(failure) = P(X=0) = 1-p$$
-</code></pre><p>最简单的随机过程是把随机过程当做一串随机变量的随机序列</p>
-<script type="math/tex; mode=display">x_1,x_2,x_3$$的联合分布
-    得这些随机变量的概率密度函数：$$p_{x_{1},x_{2},x_{3}}=p_{x_1}*p_{x_2}*p_{x_3}</script><pre><code>    由于这些随机变量是独立的
-</code></pre><p>小总结：随机过程只是随机变量的集合</p>
-]]></content>
+<h4 id="伯努利过程：一直随机的抛一枚硬币-独立的"><a href="#伯努利过程：一直随机的抛一枚硬币-独立的" class="headerlink" title="伯努利过程：一直随机的抛一枚硬币,独立的"></a>伯努利过程：一直随机的抛一枚硬币,独立的</h4><p>independent</p>
+<p>at each trials:<br>    $P(sucess) = P(X=1) = p$<br>    $P(failure) = P(X=0) = 1-p$</p>
+<p>最简单的随机过程是把随机过程当做一串随机变量的随机序列</p>
+<p>$x_1,x_2,x_3$的联合分布<br>    得这些随机变量的概率密度函数：$P_{x_1,x_2,x_3}=P_{x_1}P_{x_2}P_{x_3}$<br>        由于这些随机变量是独立的<br>小总结：随机过程只是随机变量的集合</p>
+<p>例：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：interarrival time.jpg" alt></p>
+<p>经过一段实验时间遇见第一个1的时间，我们称为$T_{1}$<br>$T_{1}$的概率分布<br>    $p(T_{1}=t)=(1-p)^{t-1}p$,$t=1,2,3,…$<br>    符合几何分布<br>    $E[t_{1}]=1/p$<br>    $Var[t_{1}]=(1-p)/p^{2}$</p>
+<p>一个伯努利实验加上一个伯努利试验可以成为新的一个伯努利试验</p>
+<h4 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h4><p>泊松分布是连续的伯努利过程版本</p>
+<p>伯努利实验：<br>            每个间隔相当于一次实验<br>            1.每个间隔的概率是相同的<br>               2.每个间隔的概率是独立的<br>将时间轴使用插槽平等分割，每个时间槽都是独立的。不同长度的时间间隔也是相互独立的</p>
+<p>伯努利过程在一个时间段使用一个个插槽，在插槽中用一个0,1表示时间是否发生，如果这个插槽是秒级的，或者毫秒级，越分越小，可以直接用时间段的没一点查看是否发生事件。这样，只需要知道在某个时间点是否发生该时间<br>如下式表达：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：small interval.jpg" alt><br>$lim P(1,delta)/delta=lamda$<br>这个lamda 我们称为到达率，或者过程的密度</p>
+<p>$E(number of arrived,in [0,delta])=lamde*delta$</p>
+<p>now,<br>我们有一个大的时间间隔t，我们用小的间隔delta来分割t，<br>能分割的个数$n=t/delta$<br>又每个delta的概率$p=lamda*delta$,且不同的delta间隔之间是独立的<br>近似可得一个伯努利过程<br>当delta 趋近于0时，使用伯努利实验的概率密度函数</p>
+<p>得出泊松的伯努利过程<br>when delta趋于0，n趋于无穷大</p>
+<script type="math/tex; mode=display">p(k)=(n choose k)(lamda*t/n)^{k}(1-lamda*t/n)^{n-k}</script><p>由微积分得<script type="math/tex">(1-lamda*t/n)^{n-k}=e^{-lamda*t}</script></p>
+<script type="math/tex; mode=display">p(k,t)=(n choose k)(lamda*t/n)^{k}e^{-lamda*t}</script><script type="math/tex; mode=display">E(N_{t})=lamda*t</script><script type="math/tex; mode=display">Var(N_{t})=lamda*t</script>]]></content>
       <categories>
         <category>算法</category>
       </categories>
