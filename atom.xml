@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cnawesome.github.io/"/>
-  <updated>2020-07-16T02:16:14.767Z</updated>
+  <updated>2020-07-21T14:01:31.571Z</updated>
   <id>https://cnawesome.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自制operation</title>
+    <link href="https://cnawesome.github.io/2020/07/21/30%E5%A4%A9%E8%87%AA%E5%88%B6operation/"/>
+    <id>https://cnawesome.github.io/2020/07/21/30%E5%A4%A9%E8%87%AA%E5%88%B6operation/</id>
+    <published>2020-07-21T12:02:08.000Z</published>
+    <updated>2020-07-21T14:01:31.571Z</updated>
+    
+    <content type="html"><![CDATA[<p>通用寄存器AX，BX，CX，DX，SP，BP，SI，DI。其中的前四个寄存器可分别分成AH，AL ;BH，BL;CH，CL;DH，DL的八位寄存器<br>指令指针寄存器（IP）、标志寄存器（FLAGS）、段寄存器CS，DS，ES，SS<br>BP为基指针（Base Pointer）寄存器，通过它减去一定的偏移值，来访问栈中的元素；<br>SP为堆栈指针（Stack Pointer）寄存器，它始终指向栈顶。</p><p>1 org 07c00h ; 告诉编译器程序加载到7c00处<br>2 mov ax, cs<br>3 mov ds, ax<br>4 mov es, ax<br>5 call DispStr ; 调用显示字符串例程<br>6 jmp $ ; 无限循环<br>7 DispStr:<br>8 mov ax, BootMessage<br>9 mov bp, ax ; ES:BP = 串地址<br>10 mov cx, 16 ; CX = 串长度<br>11 mov ax, 01301h ; AH = 13, AL = 01h<br>12 mov bx, 000ch ; 页号为0 (BH = 0) 黑底红字(BL = 0Ch,高亮)<br>13 mov dl, 0<br>14 int 10h ; 10h 号中断<br>15 ret<br>16 BootMessage: db “Hello,␣OS␣world!”<br>17 times 510 - ($-$$) db 0 ; 填充剩下的空间，使生成的二进制代码恰好为512字节<br>18 dw 0xaa55 ; 结束标志 </p><p>把这段代码用NASM编译一下： ▹ nasm boot.asm -o boot.bin<br>NASM是一个为可移植性与模块化而设计的一个80x86的汇编器。它支持相当多的目标文件格式，包括Linux和’’NetBSD/FreeBSD’’,’’a.out’’,’’ELF’’,’’COFF’’,微软16位的’’OBJ’’和’’Win32’’。它还可以输出纯二进制文件</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;通用寄存器AX，BX，CX，DX，SP，BP，SI，DI。其中的前四个寄存器可分别分成AH，AL ;BH，BL;CH，CL;DH，DL的八位寄存器&lt;br&gt;指令指针寄存器（IP）、标志寄存器（FLAGS）、段寄存器CS，DS，ES，SS&lt;br&gt;BP为基指针（Base Poin
+      
+    
+    </summary>
+    
+    
+      <category term="操作系统" scheme="https://cnawesome.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://cnawesome.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>python爬虫</title>
@@ -285,15 +311,15 @@
     <link href="https://cnawesome.github.io/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/"/>
     <id>https://cnawesome.github.io/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/</id>
     <published>2020-04-15T03:20:36.000Z</published>
-    <updated>2020-07-15T02:55:12.094Z</updated>
+    <updated>2020-07-23T08:17:56.111Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="随机过程-random-process"><a href="#随机过程-random-process" class="headerlink" title="随机过程 random process"></a>随机过程 random process</h4><p>easiest random process ：伯努利过程 Bernoulli process</p><h4 id="伯努利过程：一直随机的抛一枚硬币-独立的"><a href="#伯努利过程：一直随机的抛一枚硬币-独立的" class="headerlink" title="伯努利过程：一直随机的抛一枚硬币,独立的"></a>伯努利过程：一直随机的抛一枚硬币,独立的</h4><p>independent</p><p>at each trials:<br>    $P(sucess) = P(X=1) = p$<br>    $P(failure) = P(X=0) = 1-p$</p><p>最简单的随机过程是把随机过程当做一串随机变量的随机序列</p><p>$x_1,x_2,x_3$的联合分布<br>    得这些随机变量的概率密度函数：$P_{x_1,x_2,x_3}=P_{x_1}P_{x_2}P_{x_3}$<br>        由于这些随机变量是独立的<br>小总结：随机过程只是随机变量的集合</p><p>例：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：interarrival time.jpg" alt></p><p>经过一段实验时间遇见第一个1的时间，我们称为$T_{1}$<br>$T_{1}$的概率分布<br>    $p(T_{1}=t)=(1-p)^{t-1}p$,$t=1,2,3,…$<br>    符合几何分布<br>    $E[t_{1}]=1/p$<br>    $Var[t_{1}]=(1-p)/p^{2}$</p><p>一个伯努利实验加上一个伯努利试验可以成为新的一个伯努利试验</p><h4 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h4><p>泊松分布是连续的伯努利过程版本</p><p>伯努利实验：<br>            每个间隔相当于一次实验<br>            1.每个间隔的概率是相同的<br>               2.每个间隔的概率是独立的<br>将时间轴使用插槽平等分割，每个时间槽都是独立的。不同长度的时间间隔也是相互独立的</p><p>伯努利过程在一个时间段使用一个个插槽，在插槽中用一个0,1表示时间是否发生，如果这个插槽是秒级的，或者毫秒级，越分越小，可以直接用时间段的没一点查看是否发生事件。这样，只需要知道在某个时间点是否发生该时间<br>如下式表达：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：small interval.jpg" alt><br>$lim P(1,delta)/delta=lamda$<br>这个lamda 我们称为到达率，或者过程的密度</p><p>$E(number of arrived,in [0,delta])=lamde*delta$</p><p>now,<br>我们有一个大的时间间隔t，我们用小的间隔delta来分割t，<br>能分割的个数$n=t/delta$<br>又每个delta的概率$p=lamda*delta$,且不同的delta间隔之间是独立的<br>近似可得一个伯努利过程<br>当delta 趋近于0时，使用伯努利实验的概率密度函数</p><p>得出泊松的伯努利过程<br>when delta趋于0，n趋于无穷大</p><script type="math/tex; mode=display">p(k)=(n choose k)(lamda*t/n)^{k}(1-lamda*t/n)^{n-k}</script><p>由微积分得<script type="math/tex">(1-lamda*t/n)^{n-k}=e^{-lamda*t}</script></p><script type="math/tex; mode=display">p(k,t)=(n choose k)(lamda*t/n)^{k}e^{-lamda*t}</script><script type="math/tex; mode=display">E(N_{t})=lamda*t</script><script type="math/tex; mode=display">Var(N_{t})=lamda*t</script>]]></content>
+    <content type="html"><![CDATA[<h3 id="随机过程-random-process"><a href="#随机过程-random-process" class="headerlink" title="随机过程 random process"></a>随机过程 random process</h3><p>easiest random process ：伯努利过程 Bernoulli process</p><h3 id="伯努利过程：一直随机的抛一枚硬币-独立的"><a href="#伯努利过程：一直随机的抛一枚硬币-独立的" class="headerlink" title="伯努利过程：一直随机的抛一枚硬币,独立的"></a>伯努利过程：一直随机的抛一枚硬币,独立的</h3><p>independent</p><p>at each trials:<br>    $P(sucess) = P(X=1) = p$<br>    $P(failure) = P(X=0) = 1-p$</p><p>最简单的随机过程是把随机过程当做一串随机变量的随机序列</p><p>$x_1,x_2,x_3$的联合分布<br>    得这些随机变量的概率密度函数：$P_{x_1,x_2,x_3}=P_{x_1}P_{x_2}P_{x_3}$<br>        由于这些随机变量是独立的<br>小总结：随机过程只是随机变量的集合</p><p>例：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：interarrival time.jpg" alt></p><p>经过一段实验时间遇见第一个1的时间，我们称为$T_{1}$<br>$T_{1}$的概率分布<br>    $p(T_{1}=t)=(1-p)^{t-1}p$,$t=1,2,3,…$<br>    符合几何分布<br>    $E[t_{1}]=1/p$<br>    $Var[t_{1}]=(1-p)/p^{2}$</p><p>一个伯努利实验加上一个伯努利试验可以成为新的一个伯努利试验</p><h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>泊松分布是连续的伯努利过程版本</p><p>伯努利实验：<br>            每个间隔相当于一次实验<br>            1.每个间隔的概率是相同的<br>               2.每个间隔的概率是独立的<br>将时间轴使用插槽平等分割，每个时间槽都是独立的。不同长度的时间间隔也是相互独立的</p><p>伯努利过程在一个时间段使用一个个插槽，在插槽中用一个0,1表示时间是否发生，如果这个插槽是秒级的，或者毫秒级，越分越小，可以直接用时间段的没一点查看是否发生事件。这样，只需要知道在某个时间点是否发生该时间<br>如下式表达：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：small interval.jpg" alt><br>$lim \frac{P(1,\delta)}{\delta}=\lambda$<br>这个$\lambda$ 我们称为到达率，或者过程的密度</p><p>$E(number of arrived,in [0,\delta])=\lambda \delta$</p><p>now,<br>我们有一个大的时间间隔t，我们用小的间隔delta来分割t，<br>能分割的个数$n=\frac{t}{\delta}$<br>又每个$\delta$的概率$p=\lambda \delta$,且不同的\delta间隔之间是独立的<br>近似可得一个伯努利过程<br>当$\delta$ 趋近于0时，使用伯努利实验的概率密度函数</p><p>得出泊松的伯努利过程<br>when $\delta$趋于0，n趋于无穷大</p><script type="math/tex; mode=display">p(k)=(n  choose  k)(\frac{\lambda t}{n})^{k}(1-\frac{\lambda t}{n})^{n-k}</script><p>由微积分得<script type="math/tex">(1-\frac{\lambda t}{n})^{n-k}=e^{-\lambda t}</script></p><script type="math/tex; mode=display">p(k,t)=(n  choose  k)(\frac{\lambda t}{n})^{k}e^{-\lambda t}</script><script type="math/tex; mode=display">E(N_{t})=\lambda t</script><script type="math/tex; mode=display">Var(N_{t})=\lambda t</script><p>—-         詹2020.7.14</p><p>泊松PMF:</p><script type="math/tex; mode=display">p(k,t)=\frac{(\lambda t)^{k}e^{-\lambda t}}{k!}</script><script type="math/tex; mode=display">k=0,1,2...</script><h4 id="分裂泊松分布"><a href="#分裂泊松分布" class="headerlink" title="分裂泊松分布"></a>分裂泊松分布</h4><p>在在一个泊松分布的随机变量变化轴的一点上可以选择多个其他的泊松分布轴。</p><h3 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h3><p>马尔科夫过程是随机过程的一类，建立在事件之间有依赖</p><p><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链.jpg" alt><br>马尔科夫通用框架：<br>$new state = f(old state,noise)$<br>一般表示一些系统或变量的演变</p><p><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链1.jpg" alt><br>为什么马尔科夫链成立？</p><p><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链2.jpg" alt><br>$p_{31}$看做在state状态3条件下转换state状态1的条件概率<br>$p_{ij}=P(X_{n+1}=j|X_{n}=i)$</p><p>$p_{31}$的转换的概率不受它之前转换的概率的影响，如$p_{23}$是$p_{31}$的概率，$p_{31}$的概率不会受$p_{23}$影响<br>$p_{ij}=P(X_{n+1}=j|X_{n}=i,X_{n-1},X_{n-2},…,X_{0})$<br>之前的不影响之后的</p><p>马尔科夫链模型制作：<br>1.确定你的状态变量是什么，确定状态的概率<br>2.确定不同的状态，再确定状态转换的概率<br>3.确定转换概率</p><p>怎么使用马尔科夫模型？</p><p>需要该模型做预测<br>当你需要在这个模型中预测从某一状态到拧一个状态后，可能出现的状态是什么。</p><p>例，求下面的$p_{ij}$<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链3.jpg" alt><br>key recursion:<br>$r_{ij}=\sum_{k=1}^{n}r_{ik}(n-1)P_{kj}$</p><p>with random initial state:<br>$P(x_{n}=j)=\sum_{i=1}^{n}P(x_{0}=i)r_{ij}(n)$</p><p>马尔科夫模型的变量的状态会一直改变，但他的变量的概率到一定程度就会稳定。</p><p>如果马尔科夫链有周期性，他可能无法收敛</p><h5 id="回归和传输状态"><a href="#回归和传输状态" class="headerlink" title="回归和传输状态"></a>回归和传输状态</h5><p>回归状态：从某一状态出去，总是能有一条回来改状态的路径<br>传输状态：从该状态出去，无法再回到该状态，也称瞬态</p><p>从一个瞬态出发，最终会在一个回归态群，无法回到瞬态</p><p>有指向自己的传输过程一定不是周期性链</p><h5 id="稳定状态概率"><a href="#稳定状态概率" class="headerlink" title="稳定状态概率"></a>稳定状态概率</h5><p>马尔科夫链收敛定理：<br>判断一个马尔科夫链最终会成为稳态<br>1，只有一个大的回归态群<br>2，这个回归态群没有周期性</p><p>稳定态马尔科夫链的从i到j概率</p><p>$r_{ij}(n)=\sum_{k}r_{ik}(n-1)r_{kj}$</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h4 id=&quot;随机过程-random-process&quot;&gt;&lt;a href=&quot;#随机过程-random-process&quot; class=&quot;headerlink&quot; title=&quot;随机过程 random process&quot;&gt;&lt;/a&gt;随机过程 random process&lt;/h4&gt;&lt;p&gt;ea
+        &lt;h3 id=&quot;随机过程-random-process&quot;&gt;&lt;a href=&quot;#随机过程-random-process&quot; class=&quot;headerlink&quot; title=&quot;随机过程 random process&quot;&gt;&lt;/a&gt;随机过程 random process&lt;/h3&gt;&lt;p&gt;ea
       
     
     </summary>
@@ -496,32 +522,6 @@
       
       
         &lt;p&gt;&lt;img src=&quot;/2020/03/14/%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E4%BD%95%E4%B8%BA%E7%94%B5%E8%B7%AF.jpg&quot; alt&gt;&lt;br&gt;&lt;img src=&quot;/2020/03/14/%E7%94
-      
-    
-    </summary>
-    
-    
-      <category term="程序人生" scheme="https://cnawesome.github.io/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
-    
-    
-      <category term="程序人生" scheme="https://cnawesome.github.io/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>普通生物学</title>
-    <link href="https://cnawesome.github.io/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/"/>
-    <id>https://cnawesome.github.io/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/</id>
-    <published>2020-03-13T23:04:35.000Z</published>
-    <updated>2020-03-29T12:24:43.727Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="生物膜的特性"><a href="#生物膜的特性" class="headerlink" title="生物膜的特性"></a>生物膜的特性</h3><p>1.生物膜具有流动性<br>2.膜蛋白分布不对称<br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C%E7%9A%84%E7%BB%84%E6%88%90.jpg" alt><br>生物膜处于动态运动中</p><p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%94%9F%E7%89%A9%E8%86%9C%E7%9A%84%E8%9B%8B%E7%99%BD%E8%B4%A8.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%B4%A8%E5%9F%BA%E8%B4%A8.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%86%9C%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD.jpg" alt></p><p>膜蛋白的作用：<br>    1.作为膜转运蛋白，选择性的介导小分子物质的跨膜运输。<br>    2.具有酶的功能<br>    3.作为细胞表面的受体，与激素结合之后将型号传递到胞内<br>    4.糖蛋白的糖链可有哦为细胞之间的识别标志。<br>    5.形成细胞之间的连接<br>    6。作为细胞骨架的连接点。</p><p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%86%9C%E8%BD%AC%E8%BF%90%E8%9B%8B%E7%99%BD.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E8%B7%A8%E8%86%9C%E8%BF%90%E8%BE%93%E7%AE%80%E5%8D%95%E6%89%A9%E6%95%A3.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E5%B0%8F%E5%88%86%E5%AD%90%E8%B7%A8%E8%86%9C%E8%BF%90%E8%BE%93.jpg" alt></p><p>载体蛋白：通过改变自身构件，转运</p><p>小分子的跨膜运输：<br>    简单扩散<br>    被动运输<br>    主动运输</p><h4 id="细胞连接"><a href="#细胞连接" class="headerlink" title="细胞连接"></a>细胞连接</h4><p>细胞间或细胞-基质见的接触部位形成特殊的连接结构，叫细胞连接。 </p><p><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F.jpg" alt><br><img src="/2020/03/14/%E6%99%AE%E9%80%9A%E7%94%9F%E7%89%A9%E5%AD%A6/%E7%BB%86%E8%83%9E%E8%BF%9E%E6%8E%A5%E6%96%B9%E5%BC%8F1.jpg" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;生物膜的特性&quot;&gt;&lt;a href=&quot;#生物膜的特性&quot; class=&quot;headerlink&quot; title=&quot;生物膜的特性&quot;&gt;&lt;/a&gt;生物膜的特性&lt;/h3&gt;&lt;p&gt;1.生物膜具有流动性&lt;br&gt;2.膜蛋白分布不对称&lt;br&gt;&lt;img src=&quot;/2020/03/14/%E6%
       
     
     </summary>
