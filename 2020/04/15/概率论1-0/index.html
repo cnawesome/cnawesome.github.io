@@ -201,10 +201,21 @@
 <p>泊松分布运行德连续时间也叫做持续时间。持续时间指数型随机变量也是连续型随机变量<br>不过目前研究离散情况下的马尔科夫链。</p>
 <p>扩展马尔科夫链到连续性<br>该问题不采用连续化，而是将时间分开离散化<br>在一个足够小的时间间隔中，每一个状态的情况：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链3-3.jpg" alt></p>
 <p>7.27</p>
-<p>如何描述一个向上过度的概率，它如同泊松分布记录到一个在一个很小的时间段$\lamda$的概率$\delta$<br>这个向上过度的概率=$\lamda\delta$<br>所以每一个向上过度的概率都是$\lamda\delta$</p>
-<p>向下过度的概率，如上在一个很小的时间段内$\alpha$的概率$\delta$<br>所以每一个向下过度的概率都是$\lamda\delta$</p>
-<p>i个电话通话时直到有一个人挂电话的概率$i\alpha\delta$</p>
-
+<p>如何描述一个向上过度的概率，它如同泊松分布记录到一个在一个很小的时间段$\lamda$的概率$\delta$<br>这个向上过度的概率=$\lambda\delta$<br>所以每一个向上过度的概率都是$\lambda\delta$</p>
+<p>向下过度的概率，如上在一个很小的时间段内$\alpha$的概率$\delta$<br>所以每一个向下过度的概率都是$\lambda\delta$</p>
+<p>i个电话通话时直到中间有一个人挂电话的概率$i\alpha\delta$</p>
+<p>规定，0~B表示通话的数目</p>
+<p>平衡方程<br>由上面分析：<br>从i状态向上过度的过程=$\lambda i\delta\pi_{i-1}$<br>等同于$\alpha\delta\pi_{i}$<br>的平衡方程：<br>$\lambda\pi_{i-1}=i\alpha\pi_{i}$</p>
+<p>$\pi_{i}=\pi_{0} \frac{\lambda^{i}}{\alpha^{i}i!}$</p>
+<p>for $\sum_{\pi_{i}}=1$</p>
+<script type="math/tex; mode=display">\pi_{0}=\frac{1}{\sum_{i=0}^{B} \frac{\lambda^{i}}{\alpha^{i}i!}}</script><h3 id="吸收状态-absorption-state"><a href="#吸收状态-absorption-state" class="headerlink" title="吸收状态 absorption state"></a>吸收状态 absorption state</h3><p>吸收状态表示一个过程进入了回归状态再也出不来了。</p>
+<hr>
+<h4 id="极限定理"><a href="#极限定理" class="headerlink" title="极限定理"></a>极限定理</h4><p>假设在南极有一群企鹅，从中随机挑几个来测量他们的身高。</p>
+<p>$X_{1},X_{2},X_{3},..X_{n}$  称为样本</p>
+<p>样本的平均值：</p>
+<script type="math/tex; mode=display">M_{n}=\frac{X_{1}+X_{2}+...+X_{n}}{n}</script><p>它与期望的差别在于，样本的平均值是样本的平均，而期望是整个数据的平均</p>
+<p>样本的平均值是一个随机变量，可以通过极限定理，趋于无穷时，可以接近正确答案。</p>
+<h4 id="大数弱定律"><a href="#大数弱定律" class="headerlink" title="大数弱定律"></a>大数弱定律</h4>
     </div>
 </article>
         </main>
