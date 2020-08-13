@@ -149,6 +149,7 @@
 <p>例：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：interarrival time.jpg" alt></p>
 <p>经过一段实验时间遇见第一个1的时间，我们称为$T_{1}$<br>$T_{1}$的概率分布<br>    $p(T_{1}=t)=(1-p)^{t-1}p$,$t=1,2,3,…$<br>    符合几何分布<br>    $E[t_{1}]=1/p$<br>    $Var[t_{1}]=(1-p)/p^{2}$</p>
 <p>一个伯努利实验加上一个伯努利试验可以成为新的一个伯努利试验</p>
+<hr>
 <h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>泊松分布是连续的伯努利过程版本</p>
 <p>伯努利实验：<br>            每个间隔相当于一次实验<br>            1.每个间隔的概率是相同的<br>               2.每个间隔的概率是独立的<br>将时间轴使用插槽平等分割，每个时间槽都是独立的。不同长度的时间间隔也是相互独立的</p>
 <p>伯努利过程在一个时间段使用一个个插槽，在插槽中用一个0,1表示时间是否发生，如果这个插槽是秒级的，或者毫秒级，越分越小，可以直接用时间段的没一点查看是否发生事件。这样，只需要知道在某个时间点是否发生该时间<br>如下式表达：<br><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/概率13：small interval.jpg" alt><br>$lim \frac{P(1,\delta)}{\delta}=\lambda$<br>这个$\lambda$ 我们称为到达率，或者过程的密度</p>
@@ -159,6 +160,7 @@
 <script type="math/tex; mode=display">p(k,t)=(n  choose  k)(\frac{\lambda t}{n})^{k}e^{-\lambda t}</script><script type="math/tex; mode=display">E(N_{t})=\lambda t</script><script type="math/tex; mode=display">Var(N_{t})=\lambda t</script><p>—-         詹2020.7.14</p>
 <p>泊松PMF:</p>
 <script type="math/tex; mode=display">p(k,t)=\frac{(\lambda t)^{k}e^{-\lambda t}}{k!}</script><script type="math/tex; mode=display">k=0,1,2...</script><h4 id="分裂泊松分布"><a href="#分裂泊松分布" class="headerlink" title="分裂泊松分布"></a>分裂泊松分布</h4><p>在在一个泊松分布的随机变量变化轴的一点上可以选择多个其他的泊松分布轴。</p>
+<hr>
 <h3 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h3><p>马尔科夫过程是随机过程的一类，建立在事件之间有依赖</p>
 <p><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链.jpg" alt><br>马尔科夫通用框架：<br>$new state = f(old state,noise)$<br>一般表示一些系统或变量的演变</p>
 <p><img src="/2020/04/15/%E6%A6%82%E7%8E%87%E8%AE%BA1-0/马尔科夫链1.jpg" alt><br>为什么马尔科夫链成立？</p>

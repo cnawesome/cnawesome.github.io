@@ -147,8 +147,9 @@
 
 RealSubject：真实主题角色，是实现抽象主题接口的类。
 
-Proxy：代理角色，内部含有对真实对象RealSubject的引用，从而可以操作真实对象。代理对象提供与真实对象相同的接口，以便在任何时刻都能代替真实对象。同时，代理对象可以在执行真实对象操作时，附加其他的操作，相当于对真实对象进行封装。</code></pre><p>这就符合了设计模式的开闭原则，即在对既有代码不改动的情况下进行功能的扩展。</p>
-<p>###静态代理<br>在使用静态代理时,被代理对象与代理对象需要一起实现相同的接口或者是继承相同父类，因此要定义一个接口或抽象类.</p>
+Proxy：代理角色，内部含有对真实对象RealSubject的引用，从而可以操作真实对象。代理对象提供与真实对象相同的接口，以便在任何时刻都能代替真实对象。同时，代理对象可以在执行真实对象操作时，附加其他的操作，相当于对真实对象进行封装。
+</code></pre><p>这就符合了设计模式的开闭原则，即在对既有代码不改动的情况下进行功能的扩展。</p>
+<h3 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h3><p>在使用静态代理时,被代理对象与代理对象需要一起实现相同的接口或者是继承相同父类，因此要定义一个接口或抽象类.</p>
 <p>代码案例：</p>
 <p>复制代码<br>// 接口<br>    interface IStar {<br>        void sing();<br>    }</p>
 <pre><code>// 真实对象
@@ -176,7 +177,8 @@ class ProxyManger implements IStar {
     }
 
     @Override
-    public void sing() {</code></pre><p>　　　　　　System.out.println(“唱歌前准备”);<br>    　　　 star.sing();<br>   　　　　System.out.println(“善后工作”);        }<br>    }<br>class Test{<br>public static void main(String[] args) {<br>            // 创建明星对象<br>            IStar ldh = new LDHStar();<br>            ProxyManger proxy = new ProxyManger(ldh);<br>            proxy.sing();<br>        }<br>}</p>
+    public void sing() {
+</code></pre><p>　　　　　　System.out.println(“唱歌前准备”);<br>    　　　 star.sing();<br>   　　　　System.out.println(“善后工作”);        }<br>    }<br>class Test{<br>public static void main(String[] args) {<br>            // 创建明星对象<br>            IStar ldh = new LDHStar();<br>            ProxyManger proxy = new ProxyManger(ldh);<br>            proxy.sing();<br>        }<br>}</p>
 <p>静态代理总结:<br>优点：<br>可以做到在不修改目标对象的功能前提下,对目标功能扩展.<br>缺点:<br>因为代理对象需要与目标对象实现一样的接口,所以会有很多代理类,类太多.同时,一旦接口增加方法,目标对象与代理对象都要维护.</p>
 <h3 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h3><p>动态代理的主要特点就是能够在程序运行时JVM才为被代理对象生成代理对象。</p>
 <h4 id="基于接口的动态代理"><a href="#基于接口的动态代理" class="headerlink" title="基于接口的动态代理"></a>基于接口的动态代理</h4><p>常说的动态代理也叫做JDK代理也是一种接口代理，JDK中生成代理对象的代理类就是Proxy，所在包是java.lang.reflect</p>
@@ -184,32 +186,34 @@ class ProxyManger implements IStar {
 <pre><code>@Override
 public void run() {
     System.out.println(&quot;猎狗在跑&quot;);
-}</code></pre><p>}<br>class DogUtils{<br>    public static void method1() {<br>        System.out.println(“增强方式一”);<br>    }</p>
+}
+</code></pre><p>}<br>class DogUtils{<br>    public static void method1() {<br>        System.out.println(“增强方式一”);<br>    }</p>
 <pre><code>public static void method2() {
     System.out.println(&quot;增强方式二&quot;);
-}</code></pre><p>}<br>class MyInvocationHandle implements InvocationHandler{<br>    private Object target;<br>    public void setTarget(Object target) {<br>        this.target = target;<br>    }<br>    @Override<br>    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {<br>            DogUtils.method1();<br>            method.invoke(target, args);<br>            DogUtils.method2();<br>            return null;<br>    }<br>}<br>    //生产代理对象的工厂****<br> class MyProxyFactory{<br>    public static Object getProxy(Object target) {<br>        MyInvocationHandle handle = new MyInvocationHandle();<br>        handle.setTarget(target);<br>        Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), handle);<br>        return proxy;<br>    }<br> }<br>public class ProxyDemo {<br>    public static void main(String[] args) {<br>      IDog dog = new GunDog();<br>      IDog proxy =(IDog) MyProxyFactory.getProxy(dog);<br>      proxy.run();<br>    }</p>
+}
+</code></pre><p>}<br>class MyInvocationHandle implements InvocationHandler{<br>    private Object target;<br>    public void setTarget(Object target) {<br>        this.target = target;<br>    }<br>    @Override<br>    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {<br>            DogUtils.method1();<br>            method.invoke(target, args);<br>            DogUtils.method2();<br>            return null;<br>    }<br>}<br>    //生产代理对象的工厂<em>**</em><br> class MyProxyFactory{<br>    public static Object getProxy(Object target) {<br>        MyInvocationHandle handle = new MyInvocationHandle();<br>        handle.setTarget(target);<br>        Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), handle);<br>        return proxy;<br>    }<br> }<br>public class ProxyDemo {<br>    public static void main(String[] args) {<br>      IDog dog = new GunDog();<br>      IDog proxy =(IDog) MyProxyFactory.getProxy(dog);<br>      proxy.run();<br>    }</p>
 <p>总结：<br>代理对象不需要实现接口,但是目标对象一定要实现接口,否则不能使用动态代理，因此这也算是这种方式的缺陷。</p>
 <h4 id="基于接口的动态代理-1"><a href="#基于接口的动态代理-1" class="headerlink" title="基于接口的动态代理"></a>基于接口的动态代理</h4><p>动态代理的特点：<br>字节码随用随创建，随用随加载。<br>作用：不更改源码的情况下，对功能加强。<br>分类：<br>    基于接口的动态代理，<br>    基于类的动态代理，</p>
 <p>基于接口的动态代理，<br>    涉及的类：proxy，提供者：jdk官方</p>
 <p>如何创建代理对象：<br>    使用proxy类的newProxyInstance();<br>创建对象的要求：<br>    被代理类至少实现一个接口，否则不能使用。</p>
 <p>newProxyInstance()的参数：<br>    classLoader：类加载器，用于加载代理对象字节码，和被代理对象使用相同类加载器。<br>    class【】数组：用与让代理对象和被代理对象有相同的方法。<br>    InvactionHandler：用于提供增强的代码，如何代理，一般使用匿名内部类</p>
 <p>Producer Producer = Proxy.wProxyInstance(producer.getClass().getClassLoader(),<br>                    producer.getClass().getInterfaces(),<br>                    new InvactionHandler(){</p>
-<pre><code>    /*该匿名内部类的invoke()作用是：执行该被代理对象的任何接口的方法都经过该方法
-        proxy :代理对象的引用
-        method：当前执行的方法
-         args：当前执行的方法所需的参数
+<pre><code>                /*该匿名内部类的invoke()作用是：执行该被代理对象的任何接口的方法都经过该方法
+                    proxy :代理对象的引用
+                    method：当前执行的方法
+                     args：当前执行的方法所需的参数
 
-    */
-    public Object invoke(Object proxy,Method method,Object[] args) throws Throwable{
-        //提供增强的代码
+                */
+                public Object invoke(Object proxy,Method method,Object[] args) throws Throwable{
+                    //提供增强的代码
 
-    }
+                }
 
 
-}
+            }
 
-    )</code></pre><p>####基于子类的动态代理</p>
-<p>Cglib代理<br>上面的静态代理和动态代理模式有个相同点就是都要求目标对象是实现一个接口的对象,然而并不是任何对象都会实现一个接口，也存在没有实现任何的接口的对象,</p>
+                )
+</code></pre><h4 id="基于子类的动态代理"><a href="#基于子类的动态代理" class="headerlink" title="基于子类的动态代理"></a>基于子类的动态代理</h4><p>Cglib代理<br>上面的静态代理和动态代理模式有个相同点就是都要求目标对象是实现一个接口的对象,然而并不是任何对象都会实现一个接口，也存在没有实现任何的接口的对象,</p>
 <p>这时就可以使用继承目标类以目标对象子类的方式实现代理,这种方法就叫做:Cglib代理，也叫作子类代理,它是在内存中构建一个子类对象从而实现对目标对象功能的扩展.</p>
 <p>使用JDK动态代理有一个限制,就是被代理的对象必须实现一个或多个接口,若想代理没有实现接口的类,就需要使用Cglib实现.</p>
 <p>由于Cglib是第三方提供的所以使用的时候需要导入相关的jar包<br>cglb<br>asm</p>
@@ -257,7 +261,8 @@ public void run() {
     arraySort.bubbleSort(arr);
     arraySort.selectSort(arr);
     arraySort.quickSort(arr);
-}</code></pre><p>}<br>class ArraySort2{<br>    public void quickSort(int[] arr) {<br>        Arrays.sort(arr);<br>    }<br>    public void selectSort(int[] arr) {<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            for (int j = i+1; j &lt; arr.length; j++) {<br>                if (arr[i] &gt; arr[j]) {<br>                    int temp = 0;<br>                    temp = arr[i];<br>                    arr[i] = arr[j];<br>                    arr[j] = temp;<br>                }<br>            }<br>        }<br>    }<br>    public void bubbleSort(int[] arr) {<br>        for (int i = 0; i &lt; arr.length - 1; i++) {<br>            for (int j = 0; j &lt; arr.length - 1 - i; j++) {<br>                if (arr[j] &gt; arr[j + 1]) {<br>                    int temp = 0;<br>                    temp = arr[j];<br>                    arr[j] = arr[j + 1];<br>                    arr[j + 1] = temp;<br>                }<br>            }<br>        }<br>    }<br>}</p>
+}
+</code></pre><p>}<br>class ArraySort2{<br>    public void quickSort(int[] arr) {<br>        Arrays.sort(arr);<br>    }<br>    public void selectSort(int[] arr) {<br>        for (int i = 0; i &lt; arr.length; i++) {<br>            for (int j = i+1; j &lt; arr.length; j++) {<br>                if (arr[i] &gt; arr[j]) {<br>                    int temp = 0;<br>                    temp = arr[i];<br>                    arr[i] = arr[j];<br>                    arr[j] = temp;<br>                }<br>            }<br>        }<br>    }<br>    public void bubbleSort(int[] arr) {<br>        for (int i = 0; i &lt; arr.length - 1; i++) {<br>            for (int j = 0; j &lt; arr.length - 1 - i; j++) {<br>                if (arr[j] &gt; arr[j + 1]) {<br>                    int temp = 0;<br>                    temp = arr[j];<br>                    arr[j] = arr[j + 1];<br>                    arr[j + 1] = temp;<br>                }<br>            }<br>        }<br>    }<br>}</p>
 <p>基于子类的动态代理<br>    涉及的类：Enhancer，提供者：第三方Cglib</p>
 <p>如何创建代理对象：<br>    使用Enhancer类的create方法;<br>创建对象的要求：<br>    被代理类不能是最终类。</p>
 <p>create()的参数：<br>    class：用于指定被代理对象字节码。<br>    callback：用于提供增强的代码，如何代理，一般使用callbac的子类接口方法MethodInterceptor()</p>
@@ -268,10 +273,12 @@ public void run() {
                      args：当前执行的方法所需的参数
 
                 */
-public Object intercept(Object proxy,Method method,Object[] args) throws Throwable    </code></pre><p>}<br>)</p>
+public Object intercept(Object proxy,Method method,Object[] args) throws Throwable    
+</code></pre><p>}<br>)</p>
+<hr>
 <h3 id="Java虚拟机类加载机制"><a href="#Java虚拟机类加载机制" class="headerlink" title="Java虚拟机类加载机制"></a>Java虚拟机类加载机制</h3><p>虚拟机把描述类的数据从 Class 文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的 Java 类型，这就是虚拟机的类加载机制。</p>
 <p>在Java语言里面，类型的加载、连接和初始化过程都是在程序运行期间完成的</p>
-<p><img src="/2020/03/11/java%E5%9F%BA%E7%A1%80/%E7%B1%BB%E5%8A%A0%E8%BD%BD.ng" alt></p>
+<p><img src="/2020/03/11/java%E5%9F%BA%E7%A1%80/类加载.ng" alt></p>
 <p>为支持运行时绑定，解析过程在某些情况下可在初始化之后再开始，除解析过程外的其他加载过程必须按照如图顺序开始。</p>
 <p>加载<br>通过全限定类名来获取定义此类的二进制字节流。<br>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构。<br>在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区这个类的各种数据的访问入口。<br>验证<br>验证是连接阶段的第一步，这一阶段的目的是为了确保 Class 文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。</p>
 <p>文件格式验证：如是否以魔数 0xCAFEBABE 开头、主、次版本号是否在当前虚拟机处理范围之内、常量合理性验证等。<br>此阶段保证输入的字节流能正确地解析并存储于方法区之内，格式上符合描述一个 Java类型信息的要求。<br>元数据验证：是否存在父类，父类的继承链是否正确，抽象类是否实现了其父类或接口之中要求实现的所有方法，字段、方法是否与父类产生矛盾等。<br>第二阶段，保证不存在不符合 Java 语言规范的元数据信息。<br>字节码验证：通过数据流和控制流分析，确定程序语义是合法的、符合逻辑的。例如保证跳转指令不会跳转到方法体以外的字节码指令上。<br>符号引用验证：在解析阶段中发生，保证可以将符号引用转化为直接引用。<br>可以考虑使用 -Xverify:none 参数来关闭大部分的类验证措施，以缩短虚拟机类加载的时间。</p>
@@ -304,11 +311,15 @@ public Object intercept(Object proxy,Method method,Object[] args) throws Throwab
     ClassLoader classLoader = Test.class.getClassLoader();
     System.out.println(&quot;加载我的classLoader：&quot; + classLoader);
     System.out.println(&quot;classLoader.parent：&quot; + classLoader.getParent());
-}</code></pre><p>}<br>并使用 javac -encoding utf8 Test.java 编译成 Test.class 文件。</p>
+}
+</code></pre><p>}<br>并使用 javac -encoding utf8 Test.java 编译成 Test.class 文件。</p>
 <p>类加载器代码如下：</p>
 <p>import java.io.*;</p>
-<p>public class MyClassLoader extends ClassLoader {<br>    @Override<br>    protected Class&lt;?&gt; findClass(String name) throws ClassNotFoundException {<br>        // 加载D盘根目录下指定类名的class<br>        String clzDir = “D:\“ + File.separatorChar<br>                + name.replace(‘.’, File.separatorChar) + “.class”;<br>        byte[] classData = getClassData(clzDir);</p>
-<pre><code>    if (classData == null) {
+<p>public class MyClassLoader extends ClassLoader {<br>    @Override<br>    protected Class&lt;?&gt; findClass(String name) throws ClassNotFoundException {<br>        // 加载D盘根目录下指定类名的class<br>        String clzDir = “D:\\” + File.separatorChar</p>
+<pre><code>            + name.replace(&#39;.&#39;, File.separatorChar) + &quot;.class&quot;;
+    byte[] classData = getClassData(clzDir);
+
+    if (classData == null) {
         throw new ClassNotFoundException();
     } else {
         return defineClass(name, classData, 0, classData.length);
@@ -331,7 +342,8 @@ private byte[] getClassData(String path) {
         e.printStackTrace();
     }
     return null;
-}</code></pre><p>}<br>使用类加载器加载调用 Test 类：</p>
+}
+</code></pre><p>}<br>使用类加载器加载调用 Test 类：</p>
 <p>public class MyClassLoaderTest {<br>    public static void main(String[] args) throws Exception {<br>        // 指定类加载器加载调用<br>        MyClassLoader classLoader = new MyClassLoader();<br>        classLoader.loadClass(“Test”).getMethod(“test”).invoke(null);<br>    }<br>}<br>输出信息：</p>
 <p>Copy<br>Test.test()已成功加载运行！<br>加载我的classLoader：class MyClassLoader<br>classLoader.parent：class sun.misc.Launcher$AppClassLoader</p>
 
