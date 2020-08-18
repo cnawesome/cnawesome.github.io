@@ -11,6 +11,13 @@
 <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h5 id="假设陈述"><a href="#假设陈述" class="headerlink" title="假设陈述"></a>假设陈述</h5><p>逻辑回归想要$ 0 &lt; h_{\theta}(x) &lt; 1$<br>$h_{\theta}{x}=g(\theta^{T}x)   g(z)=\frac{1}{1+e^{-z}}$</p>
 <p>$h_{\theta}(x)=\frac{1}{1+e^{-\theta^{T}x}}$</p>
 <p>$h_{\theta}(x)$表示预测输入x后y=1的概率，即$h_{\theta}(x)=p(y=1|x;\theta)$,概率论中，在给定条件$x and<br> \theta$下，y=1的概率</p>
+<h5 id="决策界限-（decsion-boundary）"><a href="#决策界限-（decsion-boundary）" class="headerlink" title="决策界限 （decsion boundary）"></a>决策界限 （decsion boundary）</h5><p>可以帮我我们了解假设函数在计算什么</p>
+<p>suppose predict :<br>    y=1,if $h_{\theta}(x)&gt;=0.5$<br>    y=0,if $h_{\theta}(x)&lt;0.5$</p>
+<p><img src="/2020/08/08/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%90%B4%E6%81%A9%E8%BE%BE-1/决策界限1.jpg" alt></p>
+<p>so:<br>    y=1,if $\theta^{T}x&gt;=0$<br>    y=0,if $\theta^{T}x&lt;0$</p>
+<p>决策界限是指利用特征分隔事件的可能的界限</p>
+<p>决策界限是被假设函数确定的，而不是数据集，由假设函数的参数决定</p>
+<p>接下来，如何自动选择参数？根据数据自动拟合</p>
 ]]></content>
       <categories>
         <category>机器学习</category>
