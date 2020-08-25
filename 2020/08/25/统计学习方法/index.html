@@ -123,57 +123,38 @@
     
     
     <h4 class="post-cat">
-        <a href="/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/">
-            程序人生
+        <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+            机器学习
         </a>
     </h4>
     
     
     <h2 class="post-title">
-        hexo语法
+        统计学习方法
     </h2>
     <ul class="post-date">
         <li>
-            2020-03-11
+            2020-08-25
         </li>
         <li>
             alei
         </li>
     </ul>
     <div class="post-content">
-        <h4 id="new-blog-new-life"><a href="#new-blog-new-life" class="headerlink" title="new blog,new life"></a>new blog,new life</h4><h3 id="hexo-数学公式使用方法"><a href="#hexo-数学公式使用方法" class="headerlink" title="hexo 数学公式使用方法"></a>hexo 数学公式使用方法</h3><h5 id="页面插入"><a href="#页面插入" class="headerlink" title="页面插入"></a>页面插入</h5><p>公式插入有两种形式，一种是在行内直接插入，不居中显示：</p>
-<p>$math$</p>
-<p>另一种是在行间插入公式，居中显示：</p>
-<script type="math/tex; mode=display">math</script><h4 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h4><h5 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h5><p>^上标，_表示下标</p>
-<script type="math/tex; mode=display">a_{1} x^{2}</script><script type="math/tex; mode=display">e^{-alpha t}</script><script type="math/tex; mode=display">a^{i}_{ij}</script><script type="math/tex; mode=display">e^{x^2} neq {e^x}^2</script><script type="math/tex; mode=display">
-a_{1} x^{2}</script><script type="math/tex; mode=display">
-$$e^{-alpha t}</script><script type="math/tex; mode=display">
-
-此外，如果左右两边都有上下标，则使用 sideset 命令，效果如下：
-
-\sideset{^xy}{^xy}\bigotimes</script><p>\sideset{^xy}{^xy}\bigotimes</p>
-<script type="math/tex; mode=display">
-
-##### 平方根
-
-平方根输入命令为 sqrt，n次方根命令为 sqrt[n]，其符号大小由LaTeX 自动给定：
-
-$$\sqrt{x}$$ $$\sqrt{x^2+\sqrt{y}$$ $$\sqrt[3]{2}</script><script type="math/tex; mode=display">\sqrt{x}</script><script type="math/tex; mode=display">
-\sqrt{x}</script><h5 id="除号"><a href="#除号" class="headerlink" title="除号"></a>除号</h5><p>\frac{分子}{分母}</p>
-<h5 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h5><p>使用 overline 和 underline 分别在表达式上下方画出水平线：</p>
-<script type="math/tex; mode=display">\overline{m + n}</script><script type="math/tex; mode=display">\underline{m + n}</script><script type="math/tex; mode=display">
-\overline{m + n}</script><h5 id="水平大括号"><a href="#水平大括号" class="headerlink" title="水平大括号"></a>水平大括号</h5><p>命令 overbrace 和 underrace，效果如下：</p>
-<script type="math/tex; mode=display">\underbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">\overbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">
-\underbrace{a+b+cdots+z}</script><script type="math/tex; mode=display">
-\overbrace{a+b+cdots+z}</script><h5 id="积分运算符"><a href="#积分运算符" class="headerlink" title="积分运算符"></a>积分运算符</h5><p>积分运算符使用 int 生成。求和运算符使用 sum 生成。乘积运算符使用 prod 生成。上下限使用^ 和_ 命令，类似 上下标：</p>
-<script type="math/tex; mode=display">\sum_{i=1}^{n}</script><script type="math/tex; mode=display">\int_{0}^{frac{pi}{2}}</script><script type="math/tex; mode=display">\prod_epsilon</script><script type="math/tex; mode=display">
-\sum_{i=1}^{n}</script><h5 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h5><p>\αα alpha ββ beta γγ gamma δδ delta ϵϵ epsilon</p>
-<p>字体转换<br>要对公式的某一部分字符进行字体转换，可以用{rm需转换的部分字符}命令，其中rm可以参照下表选择合适的字体。<br>一般情况下，公式默认为意大利体。</p>
-<p>rm 罗马体 rm test it 意大利体 it test</p>
-<p>bf 黑体 bf test cal 花体 cal test</p>
-<p>sl 倾斜体 sl test sf 等线体 sf test</p>
-<p>mit 数学斜体 mit test tt 打字机字体 tt test</p>
-<p>sc 小体大写字母 sc test</p>
+        <h3 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h3><p>统计学习的方法是基于数据构造统计模型从而对数据进行预测和分析。</p>
+<p>统计学习有：<br>    监督学习<br>    非监督学习<br>    半监督学习<br>    强化学习<br>    等</p>
+<p>监督学习的统计方法：<br>    1.从给定的，有限的，用于学习的训练数据集合中，假设数据时独立同分布的。<br>    2.假设要学习的模型是属于某个函数集合，称为假设空间（这个函数集合是什么？）<br>    3.应用某个评价标准，从假设空间中选取最优模型，使他对已知训练数据和未知训练数据在某个评价标准下有最优的预测（最优是如何判断的？），最优模型的选取有算法实现。</p>
+<p>监督学习的统计方法的三要素：<br>    1.模型的假设空间（模型）<br>    2.模型的选择准则（策略）<br>    3.模型学习的算法（算法）</p>
+<h3 id="1-2监督学习"><a href="#1-2监督学习" class="headerlink" title="1.2监督学习"></a>1.2监督学习</h3><p>监督学习的任务是：学习一个模型，使模型对于给定的任意输入，对其相应的输出做出一个好的预测。</p>
+<p>监督学习中：<br>    输入空间：输入的所有取值集合<br>    输出空间：输出的所有取值集合<br>    输入空间与输出空间可以是同一个空间，也可以不是。</p>
+<pre><code>每一个具体的输入是一个实例，由特征向量表示。所有特征向量存在的空间，叫做特征空间。特征空间的每一维，对应一个特征
+如 输入可以使 一个房子的 ，长，宽，高。 特征向量表示为（长，宽，高）：具体（1,1,1,），输入空间转变为特征空间。 向量中的1，对应的就是一个特征。
+</code></pre><p>在监督学习中，将输入和输出看做：在输入（特征）空间和输出空间基础上随机变量的取值<br>    输入变量$x=(x^{(1)},x^{(2)},x^{(3)},..,x^{(n)})^T$,$x^{(i)}$表示第i个特征<br>    $x_{i}$表示多个输入变量中第i个输入变量，$x_i=(x^{(1)},x^{(2)},x^{(3)},…,x^{(n)})^T$</p>
+<p>监督学习从训练数据集合中学习模型，对测试数据进行预测。<br>训练集由输入和输出对组成。训练集表示为：$T={(x_{1},y_{1}),(x_{2},y_{2}),..,(x_{n},y_{n})}$<br>测试集也是。</p>
+<p>根据输入变量和输出变量的类型可以区分要解决的问题。</p>
+<p>注意：<br>监督学习假设输入和输出的随机变量X和Y是符合联合概率分布。但对于学习系统来说，联合概率的具体定义是未知的。训练数据集测试训练集被看作是依联合概率分布独立同分布产生的。</p>
+<p>监督学习的模型可以使概率模型和非概率模型。由条件概率分布$P(Y|X)$或决策函数$Y=f(x)$表示。<br>因为训练集需要人工给出，所以叫监督学习。</p>
+<p>监督学习问题：<br>    1.首先规定一个训练数据集：$T={(x_{1},y_{1}),(x_{2},y_{2}),..,(x_{n},y_{n})}$<br>    2.监督学习假设输入和输出的随机变量X和Y是符合联合概率分布，P(X,Y)独立同分布。<br>    3.学习过程:学习系统通过给定的训练数据的大一个模型，表示为条件概率分布$P(Y|X)$或决策函数$Y=f(x)$。（这里$P(Y|X)$是相对于监督学习使用的联合概率分布而言，$P(Y|X)$表达一个处理什么样随机事件在，这里是在x发生下y的概率）<br>    4.预测过程：对于给定的测试数据，模型输出相应的测试结果。</p>
 
     </div>
 </article>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cnawesome.github.io/"/>
-  <updated>2020-08-13T23:15:52.275Z</updated>
+  <updated>2020-08-25T01:23:21.357Z</updated>
   <id>https://cnawesome.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>统计学习方法</title>
+    <link href="https://cnawesome.github.io/2020/08/25/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    <id>https://cnawesome.github.io/2020/08/25/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</id>
+    <published>2020-08-24T23:35:42.000Z</published>
+    <updated>2020-08-25T01:23:21.357Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="统计学习的方法"><a href="#统计学习的方法" class="headerlink" title="统计学习的方法"></a>统计学习的方法</h3><p>统计学习的方法是基于数据构造统计模型从而对数据进行预测和分析。</p><p>统计学习有：<br>    监督学习<br>    非监督学习<br>    半监督学习<br>    强化学习<br>    等</p><p>监督学习的统计方法：<br>    1.从给定的，有限的，用于学习的训练数据集合中，假设数据时独立同分布的。<br>    2.假设要学习的模型是属于某个函数集合，称为假设空间（这个函数集合是什么？）<br>    3.应用某个评价标准，从假设空间中选取最优模型，使他对已知训练数据和未知训练数据在某个评价标准下有最优的预测（最优是如何判断的？），最优模型的选取有算法实现。</p><p>监督学习的统计方法的三要素：<br>    1.模型的假设空间（模型）<br>    2.模型的选择准则（策略）<br>    3.模型学习的算法（算法）</p><h3 id="1-2监督学习"><a href="#1-2监督学习" class="headerlink" title="1.2监督学习"></a>1.2监督学习</h3><p>监督学习的任务是：学习一个模型，使模型对于给定的任意输入，对其相应的输出做出一个好的预测。</p><p>监督学习中：<br>    输入空间：输入的所有取值集合<br>    输出空间：输出的所有取值集合<br>    输入空间与输出空间可以是同一个空间，也可以不是。</p><pre><code>每一个具体的输入是一个实例，由特征向量表示。所有特征向量存在的空间，叫做特征空间。特征空间的每一维，对应一个特征如 输入可以使 一个房子的 ，长，宽，高。 特征向量表示为（长，宽，高）：具体（1,1,1,），输入空间转变为特征空间。 向量中的1，对应的就是一个特征。</code></pre><p>在监督学习中，将输入和输出看做：在输入（特征）空间和输出空间基础上随机变量的取值<br>    输入变量$x=(x^{(1)},x^{(2)},x^{(3)},..,x^{(n)})^T$,$x^{(i)}$表示第i个特征<br>    $x_{i}$表示多个输入变量中第i个输入变量，$x_i=(x^{(1)},x^{(2)},x^{(3)},…,x^{(n)})^T$</p><p>监督学习从训练数据集合中学习模型，对测试数据进行预测。<br>训练集由输入和输出对组成。训练集表示为：$T={(x_{1},y_{1}),(x_{2},y_{2}),..,(x_{n},y_{n})}$<br>测试集也是。</p><p>根据输入变量和输出变量的类型可以区分要解决的问题。</p><p>注意：<br>监督学习假设输入和输出的随机变量X和Y是符合联合概率分布。但对于学习系统来说，联合概率的具体定义是未知的。训练数据集测试训练集被看作是依联合概率分布独立同分布产生的。</p><p>监督学习的模型可以使概率模型和非概率模型。由条件概率分布$P(Y|X)$或决策函数$Y=f(x)$表示。<br>因为训练集需要人工给出，所以叫监督学习。</p><p>监督学习问题：<br>    1.首先规定一个训练数据集：$T={(x_{1},y_{1}),(x_{2},y_{2}),..,(x_{n},y_{n})}$<br>    2.监督学习假设输入和输出的随机变量X和Y是符合联合概率分布，P(X,Y)独立同分布。<br>    3.学习过程:学习系统通过给定的训练数据的大一个模型，表示为条件概率分布$P(Y|X)$或决策函数$Y=f(x)$。（这里$P(Y|X)$是相对于监督学习使用的联合概率分布而言，$P(Y|X)$表达一个处理什么样随机事件在，这里是在x发生下y的概率）<br>    4.预测过程：对于给定的测试数据，模型输出相应的测试结果。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;统计学习的方法&quot;&gt;&lt;a href=&quot;#统计学习的方法&quot; class=&quot;headerlink&quot; title=&quot;统计学习的方法&quot;&gt;&lt;/a&gt;统计学习的方法&lt;/h3&gt;&lt;p&gt;统计学习的方法是基于数据构造统计模型从而对数据进行预测和分析。&lt;/p&gt;
+&lt;p&gt;统计学习有：&lt;br&gt; 
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://cnawesome.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="统计学习" scheme="https://cnawesome.github.io/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习。吴恩达.1</title>
@@ -507,29 +534,6 @@
     
     
       <category term="算法" scheme="https://cnawesome.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vscode配置编译环境</title>
-    <link href="https://cnawesome.github.io/2020/03/18/vscode%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/"/>
-    <id>https://cnawesome.github.io/2020/03/18/vscode%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83/</id>
-    <published>2020-03-18T09:05:53.000Z</published>
-    <updated>2020-03-18T09:05:53.351Z</updated>
-    
-    <content type="html"><![CDATA[<hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;hr&gt;
-
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
